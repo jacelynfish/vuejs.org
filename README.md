@@ -59,4 +59,20 @@ guide/unit-testing |
 guide/ssr |                    
 guide/migration |              
 guide/comparison |             
-guide/join |                   
+guide/join | 
+api/index#Global Config |
+api/index#Global API |
+api/index#Options/Data |
+api/index#Options/DOM |
+api/index#Options/Lifecycle Hooks |
+api/index#Options/Assets|
+api/index#Options/misc |
+api/index#Instance Properties |
+api/index#Instance Methods/Data |
+api/index#Instance Methods/Eevents |
+api/index#Instance Methods/Lifecycle |
+api/index#Directives |
+api/index#Special Attributes |
+api/index#Built-in Components |
+api/index#VNode Interface |
+api/index#Server-Side Rendering |
