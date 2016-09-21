@@ -34,18 +34,29 @@
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
 示例/示例| [mrwiredancer](https://github.com/Mr-Wiredancer) | | 进行中 |
-[Guide](http://rc.vuejs.org/guide/)|
-[Global Config](http://rc.vuejs.org/api/#Global-Config) |
-[Global API](http://rc.vuejs.org/api/#Global-API) |
-[Options / Data](http://rc.vuejs.org/api/#Options-Data) |
-[Options / DOM](http://rc.vuejs.org/api/#Options-DOM) |
-[Options / Lifecycle Hooks](http://rc.vuejs.org/api/#Options-Lifecycle-Hooks) |
-[Options / Assets](http://rc.vuejs.org/api/#Options-Assets) |
-[Instance Properties](http://rc.vuejs.org/api/#Instance-Properties) |
-[Instance Methods / Data](http://rc.vuejs.org/api/#Instance-Methods-Data) |
-[Instance Methods / Events](http://rc.vuejs.org/api/#Instance-Methods-Events) |
-[Instance Methods / Lifecycle](http://rc.vuejs.org/api/#Instance-Methods-Lifecycle) |
-[Directives](http://rc.vuejs.org/api/#Directives) |
-[Special Attributes](http://rc.vuejs.org/api/#Special-Attributes) |
-[Built-In Components](http://rc.vuejs.org/api/#Built-In-Components) |
-[Server-Side Rendering](http://rc.vuejs.org/api/#Server-Side-Rendering) |
+guide/installation |           
+guide/index |                 
+guide/instance |               
+guide/syntax |
+guide/computed |               
+guide/class-and-style |      
+guide/conditional |            
+guide/list |                   
+guide/events |                 
+guide/forms |   
+guide/components |             
+guide/transitions |
+guide/transitioning-state |
+guide/render-function |        
+guide/reactivity |
+guide/custom-directive |
+guide/mixins |                 
+guide/plugins |                
+guide/single-file-components |
+guide/routing |
+guide/state-management |       
+guide/unit-testing |
+guide/ssr |                    
+guide/migration |              
+guide/comparison |             
+guide/join |                   
