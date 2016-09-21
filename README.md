@@ -27,7 +27,7 @@
 ## 进度表
 文章 | 翻译 | 校对 | 状态 | 
 ---- | ---- | ---- | ---- |
-/template/template.md| [mrwiredancer](https://github.com/Mr-Wiredancer) | | 进行中 | 
+示例/示例| [mrwiredancer](https://github.com/Mr-Wiredancer) | | 进行中 | 
 api/index|
 guide/class-and-style|
 guide/comparison | 
