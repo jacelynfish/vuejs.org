@@ -33,7 +33,6 @@
 
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
-示例/示例| [mrwiredancer](https://github.com/Mr-Wiredancer) | | 进行中 |
 guide/installation |           
 guide/index |                 
 guide/instance |               
@@ -60,7 +59,7 @@ guide/ssr |
 guide/migration |              
 guide/comparison |             
 guide/join | 
-api/index#Global Config |
+api/index#Global Config | mrwiredancer | | 翻译中
 api/index#Global API |
 api/index#Options/Data |
 api/index#Options/DOM |
