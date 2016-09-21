@@ -24,6 +24,15 @@
 * 校对通过则将 PR 改为`待合并`，并分配给协调员
 * 校对不通过则将 PR 改为 `待修改`，并分配给 PR 提交者
 
+## 进度表
+文章 | 翻译 | 校对 | 状态 | 
+---- | ---- | ---- | ---- |
+/template/template.md| [mrwiredancer](https://github.com/Mr-Wiredancer) | | 进行中 | 
+api/index|
+guide/class-and-style|
+guide/comparison | 
+guide/components |
+
 #vuejs.org
 
 This site is built with [hexo](http://hexo.io/). Site content is written in Markdown format located in `src`. Pull requests welcome!
