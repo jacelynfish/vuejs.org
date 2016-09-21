@@ -1,33 +1,61 @@
 ---
 type: api
 ---
+---
+type: api
+---
 
 ## Global Config
+## 全局配置
 
 `Vue.config` is an object containing Vue's global configurations. You can modify its properties listed below before bootstrapping your application:
+`Vue.config` 是一个对象，包含 Vue 的全局配置。可以在启动应用之前修改以下属性：
 
+### silent
 ### silent
 
 - **Type:** `boolean`
+- **类型：** `boolean`
 
 - **Default:** `false`
+- **默认值：** `false`
 
 - **Usage:**
+- **用法：**
 
+  ``` js
+  Vue.config.silent = true
+  ```
   ``` js
   Vue.config.silent = true
   ```
 
   Suppress all Vue logs and warnings.
+  禁用 Vue.js 的所有日志和警告。
 
+### optionMergeStrategies
 ### optionMergeStrategies
 
 - **Type:** `{ [key: string]: Function }`
+- **类型：** `{ [key: string]: Function }`
 
 - **Default:** `{}`
+- **默认值：** `{}`
 
 - **Usage:**
+- **用法：**
 
+  ``` js
+  Vue.config.optionMergeStrategies._my_option = function (parent, child, vm) {
+    return child + 1
+  }
+
+  const Profile = Vue.extend({
+    _my_option: 1
+  })
+
+  // Profile.options._my_option = 2
+  ```
   ``` js
   Vue.config.optionMergeStrategies._my_option = function (parent, child, vm) {
     return child + 1
@@ -41,51 +69,77 @@ type: api
   ```
 
   Define custom merging strategies for options.
+  为选项定义自定义的合并策略。
 
   The merge strategy receives the value of that option defined on the parent and child instances as the first and second arguments, respectively. The context Vue instance is passed as the third argument.
+  合并策略会接受在父实例和子实例中定义的选项值，以它们来分别作为第一和第二个参数。Vue 实例所在的上下文会作为第三个参数传递。
 
 - **See also**: [Custom Option Merging Strategies](/guide/mixins.html#Custom-Option-Merge-Strategies)
+- **请参考**：[Custom Option Merging Strategies](/guide/mixins.html#Custom-Option-Merge-Strategies)
 
+### devtools
 ### devtools
 
 - **Type:** `boolean`
+- **类型：** `boolean`
 
 - **Default:** `true` (`false` in production builds)
+- **默认值：** `true` (`false` in production builds)
 
 - **Usage:**
+- **用法：**
 
   ``` js
   // make sure to set this synchronously immediately after loading Vue
   Vue.config.devtools = true
   ```
+  ``` js
+  // 要保证在加载 Vue 之后同步地立刻设置
+  Vue.config.devtools = true
+  ```
 
   Configure whether to allow [vue-devtools](https://github.com/vuejs/vue-devtools) inspection. This option's default value is `true` in development builds and `false` in production builds. You can set it to `true` to enable inspection for production builds.
+  配置是否允许 [vue-devtools](https://github.com/vuejs/vue-devtools) 进行检查。开发版默认为 `true`，生产版默认为 `false`。你可以在生产版中将它设为 `true` 来启用检查。
 
+### errorHandler
 ### errorHandler
 
 - **Type:** `Function`
+- **类型：** `Function`
 
 - **Default:** Error is thrown in place
+- **默认值：** Error is thrown in place
 
 - **Usage:**
+- **用法：**
 
   ``` js
   Vue.config.errorHandler = function (err, vm) {
     // handle error
   }
   ```
+  ``` js
+  Vue.config.errorHandler = function (err, vm) {
+    // 处理错误
+  }
+  ```
 
   Assign a handler for uncaught errors during component render and watchers. The handler gets called with the error and the Vue instance.
+  为渲染过程和监视器中的未捕捉错误，分配一个处理器。这个处理器被调用的时候会得到错误和 Vue 实例。
 
   > [Sentry](https://sentry.io), an error tracking service, provides [official integration](https://sentry.io/for/vue/) using this option.
 
 ### keyCodes
+### keyCodes
 
 - **Type:** `{ [key: string]: number }`
+- **类型：** `{ [key: string]: number }`
 
 - **Default:** `{}`
+- **默认值：** `{}`
 
 - **Usage:**
+- **用法：**
 
   ``` js
   Vue.config.keyCodes = {
@@ -94,8 +148,12 @@ type: api
     mediaPlayPause: 179
   }
   ```
+  ``` js
+  Vue.config.keyCodes = { esc: 27 }
+  ```
 
   Define custom key alias(es) for v-on.
+  为 v-on 定义自定义的按键别名。
 
 ## Global API
 
