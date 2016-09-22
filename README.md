@@ -33,7 +33,7 @@
 
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
-guide/installation |           
+guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | | 翻译中
 guide/index |                 
 guide/instance |               
 guide/syntax |
