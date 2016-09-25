@@ -17,13 +17,13 @@
 * 完成任务后提交 PR
 * 若 PR 被标记为 `待修改`，根据反馈修改后删除标记，分配给协调员
 
-协调员
+协调员：[@hymRedemption](https://github.com/hymRedemption)
 
 * 将无状态的 PR 分配给校对员，标记为待校对
 * 若 `待合并` 的 PR 可以合并，则直接合并。合并后在 README 更新进度表，关闭相关的 issues
 * 若 `待合并` 的 PR 不能合并，分配给 PR 提交者并将 PR 标记为 `待修改`
 
-校对员:
+校对员: [@Egoist](https://github.com/egoist), [@mrwiredancer](https://github.com/Mr-Wiredancer)
 
 * 对 `待校对` 的 PR 进行校对
 * 校对通过则将 PR 改为`待合并`，并分配给协调员
