@@ -33,6 +33,22 @@
 
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
+api/index#Global Config | mrwiredancer | | 翻译中
+api/index#Global API | pandazki | | 翻译中
+api/index#Options/Data |
+api/index#Options/DOM |
+api/index#Options/Lifecycle Hooks |
+api/index#Options/Assets|
+api/index#Options/misc |
+api/index#Instance Properties |
+api/index#Instance Methods/Data |
+api/index#Instance Methods/Eevents |
+api/index#Instance Methods/Lifecycle |
+api/index#Directives |
+api/index#Special Attributes |
+api/index#Built-in Components |
+api/index#VNode Interface |
+api/index#Server-Side Rendering |
 guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | | 翻译中
 guide/index | [mrwiredancer](https://github.com/Mr-Wiredancer) | | 翻译中
 guide/instance |               
@@ -59,19 +75,3 @@ guide/ssr |
 guide/migration |              
 guide/comparison |             
 guide/join | 
-api/index#Global Config | mrwiredancer | | 翻译中
-api/index#Global API | pandazki | | 翻译中
-api/index#Options/Data |
-api/index#Options/DOM |
-api/index#Options/Lifecycle Hooks |
-api/index#Options/Assets|
-api/index#Options/misc |
-api/index#Instance Properties |
-api/index#Instance Methods/Data |
-api/index#Instance Methods/Eevents |
-api/index#Instance Methods/Lifecycle |
-api/index#Directives |
-api/index#Special Attributes |
-api/index#Built-in Components |
-api/index#VNode Interface |
-api/index#Server-Side Rendering |
