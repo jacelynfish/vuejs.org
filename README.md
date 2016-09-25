@@ -60,7 +60,7 @@ guide/migration |
 guide/comparison |             
 guide/join | 
 api/index#Global Config | mrwiredancer | | 翻译中
-api/index#Global API |
+api/index#Global API | pandazki | | 翻译中
 api/index#Options/Data |
 api/index#Options/DOM |
 api/index#Options/Lifecycle Hooks |
