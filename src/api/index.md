@@ -370,40 +370,28 @@ type: api
 - **See also:** [Render Functions](/guide/render-function.html)
 
 ## Options / Data
-## 选项 / 数据
 
-### data
 ### data
 
 - **Type:** `Object | Function`
-- **类型:** `Object | Function`
 
 - **Restriction:** Only accepts `Function` when used in a component definition.
-- **限制:** 在组件定义中只能是函数
 
 - **Details:**
-- **详细:**
 
   The data object for the Vue instance. Vue will recursively convert its properties into getter/setters to make it "reactive". **The object must be plain**: native objects such as browser API objects and prototype properties are ignored. A rule of thumb is that data should just be data - it is not recommended to observe objects with its own stateful behavior.
-  Vue 实例的数据对象。 Vue 会递归地将它全部属性转为 getter/setter，从而让它能响应数据变化。**这个对象必须是普通对象**: 例如浏览器API对象这类原生对象的原型属性会被忽略。谨记一条规则，数据应该只是单纯的数据，而不推荐观察有状态的对象。
 
   Once observed, you can no longer add reactive properties to the root data object. It is therefore recommended to declare all root-level reactive properties upfront, before creating the instance.
-  一旦开始监听数据变化, 你再也不能在根数据对象上添加响应属性。 因此建议在创建实例之前首先声明所有根响应属性。
 
   After the instance is created, the original data object can be accessed as `vm.$data`. The Vue instance also proxies all the properties found on the data object, so `vm.a` will be equivalent to `vm.$data.a`.
-  在实例创建之后, 可以用 `vm.$data` 访问原始数据对象。 Vue 实例也代理了数据对象的所有属性，所以 `vm.a` 等同于 `vm.$data.a`.
 
   Properties that start with `_` or `$` will **not** be proxied on the Vue instance because they may conflict with Vue's internal properties and API methods. You will have to access them as `vm.$data._property`.
-  名字以 `_` 或 `$` 开始的属性**不会**被 Vue 实例代理，因为它们可能与 Vue 的内置属性与 API 方法冲突。可以用 `vm.$data._property` 访问它们。
 
   When defining a **component**, `data` must be declared as a function that returns the initial data object, because there will be many instances created using the same definition. If we still use a plain object for `data`, that same object will be **shared by reference** across all instances created! By providing a `data` function, every time a new instance is created, we can simply call it to return a fresh copy of the initial data.
-  在定义**组件**时，由于同一定义将创建多个实例，所以 `data` 必须是一个函数，返回原始数据对象。如果我们仍然使用一个普通对象作为 `data` ，则创建的所有实例将指向同一个对象！但是换成函数后，每当创建一个实例时，会调用这个函数，返回一个新的原始数据对象的副本，实例指向这个副本对象。
 
   If required, a deep clone of the original object can be obtained by passing `vm.$data` through `JSON.parse(JSON.stringify(...))`.
-  如果有需要，可以通过将 `vm.$data` 传入 `JSON.parse(JSON.stringify(...))` 得到原始数据对象。
 
 - **Example:**
-- **示例:**
 
   ``` js
   var data = { a: 1 }
@@ -433,26 +421,20 @@ type: api
 ### props
 
 - **Type:** `Array<string> | Object`
-- **类型:** `Array<string> | Object`
 
 - **Details:**
-- **详细:**
 
   A list/hash of attributes that are exposed to accept data from the parent component. It has a simple Array-based syntax and an alternative Object-based syntax that allows advanced configurations such as type checking, custom validation and default values.
-  用来接收父组件数据的 list/hash 属性。可以是数组或对象，对象用于高级配置，如类型检查，自定义验证，默认值等。
 
 - **Example:**
-- **示例:**
 
   ``` js
   // simple syntax
-  // 简单语法
   Vue.component('props-demo-simple', {
     props: ['size', 'myMessage']
   })
 
   // object syntax with validation
-  // 对象语法，指定验证要求
   Vue.component('props-demo-advanced', {
     props: {
       // just type check
@@ -472,23 +454,19 @@ type: api
   })
   ```
 
-- **另见:** [Props](/guide/components.html#Props)
+- **See also:** [Props](/guide/components.html#Props)
 
 ### propsData
 
 - **Type:** `{ [key: string]: any }`
-- **类型:** `{ [key: string]: any }`
 
 - **Restriction:** only respected in instance creation via `new`.
-- **限制:** only respected in instance creation via `new`.
 
 - **Details:**
 
   Pass props to an instance during its creation. This is primarily intended to make unit testing easier.
-  在创建实例的过程传递 props。主要作用是方便测试。
 
 - **Example:**
-- **示例:**
 
   ``` js
   var Comp = Vue.extend({
@@ -506,7 +484,6 @@ type: api
 ### computed
 
 - **Type:** `{ [key: string]: Function | { get: Function, set: Function } }`
-- **类型:** `{ [key: string]: Function | { get: Function, set: Function } }`
 
 - **Details:**
 
@@ -516,7 +493,6 @@ type: api
   <p class="tip">Note that __you should not use an arrow function to define a computed property__ (e.g. `aDouble: () => this.a * 2`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.a` will be undefined.<br>注意，__你不应该用箭头函数来定义一个计算属性__（比如 `aDouble: () => this.a * 2`）。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.a` 的值会是 undefined。</p>
 
   Computed properties are cached, and only re-computed on reactive dependency changes.
-  计算属性会被缓存，只有在响应依赖改变的时候才会重计算。
 
 - **Example:**
 
@@ -525,12 +501,10 @@ type: api
     data: { a: 1 },
     computed: {
       // get only, just need a function
-      // 仅读取，值只须为函数
       aDouble: function () {
         return this.a * 2
       },
       // both get and set
-      // 读取和设置
       aPlus: {
         get: function () {
           return this.a + 1
@@ -547,24 +521,20 @@ type: api
   vm.aDouble // -> 4
   ```
 
-- **另见:**
-  - [计算属性](/guide/computed.html)
+- **See also:**
+  - [Computed Properties](/guide/computed.html)
 
 ### methods
 
 - **Type:** `{ [key: string]: Function }`
-- **类型:** `{ [key: string]: Function }`
 
 - **Details:**
-- **详细:**
 
   Methods to be mixed into the Vue instance. You can access these methods directly on the VM instance, or use them in directive expressions. All methods will have their `this` context automatically bound to the Vue instance.
-  实例方法。实例可以直接访问这些方法，也可以用在指令表达式内。方法的 `this` 自动绑定到实例。
 
   <p class="tip">Note that __you should not use an arrow function to define a method__ (e.g. `plus: () => this.a++`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.a` will be undefined.</p>
 
 - **Example:**
-- **示例:**
 
   ```js
   var vm = new Vue({
@@ -580,18 +550,14 @@ type: api
   ```
 
 - **See also:** [Methods and Event Handling](/guide/events.html)
-- **另见:** [方法与事件处理器](/guide/events.html)
 
 ### watch
 
 - **Type:** `{ [key: string]: string | Function | Object }`
-- **类型:** `{ [key: string]: string | Function | Object }`
 
 - **Details:**
-- **详细:**
 
   An object where keys are expressions to watch and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options. The Vue instance will call `$watch()` for each entry in the object at instantiation.
-  一个对象，键是观察表达式，值是对应回调。值也可以是方法名，或者是包含其他选项的对象。在实例化时为每个键调用 `$watch()` 。
 
 - **Example:**
 
@@ -607,11 +573,17 @@ type: api
         console.log('new: %s, old: %s', val, oldVal)
       },
       // string method name
+<<<<<<< 95386200c56134cd4e71beba1f46afb62e042f8e
       // 方法名
       b: 'someMethod',
       // deep watcher
       // 深度 watcher
       c: {
+=======
+      'b': 'someMethod',
+      // deep watcher
+      'c': {
+>>>>>>> Revert "Translate Options / data #4"
         handler: function (val, oldVal) { /* ... */ },
         deep: true
       }
@@ -620,81 +592,68 @@ type: api
   vm.a = 2 // -> new: 2, old: 1
   ```
 
+<<<<<<< 95386200c56134cd4e71beba1f46afb62e042f8e
   <p class="tip">Note that __you should not use an arrow function to define a watcher__ (e.g. `searchQuery: newValue => this.updateAutocomplete(newValue)`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.updateAutocomplete` will be undefined.<br>注意，__你不应该用箭头函数来定义监视器__（比如 `searchQuery: newValue => this.updateAutocomplete(newValue)`）。因为尖头函数会绑定父山下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.updateAutocomplete` 的值会是 undefined。</p>
 
 - **See also:** [Instance Methods - vm.$watch](#vm-watch)
 - **另见:** [实例方法 - vm.$watch](#vm-watch)
+=======
+- **See also:** [Instance Methods - vm.$watch](#vm-watch)
+>>>>>>> Revert "Translate Options / data #4"
 
 ## Options / DOM
-## 选项 / DOM
 
 ### el
 
 - **Type:** `string | HTMLElement`
-- **类型:** `string | HTMLElement`
 
 - **Restriction:** only respected in instance creation via `new`.
-- **限制:** only respected in instance creation via `new`.
 
 - **Details:**
 
+<<<<<<< 95386200c56134cd4e71beba1f46afb62e042f8e
   Provide the Vue instance an existing DOM element to mount on. It can be a CSS selector string or an actual HTMLElement.
   为实例提供挂载元素。值可以是 CSS 选择器，或实际 HTML 元素。
+=======
+  Provide the Vue instance an existing DOM element to mount on. It can be a CSS selector string or an actual HTMLElement.
+>>>>>>> Revert "Translate Options / data #4"
 
   After the instance is mounted, the resolved element will be accessible as `vm.$el`.
-  在实例挂载结束之后, 可以通过 `vm.$el` 访问关联元素。
 
   If this option is available at instantiation, the instance will immediately enter compilation; otherwise, the user will have to explicitly call `vm.$mount()` to manually start the compilation.
-  如果在初始化时指定了这个选项，实例将立即进入编译过程; 否则, 需要调用 `vm.$mount()` 手动开始编译。
 
   <p class="tip">The provided element merely serves as a mounting point. Unlike in Vue 1.x, the mounted element will be replaced with Vue-generated DOM in all cases. It is therefore not recommended to mount the root instance to `<html>` or `<body>`.</p>
-  <p class="tip">提供的元素仅仅作为一个挂载点。 不同于 Vue 1.x， Vue 2.x 在任何情况下，挂载的元素会被 Vue 生成的 Dom 替换掉。因此不建议把根实例挂载在 `<html>` 或 `<body>` </p>
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
 ### template
 
 - **Type:** `string`
-- **类型:** `string`
 
 - **Details:**
-- **详细:**
 
   A string template to be used as the markup for the Vue instance. The template will **replace** the mounted element. Any existing markup inside the mounted element will be ignored, unless content distribution slots are present in the template.
-  实例模版。模版会 **替换** 挂载元素。除非模版中有内容分发 solt，否则挂载元素的内容都将被忽略。
 
   If the string starts with `#` it will be used as a querySelector and use the selected element's innerHTML as the template string. This allows the use of the common `<script type="x-template">` trick to include templates.
-  如果值以 `#` 开头，则会使用 querySelector 并将选中的元素的 innerHTML 作为模版。 常用的技巧是用 `<script type="x-template">` 来包含模版。
 
   <p class="tip">From a security perspective, you should only use Vue templates that you can trust. Never use user-generated content as your template.</p>
-  <p class="tip">从安全角度出发，你应该只使用你能信赖的 Vue 模版. 永远不用使用用户提供的内容作为你的模版</p>
 
 - **See also:**
   - [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
   - [Content Distribution](/guide/components.html#Content-Distribution-with-Slots)
-- **另见:**
-  - [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
-  - [内容分发](/guide/components.html#Content-Distribution-with-Slots)
 
 ### render
 
   - **Type:** `Function`
-  - **类型:** `Function`
 
   - **Details:**
-  - **详细:**
 
     An alternative to string templates allowing you to leverage the full programmatic power of JavaScript. The render function receives a `createElement` method as it's first argument used to create `VNode`s.
-    一个可以让你充分发挥 JavaScript 编程能力的模版方法. render 函数接收一个 `createElement` 方法作为它的第一个参数来创建 `VNode`s.
 
     If the component is a functional component, the render function also receives an extra argument `context`, which provides access to contextual data since functional components are instance-less.
-    如果是一个函数形式的组件, render 函数也接收一个额外的参数 `context`,当函数形式的组件缺少实例的时候提供上下文数据。
 
   - **See also:**
     - [Render Functions](/guide/render-function)
-  - **另见:**
-    - [渲染函数](/guide/render-function)
 
 ## Options / Lifecycle Hooks
 
