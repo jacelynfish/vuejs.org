@@ -370,26 +370,37 @@ type: api
 - **See also:** [Render Functions](/guide/render-function.html)
 
 ## Options / Data
+## 选项 / 数据
 
+### data
 ### data
 
 - **Type:** `Object | Function`
+- **类型:** `Object | Function`
 
 - **Restriction:** Only accepts `Function` when used in a component definition.
+- **限制:** 在组件定义中只能是函数
 
 - **Details:**
+- **详细:**
 
   The data object for the Vue instance. Vue will recursively convert its properties into getter/setters to make it "reactive". **The object must be plain**: native objects such as browser API objects and prototype properties are ignored. A rule of thumb is that data should just be data - it is not recommended to observe objects with its own stateful behavior.
+  Vue 实例的数据对象。 Vue 会递归地将它全部属性转为 getter/setter，从而让它能响应数据变化。**这个对象必须是普通对象**: 例如浏览器API对象这类原生对象的原型属性会被忽略。谨记一条规则，数据应该只是单纯的数据，而不推荐观察有状态的对象。
 
   Once observed, you can no longer add reactive properties to the root data object. It is therefore recommended to declare all root-level reactive properties upfront, before creating the instance.
+  一旦开始监听数据变化, 你再也不能在根数据对象上添加响应属性。 因此建议在创建实例之前首先声明所有根响应属性。
 
   After the instance is created, the original data object can be accessed as `vm.$data`. The Vue instance also proxies all the properties found on the data object, so `vm.a` will be equivalent to `vm.$data.a`.
+  在实例创建之后, 可以用 `vm.$data` 访问原始数据对象。 Vue 实例也代理了数据对象的所有属性，所以 `vm.a` 等同于 `vm.$data.a`.
 
   Properties that start with `_` or `$` will **not** be proxied on the Vue instance because they may conflict with Vue's internal properties and API methods. You will have to access them as `vm.$data._property`.
+  名字以 `_` 或 `$` 开始的属性**不会**被 Vue 实例代理，因为它们可能与 Vue 的内置属性与 API 方法冲突。可以用 `vm.$data._property` 访问它们。
 
   When defining a **component**, `data` must be declared as a function that returns the initial data object, because there will be many instances created using the same definition. If we still use a plain object for `data`, that same object will be **shared by reference** across all instances created! By providing a `data` function, every time a new instance is created, we can simply call it to return a fresh copy of the initial data.
+  在定义**组件**时，由于同一定义将创建多个实例，所以 `data` 必须是一个函数，返回原始数据对象。如果我们仍然使用一个普通对象作为 `data` ，则创建的所有实例将指向同一个对象！但是换成函数后，每当创建一个实例时，会调用这个函数，返回一个新的原始数据对象的副本，实例指向这个副本对象。
 
   If required, a deep clone of the original object can be obtained by passing `vm.$data` through `JSON.parse(JSON.stringify(...))`.
+  如果有需要，可以通过将 `vm.$data` 传入 `JSON.parse(JSON.stringify(...))` 得到原始数据对象。
 
 - **Example:**
 
@@ -397,6 +408,7 @@ type: api
   var data = { a: 1 }
 
   // direct instance creation
+  // 直接创建一个实例
   var vm = new Vue({
     data: data
   })
@@ -404,6 +416,7 @@ type: api
   vm.$data === data // -> true
 
   // must use function when in Vue.extend()
+  // 在 Vue.extend() 中 data 必须是函数
   var Component = Vue.extend({
     data: function () {
       return { a: 1 }
@@ -411,9 +424,10 @@ type: api
   })
   ```
 
-  <p class="tip">Note that __you should not use an arrow function with the `data` property__ (e.g. `data: () => { return { a: this.myProp }}`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.myProp` will be undefined.</p>
+  <p class="tip">Note that __you should not use an arrow function with the `data` property__ (e.g. `data: () => { return { a: this.myProp }}`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.myProp` will be undefined.<br>注意，__你不应该用箭头函数给 `data` 属性赋值__（比如 `data: () => { return { a: this.myProp }}`）。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.myProp` 的值会是 undefined。</p>
 
 - **See also:** [Reactivity in Depth](/guide/reactivity.html)
+- **另见:** [Reactivity in Depth](/guide/reactivity.html)
 
 ### props
 
