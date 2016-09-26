@@ -656,18 +656,26 @@ type: api
 ### template
 
 - **Type:** `string`
+- **类型:** `string`
 
 - **Details:**
+- **详细:**
 
   A string template to be used as the markup for the Vue instance. The template will **replace** the mounted element. Any existing markup inside the mounted element will be ignored, unless content distribution slots are present in the template.
+  实例模版。模版会 **替换** 挂载元素。除非模版中有内容分发 solt，否则挂载元素的内容都将被忽略。
 
   If the string starts with `#` it will be used as a querySelector and use the selected element's innerHTML as the template string. This allows the use of the common `<script type="x-template">` trick to include templates.
+  如果值以 `#` 开头，则会使用 querySelector 并将选中的元素的 innerHTML 作为模版。 常用的技巧是用 `<script type="x-template">` 来包含模版。
 
   <p class="tip">From a security perspective, you should only use Vue templates that you can trust. Never use user-generated content as your template.</p>
+  <p class="tip">从安全角度出发，你应该只使用你能信赖的 Vue 模版. 永远不用使用用户提供的内容作为你的模版</p>
 
 - **See also:**
   - [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
   - [Content Distribution](/guide/components.html#Content-Distribution-with-Slots)
+- **另见:**
+  - [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
+  - [内容分发](/guide/components.html#Content-Distribution-with-Slots)
 
 ### render
 
