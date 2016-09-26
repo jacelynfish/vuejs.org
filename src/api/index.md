@@ -680,15 +680,21 @@ type: api
 ### render
 
   - **Type:** `Function`
+  - **类型:** `Function`
 
   - **Details:**
+  - **详细:**
 
     An alternative to string templates allowing you to leverage the full programmatic power of JavaScript. The render function receives a `createElement` method as it's first argument used to create `VNode`s.
+    一个可以让你充分发挥 JavaScript 编程能力的模版方法. render 函数接收一个 `createElement` 方法作为它的第一个参数来创建 `VNode`s.
 
     If the component is a functional component, the render function also receives an extra argument `context`, which provides access to contextual data since functional components are instance-less.
+    如果是一个函数形式的组件, render 函数也接收一个额外的参数 `context`,当函数形式的组件缺少实例的时候提供上下文数据。
 
   - **See also:**
     - [Render Functions](/guide/render-function)
+  - **另见:**
+    - [渲染函数](/guide/render-function)
 
 ## Options / Lifecycle Hooks
 
