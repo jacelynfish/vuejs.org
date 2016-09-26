@@ -5,8 +5,10 @@ order: 5
 ---
 
 ## Computed Properties
+## 计算属性
 
 In-template expressions are very convenient, but they are really only meant for simple operations. Putting too much logic into your templates can make them bloated and hard to maintain. For example:
+在模板中绑定表达式是非常便利的，但是它们实际上只用于简单的操作。在模板中放入太多的逻辑会让模板过重且难以维护。例如：
 
 ``` html
 <div id="example">
