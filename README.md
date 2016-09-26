@@ -44,7 +44,7 @@ api/index#Options/Lifecycle Hooks |
 api/index#Options/Assets|
 api/index#Options/misc |
 api/index#Instance Properties |
-api/index#Instance Methods/Data |
+api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) || 翻译中
 api/index#Instance Methods/Eevents |
 api/index#Instance Methods/Lifecycle |
 api/index#Directives |
