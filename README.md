@@ -56,7 +56,7 @@ guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist 
 guide/index | [mrwiredancer](https://github.com/Mr-Wiredancer) | | 翻译中
 guide/instance |               
 guide/syntax |
-guide/computed |               
+guide/computed | [gongph](https://github.com/gongph) | | 翻译中         
 guide/class-and-style |      
 guide/conditional |            
 guide/list |                   
