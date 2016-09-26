@@ -506,14 +506,17 @@ type: api
 ### computed
 
 - **Type:** `{ [key: string]: Function | { get: Function, set: Function } }`
+- **类型:** `{ [key: string]: Function | { get: Function, set: Function } }`
 
 - **Details:**
 
   Computed properties to be mixed into the Vue instance. All getters and setters have their `this` context automatically bound to the Vue instance.
+  实例的计算属性。getter 和 setter 的 `this` 自动地绑定到实例。
 
-  <p class="tip">Note that __you should not use an arrow function to define a computed property__ (e.g. `aDouble: () => this.a * 2`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.a` will be undefined.</p>
+  <p class="tip">Note that __you should not use an arrow function to define a computed property__ (e.g. `aDouble: () => this.a * 2`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.a` will be undefined.<br>注意，__你不应该用箭头函数给 `data` 属性赋值__（比如 `data: () => { return { a: this.myProp }}`）。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.myProp` 的值会是 undefined。</p>
 
   Computed properties are cached, and only re-computed on reactive dependency changes.
+  计算属性会被缓存，只有在响应依赖改变的时候才会重计算。
 
 - **Example:**
 
@@ -522,10 +525,12 @@ type: api
     data: { a: 1 },
     computed: {
       // get only, just need a function
+      // 仅读取，值只须为函数
       aDouble: function () {
         return this.a * 2
       },
       // both get and set
+      // 读取和设置
       aPlus: {
         get: function () {
           return this.a + 1
@@ -542,8 +547,8 @@ type: api
   vm.aDouble // -> 4
   ```
 
-- **See also:**
-  - [Computed Properties](/guide/computed.html)
+- **另见:**
+  - [计算属性](/guide/computed.html)
 
 ### methods
 
