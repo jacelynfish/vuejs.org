@@ -403,6 +403,7 @@ type: api
   如果有需要，可以通过将 `vm.$data` 传入 `JSON.parse(JSON.stringify(...))` 得到原始数据对象。
 
 - **Example:**
+- **示例:**
 
   ``` js
   var data = { a: 1 }
@@ -441,6 +442,7 @@ type: api
   用来接收父组件数据的 list/hash 属性。可以是数组或对象，对象用于高级配置，如类型检查，自定义验证，默认值等。
 
 - **Example:**
+- **示例:**
 
   ``` js
   // simple syntax
@@ -483,8 +485,10 @@ type: api
 - **Details:**
 
   Pass props to an instance during its creation. This is primarily intended to make unit testing easier.
+  在创建实例的过程传递 props。主要作用是方便测试。
 
 - **Example:**
+- **示例:**
 
   ``` js
   var Comp = Vue.extend({
