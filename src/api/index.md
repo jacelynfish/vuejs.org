@@ -626,24 +626,32 @@ type: api
 - **另见:** [实例方法 - vm.$watch](#vm-watch)
 
 ## Options / DOM
+## 选项 / DOM
 
 ### el
 
 - **Type:** `string | HTMLElement`
+- **类型:** `string | HTMLElement`
 
 - **Restriction:** only respected in instance creation via `new`.
+- **限制:** only respected in instance creation via `new`.
 
 - **Details:**
 
   Provide the Vue instance an existing DOM element to mount on. It can be a CSS selector string or an actual HTMLElement.
+  为实例提供挂载元素。值可以是 CSS 选择器，或实际 HTML 元素。
 
   After the instance is mounted, the resolved element will be accessible as `vm.$el`.
+  在实例挂载结束之后, 可以通过 `vm.$el` 访问关联元素。
 
   If this option is available at instantiation, the instance will immediately enter compilation; otherwise, the user will have to explicitly call `vm.$mount()` to manually start the compilation.
+  如果在初始化时指定了这个选项，实例将立即进入编译过程; 否则, 需要调用 `vm.$mount()` 手动开始编译。
 
   <p class="tip">The provided element merely serves as a mounting point. Unlike in Vue 1.x, the mounted element will be replaced with Vue-generated DOM in all cases. It is therefore not recommended to mount the root instance to `<html>` or `<body>`.</p>
+  <p class="tip">提供的元素仅仅作为一个挂载点。 不同于 Vue 1.x， Vue 2.x 在任何情况下，挂载的元素会被 Vue 生成的 Dom 替换掉。因此不建议把根实例挂载在 `<html>` 或 `<body>` </p>
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
 ### template
 
