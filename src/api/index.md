@@ -513,7 +513,7 @@ type: api
   Computed properties to be mixed into the Vue instance. All getters and setters have their `this` context automatically bound to the Vue instance.
   实例的计算属性。getter 和 setter 的 `this` 自动地绑定到实例。
 
-  <p class="tip">Note that __you should not use an arrow function to define a computed property__ (e.g. `aDouble: () => this.a * 2`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.a` will be undefined.<br>注意，__你不应该用箭头函数给 `data` 属性赋值__（比如 `data: () => { return { a: this.myProp }}`）。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.myProp` 的值会是 undefined。</p>
+  <p class="tip">Note that __you should not use an arrow function to define a computed property__ (e.g. `aDouble: () => this.a * 2`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.a` will be undefined.<br>注意，__你不应该用箭头函数来定义一个计算属性__（比如 `aDouble: () => this.a * 2`）。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.a` 的值会是 undefined。</p>
 
   Computed properties are cached, and only re-computed on reactive dependency changes.
   计算属性会被缓存，只有在响应依赖改变的时候才会重计算。
@@ -585,10 +585,13 @@ type: api
 ### watch
 
 - **Type:** `{ [key: string]: string | Function | Object }`
+- **类型:** `{ [key: string]: string | Function | Object }`
 
 - **Details:**
+- **详细:**
 
   An object where keys are expressions to watch and values are the corresponding callbacks. The value can also be a string of a method name, or an Object that contains additional options. The Vue instance will call `$watch()` for each entry in the object at instantiation.
+  一个对象，键是观察表达式，值是对应回调。值也可以是方法名，或者是包含其他选项的对象。在实例化时为每个键调用 `$watch()` 。
 
 - **Example:**
 
@@ -604,8 +607,10 @@ type: api
         console.log('new: %s, old: %s', val, oldVal)
       },
       // string method name
+      // 方法名
       b: 'someMethod',
       // deep watcher
+      // 深度 watcher
       c: {
         handler: function (val, oldVal) { /* ... */ },
         deep: true
@@ -615,9 +620,10 @@ type: api
   vm.a = 2 // -> new: 2, old: 1
   ```
 
-  <p class="tip">Note that __you should not use an arrow function to define a watcher__ (e.g. `searchQuery: newValue => this.updateAutocomplete(newValue)`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.updateAutocomplete` will be undefined.</p>
+  <p class="tip">Note that __you should not use an arrow function to define a watcher__ (e.g. `searchQuery: newValue => this.updateAutocomplete(newValue)`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.updateAutocomplete` will be undefined.<br>注意，__你不应该用箭头函数来定义监视器__（比如 `searchQuery: newValue => this.updateAutocomplete(newValue)`）。因为尖头函数会绑定父山下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.updateAutocomplete` 的值会是 undefined。</p>
 
 - **See also:** [Instance Methods - vm.$watch](#vm-watch)
+- **另见:** [实例方法 - vm.$watch](#vm-watch)
 
 ## Options / DOM
 
