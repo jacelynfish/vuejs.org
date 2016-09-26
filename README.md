@@ -38,13 +38,13 @@
 ---- | ---- | ---- | ---- |
 api/index#Global Config | mrwiredancer | egoist | 校对中
 api/index#Global API | pandazki |mrwiredancer | 校对中
-api/index#Options/Data |[milkmeowo](https://github.com/milkmeowo)| 校对中
+api/index#Options/Data |[milkmeowo](https://github.com/milkmeowo)| egoist| 校对中
 api/index#Options/DOM |
 api/index#Options/Lifecycle Hooks |
 api/index#Options/Assets|
 api/index#Options/misc |
-api/index#Instance Properties | [dmxj](https://github.com/dmxj) || 校对中
-api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) || 翻译中
+api/index#Instance Properties | [dmxj](https://github.com/dmxj) |mrwiredancer| 校对中
+api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egoist| 翻译中
 api/index#Instance Methods/Eevents |
 api/index#Instance Methods/Lifecycle |
 api/index#Directives |
