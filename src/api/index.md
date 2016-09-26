@@ -427,7 +427,7 @@ type: api
   <p class="tip">Note that __you should not use an arrow function with the `data` property__ (e.g. `data: () => { return { a: this.myProp }}`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.myProp` will be undefined.<br>注意，__你不应该用箭头函数给 `data` 属性赋值__（比如 `data: () => { return { a: this.myProp }}`）。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.myProp` 的值会是 undefined。</p>
 
 - **See also:** [Reactivity in Depth](/guide/reactivity.html)
-- **另见:** [Reactivity in Depth](/guide/reactivity.html)
+- **另见:** [深入响应式原理](/guide/reactivity.html)
 
 ### props
 
@@ -475,8 +475,10 @@ type: api
 ### propsData
 
 - **Type:** `{ [key: string]: any }`
+- **类型:** `{ [key: string]: any }`
 
 - **Restriction:** only respected in instance creation via `new`.
+- **限制:** only respected in instance creation via `new`.
 
 - **Details:**
 
