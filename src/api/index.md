@@ -553,14 +553,18 @@ type: api
 ### methods
 
 - **Type:** `{ [key: string]: Function }`
+- **类型:** `{ [key: string]: Function }`
 
 - **Details:**
+- **详细:**
 
   Methods to be mixed into the Vue instance. You can access these methods directly on the VM instance, or use them in directive expressions. All methods will have their `this` context automatically bound to the Vue instance.
+  实例方法。实例可以直接访问这些方法，也可以用在指令表达式内。方法的 `this` 自动绑定到实例。
 
   <p class="tip">Note that __you should not use an arrow function to define a method__ (e.g. `plus: () => this.a++`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.a` will be undefined.</p>
 
 - **Example:**
+- **示例:**
 
   ```js
   var vm = new Vue({
@@ -576,6 +580,7 @@ type: api
   ```
 
 - **See also:** [Methods and Event Handling](/guide/events.html)
+- **另见:** [方法与事件处理器](/guide/events.html)
 
 ### watch
 
