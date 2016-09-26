@@ -432,25 +432,32 @@ type: api
 ### props
 
 - **Type:** `Array<string> | Object`
+- **类型:** `Array<string> | Object`
 
 - **Details:**
+- **详细:**
 
   A list/hash of attributes that are exposed to accept data from the parent component. It has a simple Array-based syntax and an alternative Object-based syntax that allows advanced configurations such as type checking, custom validation and default values.
+  用来接收父组件数据的 list/hash 属性。可以是数组或对象，对象用于高级配置，如类型检查，自定义验证，默认值等。
 
 - **Example:**
 
   ``` js
   // simple syntax
+  // 简单语法
   Vue.component('props-demo-simple', {
     props: ['size', 'myMessage']
   })
 
   // object syntax with validation
+  // 对象语法，指定验证要求
   Vue.component('props-demo-advanced', {
     props: {
       // just type check
+      // 只检测类型
       height: Number,
       // type check plus other validations
+      // 类型检测 + 其他验证
       age: {
         type: Number,
         default: 0,
@@ -463,7 +470,7 @@ type: api
   })
   ```
 
-- **See also:** [Props](/guide/components.html#Props)
+- **另见:** [Props](/guide/components.html#Props)
 
 ### propsData
 
