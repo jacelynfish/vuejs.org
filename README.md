@@ -37,7 +37,7 @@
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
 api/index#Global Config | mrwiredancer | | 翻译中
-api/index#Global API | pandazki | | 翻译中
+api/index#Global API | pandazki |mrwiredancer | 校对中
 api/index#Options/Data |
 api/index#Options/DOM |
 api/index#Options/Lifecycle Hooks |
