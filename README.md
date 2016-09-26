@@ -38,7 +38,7 @@
 ---- | ---- | ---- | ---- |
 api/index#Global Config | mrwiredancer | egoist | 校对中
 api/index#Global API | pandazki |mrwiredancer | 校对中
-api/index#Options/Data |[milkmeowo](https://github.com/milkmeowo)| egoist| 校对中
+api/index#Options/Data |[milkmeowo](https://github.com/milkmeowo)| egoist| 已完成
 api/index#Options/DOM |
 api/index#Options/Lifecycle Hooks |
 api/index#Options/Assets|
