@@ -892,33 +892,35 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 ## 选项 / 资源
 
 ### directives
+### directives
 
 - **Type:** `Object`
-- **类型:** `Object`
+- **类型：** `Object`
 
 - **Details:**
-- **详细:**
+- **详细：**
 
   A hash of directives to be made available to the Vue instance.
-  一个对象，包含指令。
+  一个哈希，包含了对 Vue 实例可见的指令。
 
 - **See also:**
   - [Custom Directives](/guide/custom-directive.html)
   - [Assets Naming Convention](/guide/components.html#Assets-Naming-Convention)
-- **另见:**
+- **另见：**
   - [自定义指令](/guide/custom-directive.html)
   - [资源命名约定](/guide/components.html#Assets-Naming-Convention)
 
 ### filters
+### filters
 
 - **Type:** `Object`
-- **类型:** `Object`
+- **类型：** `Object`
 
 - **Details:**
-- **详细:**
+- **详细：**
 
   A hash of filters to be made available to the Vue instance.
-  一个对象，包含过滤器
+  一个哈希，包含了对 Vue 实例可见的过滤器。
 
 - **See also:**
   - [`Vue.filter`](#Vue-filter)
@@ -926,19 +928,20 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   - [`Vue.filter`](#Vue-filter)
 
 ### components
+### components
 
 - **Type:** `Object`
-- **类型:** `Object`
+- **类型：** `Object`
 
 - **Details:**
-- **详细:**
+- **详细：**
 
   A hash of components to be made available to the Vue instance.
-  一个对象，包含组件
+  一个哈希，包含了对 Vue 实例可见的组件。
 
 - **See also:**
   - [Components](/guide/components.html)
-- **另见:**
+- **另见：**
   - [组件](/guide/components.html)
 
 ## Options / Misc
