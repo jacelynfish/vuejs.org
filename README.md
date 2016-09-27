@@ -4,16 +4,22 @@
 
 [vue2 文档厂库](https://github.com/hayeah/vuejs.org)
 
-## 翻译字典
-
-先参考 [vuejs-1.0 中文文档](http://cn.vuejs.org/)，如有需要再建立一个额外的文档。
-
 ## 翻译规范（参考了 [vue 1.0 翻译规范](https://github.com/vuejs/cn.vuejs.org/blob/lang-zh/CONTRIBUTING.md#翻译) ）
 
 * 使用中文的符号
 * 汉字，字母，数字等之间以空格隔开。
 * 专有词注意大小写，如 HTML，CSS，JavaScript。
 * 代码只翻译注释。
+
+## 翻译字典（更新中）
+
+英文 | 中文 | 备注 |
+---- | ---- | ---- |
+See also | 另见
+component | 组件
+
+
+参考 [vuejs-1.0 中文文档](http://cn.vuejs.org/)
 
 ## 协作形式
 
