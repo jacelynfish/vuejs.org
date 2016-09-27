@@ -870,8 +870,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 ### destroyed
 
 - **Type:** `Function`
+- **类型:** `Function`
 
 - **Details:**
+- **详细:**
 
   Called after a Vue instance has been destroyed. When this hook is called, all directives of the Vue instance have been unbound, all event listeners have been removed, and all child Vue instances have also been destroyed.
   在实例被销毁后调用。当钩子被调用的时候，解绑所有指令，移除所有事件监听器，销毁所有的子实例。
