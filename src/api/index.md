@@ -901,7 +901,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **详细：**
 
   A hash of directives to be made available to the Vue instance.
-  一个哈希，包含了对 Vue 实例可见的指令。
+  一个哈希表，包含了对 Vue 实例可见的指令。
 
 - **See also:**
   - [Custom Directives](/guide/custom-directive.html)
@@ -920,7 +920,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **详细：**
 
   A hash of filters to be made available to the Vue instance.
-  一个哈希，包含了对 Vue 实例可见的过滤器。
+  一个哈希表，包含了对 Vue 实例可见的过滤器。
 
 - **See also:**
   - [`Vue.filter`](#Vue-filter)
@@ -937,7 +937,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **详细：**
 
   A hash of components to be made available to the Vue instance.
-  一个哈希，包含了对 Vue 实例可见的组件。
+  一个哈希表，包含了对 Vue 实例可见的组件。
 
 - **See also:**
   - [Components](/guide/components.html)
