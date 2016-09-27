@@ -649,7 +649,7 @@ type: api
 - **类型:** `string | HTMLElement`
 
 - **Restriction:** only respected in instance creation via `new`.
-- **限制:** only respected in instance creation via `new`.
+- **限制:** 只有在通过 `new` 新建实例的时候才使用
 
 - **Details:**
 
