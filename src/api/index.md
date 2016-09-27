@@ -632,71 +632,75 @@ type: api
 ## 选项 / DOM
 
 ### el
+### el
 
 - **Type:** `string | HTMLElement`
-- **类型:** `string | HTMLElement`
+- **类型：** `string | HTMLElement`
 
 - **Restriction:** only respected in instance creation via `new`.
-- **限制:** 只有在通过 `new` 新建实例的时候才使用
+- **限制：** 只有在通过 `new` 新建实例的时候才使用
 
-- **Details:**
+- **Details：**
+- **详细：**
 
   Provide the Vue instance an existing DOM element to mount on. It can be a CSS selector string or an actual HTMLElement.
   为实例提供挂载元素。值可以是 CSS 选择器，或实际 HTML 元素。
 
   After the instance is mounted, the resolved element will be accessible as `vm.$el`.
-  在实例挂载结束之后, 可以通过 `vm.$el` 访问关联元素。
+  在实例挂载之后，可以通过 `vm.$el` 访问关联元素。
 
   If this option is available at instantiation, the instance will immediately enter compilation; otherwise, the user will have to explicitly call `vm.$mount()` to manually start the compilation.
-  如果在初始化时指定了这个选项，实例将立即进入编译过程; 否则, 需要调用 `vm.$mount()` 手动开始编译。
+  如果在初始化时指定了这个选项，实例将立即进入编译过程; 否则，需要调用 `vm.$mount()` 手动开始编译。
 
   <p class="tip">The provided element merely serves as a mounting point. Unlike in Vue 1.x, the mounted element will be replaced with Vue-generated DOM in all cases. It is therefore not recommended to mount the root instance to `<html>` or `<body>`.</p>
-  <p class="tip">提供的元素仅仅作为一个挂载点。 不同于 Vue 1.x， Vue 2.x 在任何情况下，挂载的元素会被 Vue 生成的 Dom 替换掉。因此不建议把根实例挂载在 `<html>` 或 `<body>` </p>
+  <p class="tip">提供的元素仅仅作为一个挂载点。 不同于 Vue 1.x， Vue 2.x 在任何情况下，被挂载的元素会被 Vue 生成的 DOM 替换掉。因此不建议把根实例挂载在 `<html>` 或 `<body>` </p>
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
+- **另见：** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
+### template
 ### template
 
 - **Type:** `string`
-- **类型:** `string`
+- **类型：** `string`
 
 - **Details:**
-- **详细:**
+- **详细：**
 
   A string template to be used as the markup for the Vue instance. The template will **replace** the mounted element. Any existing markup inside the mounted element will be ignored, unless content distribution slots are present in the template.
-  实例模版。模版会 **替换** 挂载元素。除非模版中有内容分发 solt，否则挂载元素的内容都将被忽略。
+  Vue 实例的字符串模版。这个模版会**替换**被挂载的元素。除非模版中有分发内容的 slot，否则被挂载元素的内容都将全部被忽略。
 
   If the string starts with `#` it will be used as a querySelector and use the selected element's innerHTML as the template string. This allows the use of the common `<script type="x-template">` trick to include templates.
-  如果值以 `#` 开头，则会使用 querySelector 并将选中的元素的 innerHTML 作为模版。 常用的技巧是用 `<script type="x-template">` 来包含模版。
+  如果这个字符串以 `#` 开头，那么它会被当作选择器来使用，然后用选中的元素的 innerHTML 作为模版。 常用的一个技巧是用 `<script type="x-template">` 来包含模版。
 
   <p class="tip">From a security perspective, you should only use Vue templates that you can trust. Never use user-generated content as your template.</p>
-  <p class="tip">从安全角度出发，你应该只使用你能信赖的 Vue 模版. 永远不用使用用户提供的内容作为你的模版</p>
+  <p class="tip">从安全角度出发，你应该只使用你能信赖的 Vue 模版。永远不用使用用户生成的内容作为你的模版。</p>
 
 - **See also:**
   - [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
   - [Content Distribution](/guide/components.html#Content-Distribution-with-Slots)
-- **另见:**
+- **另见：**
   - [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
   - [内容分发](/guide/components.html#Content-Distribution-with-Slots)
 
 ### render
+### render
 
   - **Type:** `Function`
-  - **类型:** `Function`
+  - **类型：** `Function`
 
   - **Details:**
-  - **详细:**
+  - **详细：**
 
     An alternative to string templates allowing you to leverage the full programmatic power of JavaScript. The render function receives a `createElement` method as it's first argument used to create `VNode`s.
-    一个可以让你充分发挥 JavaScript 编程能力的模版方法. render 函数接收一个 `createElement` 方法作为它的第一个参数来创建 `VNode`s.
+    字符串模版的替代品，可以让你充分发挥 JavaScript 的编程能力。render 函数接收一个 `createElement` 方法作为它的第一个参数来创建 `VNode`。
 
     If the component is a functional component, the render function also receives an extra argument `context`, which provides access to contextual data since functional components are instance-less.
-    如果是一个函数形式的组件, render 函数也接收一个额外的参数 `context`,当函数形式的组件缺少实例的时候提供上下文数据。
+    如果组件是一个函数式组件, render 函数也接收一个额外的参数 `context`，它会为缺少实例的函数式组件提供上下文数据。
 
   - **See also:**
     - [Render Functions](/guide/render-function)
-  - **另见:**
+  - **另见：**
     - [渲染函数](/guide/render-function)
 
 ## Options / Lifecycle Hooks
