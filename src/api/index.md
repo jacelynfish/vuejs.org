@@ -700,120 +700,172 @@ type: api
     - [渲染函数](/guide/render-function)
 
 ## Options / Lifecycle Hooks
+## 选项 / 生命周期钩子
 
 All lifecycle hooks automatically have their `this` context bound to the instance, so that you can access data, computed properties, and methods. This means __you should not use an arrow function to define a lifecycle method__ (e.g. `created: () => this.fetchTodos()`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.fetchTodos` will be undefined.
 
 ### beforeCreate
 
 - **Type:** `Function`
+- **类型:** `Function`
 
 - **Details:**
+- **详细:**
 
   Called synchronously after the instance has just been initialized, before data observation and event/watcher setup.
+  在实例开始初始化时同步调用。此时数据观察，事件和 watcher 都尚未初始化。
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
 ### created
 
 - **Type:** `Function`
+- **类型:** `Function`
 
 - **Details:**
+- **详细:**
 
   Called synchronously after the instance is created. At this stage, the instance has finished processing the options which means the following have been set up: data observation, computed properties, methods, watch/event callbacks. However, the mounting phase has not been started, and the `$el` property will not be available yet.
+  在实例创建之后同步调用。此时实例已经结束解析选项，这意味着已建立：数据绑定，计算属性，方法，watcher/事件回调。但是还没有开始挂载，所以 `$el` 还不存在。
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
 ### beforeMount
 
 - **Type:** `Function`
+- **类型:** `Function`
 
 - **Details:**
+- **详细:**
 
   Called right before the mounting begins: the `render` function is about to be called for the first time.
+  在挂载前调用： `render` 函数第一次被调用。
 
   **This hook is not called during server-side rendering.**
+  **这钩子在服务端渲染的时候不会被调用**
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
 ### mounted
 
 - **Type:** `Function`
+- **类型:** `Function`
 
 - **Details:**
+- **详细:**
 
   Called after the instance has just been mounted where `el` is replaced by the newly created `vm.$el`. If the root instance is mounted to an in-document element, `vm.$el` will also be in-document when `mounted` is called.
+  在挂载完成， `el` 被新建的 `vm.$el` 替换之后调用。如果根实例是挂载在文档中的元素，那么当 `mounted` 被调用的时候 `vm.$el` 也会在文档中
+  
+  > 译者注: 因为 Vue 2.0 使用了虚拟 Dom，所以挂载之后不一定在文档中(in-document)，也有可能是在上下文中(contextual)。
 
   **This hook is not called during server-side rendering.**
+  **这钩子在服务端渲染的时候不会被调用**
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
 ### beforeUpdate
 
 - **Type:** `Function`
+- **类型:** `Function`
 
 - **Details:**
+- **详细:**
 
   Called when the data changes, before the virtual DOM is re-rendered and patched.
+  当数据改变，在虚拟 Dom 重新渲染和打上补丁之前调用。
 
   You can perform further state changes in this hook and they will not trigger additional re-renders.
+  在这个钩子调用的时候，你可以执行进一步状态改变，这些改变不会触发其它额外的重渲染。
 
   **This hook is not called during server-side rendering.**
+  **这钩子在服务端渲染的时候不会被调用**
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
 ### updated
 
 - **Type:** `Function`
+- **类型:** `Function`
 
 - **Details:**
+- **详细:**
 
   Called after a data change causes the virtual DOM to be re-rendered and patched.
+  在数据改变，虚拟 Dom 重新渲染和打补丁之后调用。
 
   The component's DOM will be in updated state when this hook is called, so you can perform DOM-dependent operations in this hook. However, in most cases you should avoid changing state in this hook, because it may lead to an infinite update loop.
+  当钩子被调用的时候，组件的 DOM 将会处于更新状态, 因此你可以在这钩子中执行 Dom 相关操作. 但是，在绝大多数情况下，你应该避免在这钩子中改变状态，因为这有可能会导致死循环。
 
   **This hook is not called during server-side rendering.**
+  **这钩子在服务端渲染的时候不会被调用**
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
 ### activated
 
 - **Type:** `Function`
+- **类型:** `Function`
 
 - **Details:**
+- **详细:**
 
   Called when a kept-alive component is activated.
+  当一个 kept-alive 组件被激活的时候调用
 
   **This hook is not called during server-side rendering.**
+  **这钩子在服务端渲染的时候不会被调用**
 
 - **See also:**
+  - [Built-in Components - keep-alive](#keep-alive)
+  - [Dynamic Components - keep-alive](/guide/components.html#keep-alive)
+- **另见:**
   - [Built-in Components - keep-alive](#keep-alive)
   - [Dynamic Components - keep-alive](/guide/components.html#keep-alive)
 
 ### deactivated
 
 - **Type:** `Function`
+- **类型:** `Function`
 
 - **Details:**
+- **详细:**
 
   Called when a kept-alive component is deactivated.
+  当一个 kept-alive 组件被移除的时候调用
 
   **This hook is not called during server-side rendering.**
+  **这钩子在服务端渲染的时候不会被调用**
 
 - **See also:**
+  - [Built-in Components - keep-alive](#keep-alive)
+  - [Dynamic Components - keep-alive](/guide/components.html#keep-alive)
+- **另见:**
   - [Built-in Components - keep-alive](#keep-alive)
   - [Dynamic Components - keep-alive](/guide/components.html#keep-alive)
 
 ### beforeDestroy
 
 - **Type:** `Function`
+- **类型:** `Function`
 
 - **Details:**
+- **详细:**
 
   Called right before a Vue instance is destroyed. At this stage the instance is still fully functional.
+  在 Vue 实例销毁前调用。在这个阶段实例仍然是完全功能的。
 
   **This hook is not called during server-side rendering.**
+  **这钩子在服务端渲染的时候不会被调用**
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
 ### destroyed
 
@@ -822,10 +874,13 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **Details:**
 
   Called after a Vue instance has been destroyed. When this hook is called, all directives of the Vue instance have been unbound, all event listeners have been removed, and all child Vue instances have also been destroyed.
+  在实例被销毁后调用。当钩子被调用的时候，解绑所有指令，移除所有事件监听器，销毁所有的子实例。
 
   **This hook is not called during server-side rendering.**
+  **这钩子在服务端渲染的时候不会被调用**
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
+- **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
 ## Options / Assets
 
