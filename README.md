@@ -39,12 +39,12 @@
 api/index#Global Config | mrwiredancer | egoist | 校对中
 api/index#Global API | pandazki |mrwiredancer | 校对中
 api/index#Options/Data |[milkmeowo](https://github.com/milkmeowo)| egoist| 已完成
-api/index#Options/DOM |[milkmeowo](https://github.com/milkmeowo)| | 待校对
+api/index#Options/DOM |[milkmeowo](https://github.com/milkmeowo)| | 校对中
 api/index#Options/Lifecycle Hooks |[milkmeowo](https://github.com/milkmeowo)| | 翻译中
 api/index#Options/Assets|[milkmeowo](https://github.com/milkmeowo)| | 翻译中
 api/index#Options/misc |[milkmeowo](https://github.com/milkmeowo)| | 翻译中
 api/index#Instance Properties | [dmxj](https://github.com/dmxj) |mrwiredancer| 校对中
-api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egoist| 翻译中
+api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egoist| 校对中
 api/index#Instance Methods/Eevents |
 api/index#Instance Methods/Lifecycle |
 api/index#Directives |
@@ -62,7 +62,7 @@ guide/computed | [gongph](https://github.com/gongph) | | 翻译中
 guide/computed |[gongph](https://github.com/gongph) | | 翻译中                 
 >>>>>>> Update README.md
 guide/class-and-style |      
-guide/conditional |[MechanicianW](https://github.com/MechanicianW) | | 翻译中            
+guide/conditional |[MechanicianW](https://github.com/MechanicianW) | | 校对中            
 guide/list |                   
 guide/events |                 
 guide/forms |   
