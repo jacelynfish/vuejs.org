@@ -156,24 +156,31 @@ type: api
   为 v-on 定义自定义的按键别名。
 
 ## Global API
+## 全局 API
 
 <h3 id="Vue-extend">Vue.extend( options )</h3>
 
 - **Arguments:**
+- **参数：**
   - `{Object} options`
 
 - **Usage:**
+- **用法：**
 
   Create a "subclass" of the base Vue constructor. The argument should be an object containing component options.
+  创建基础 Vue 构造器的“子类”。参数为包含组件选项的对象。
 
   The special case to note here is the `data` option - it must be a function when used with `Vue.extend()`.
+  这里要注意的特例是，在使用 `Vue.extend()` 时，`data` 选项必须是一个函数。
 
   ``` html
   <div id="mount-point"></div>
   ```
 
   ``` js
+<<<<<<< 74bc943b83ec67e5f39c1dcc43cfbcaeb75f275a
   // create constructor
+  // 创建的构造函数
   var Profile = Vue.extend({
     template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>',
     data: function () {
@@ -185,81 +192,106 @@ type: api
     }
   })
   // create an instance of Profile and mount it on an element
+  // 创建一个 Profile 实例然后将它挂载到一个元素上
   new Profile().$mount('#mount-point')
   ```
 
   Will result in:
+  结果：
 
   ``` html
   <p>Walter White aka Heisenberg</p>
   ```
 
 - **See also:** [Components](/guide/components.html)
+- **另见：** [组件](/guide/components.html)
 
 <h3 id="Vue-nextTick">Vue.nextTick( callback, [context] )</h3>
 
 - **Arguments:**
+- **参数：**
   - `{Function} callback`
   - `{Object} [context]`
 
 - **Usage:**
+- **用法：**
 
   Defer the callback to be executed after the next DOM update cycle. Use it immediately after you've changed some data to wait for the DOM update.
+  将回调推迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用这个方法，等待 DOM 更新。
 
   ``` js
   // modify data
+  // 修改数据
   vm.msg = 'Hello'
   // DOM not updated yet
+  // DOM 尚未更新
   Vue.nextTick(function () {
     // DOM updated
+    // DOM 已更新
   })
   ```
 
 - **See also:** [Async Update Queue](/guide/reactivity.html#Async-Update-Queue)
+- **另见：** [异步更新队列](/guide/reactivity.html#异步更新队列)
 
 <h3 id="Vue-set">Vue.set( object, key, value )</h3>
 
 - **Arguments:**
+- **参数：**
   - `{Object} object`
   - `{string} key`
   - `{any} value`
 
 - **Returns:** the set value.
+- **返回值：** 设置的值.
 
 - **Usage:**
+- **用法：**
 
   Set a property on an object. If the object is reactive, ensure the property is created as a reactive property and trigger view updates. This is primarily used to get around the limitation that Vue cannot detect property additions.
+  设置对象的属性。如果对象是响应式的，保证属性是响应式属性并触发视图更新。这个方法主要用于解决 Vue 无法检测到属性添加的局限性。
 
   **Note the object cannot be a Vue instance, or the root data object of a Vue instance.**
+  **注意，这个对象不可以是 Vue 的实例或者 Vue 实例的根对象。**
 
 - **See also:** [Reactivity in Depth](/guide/reactivity.html)
+- **另见：** [深入响应式原理](/guide/reactivity.html)
 
 <h3 id="Vue-delete">Vue.delete( object, key )</h3>
 
 - **Arguments:**
+- **参数：**
   - `{Object} object`
   - `{string} key`
 
 - **Usage:**
+- **用法：**
 
   Delete a property on an object. If the object is reactive, ensure the deletion triggers view updates. This is primarily used to get around the limitation that Vue cannot detect property deletions, but you should rarely need to use it.
+  删除对象的属性。如果对象是响应式的，保证属性是响应式属性并触发视图更新。这个方法主要用于解决 Vue 无法检测到属性删除的局限性，但是你应该很少会用到它。
 
   **Note the object cannot be a Vue instance, or the root data object of a Vue instance.**
+  **注意，这个对象不可以是 Vue 的实例或者 Vue 实例的根对象。**
 
 - **See also:** [Reactivity in Depth](/guide/reactivity.html)
+- **另见：** [深入响应式原理](/guide/reactivity.html)
 
 <h3 id="Vue-directive">Vue.directive( id, [definition] )</h3>
 
 - **Arguments:**
+- **参数：**
   - `{string} id`
   - `{Function | Object} [definition]`
 
 - **Usage:**
+- **用法：**
 
   Register or retrieve a global directive.
+  注册或获取全局指令。
 
   ``` js
   // register
+  // 注册
   Vue.directive('my-directive', {
     bind: function () {},
     inserted: function () {},
@@ -269,91 +301,120 @@ type: api
   })
 
   // register (simple function directive)
+  // 注册 （简单函数指令）
   Vue.directive('my-directive', function () {
     // this will be called as `bind` and `update`
+    // 将被作为 `bind` 和 `update` 调用
   })
 
   // getter, return the directive definition if registered
+  // getter, 返回已注册的指令
   var myDirective = Vue.directive('my-directive')
   ```
 
 - **See also:** [Custom Directives](/guide/custom-directive.html)
+- **另见：** [自定义指令](/guide/custom-directive.html)
 
 <h3 id="Vue-filter">Vue.filter( id, [definition] )</h3>
 
 - **Arguments:**
+- **参数：**
   - `{string} id`
   - `{Function} [definition]`
 
 - **Usage:**
+- **用法：**
 
   Register or retrieve a global filter.
+  注册或获取全局过滤器。
 
   ``` js
   // register
+  // 注册
   Vue.filter('my-filter', function (value) {
     // return processed value
+    // 返回处理后的值
   })
 
   // getter, return the filter if registered
+  // getter, 返回已注册的过滤器
   var myFilter = Vue.filter('my-filter')
   ```
 
 <h3 id="Vue-component">Vue.component( id, [definition] )</h3>
 
 - **Arguments:**
+- **参数：**
   - `{string} id`
   - `{Function | Object} [definition]`
 
 - **Usage:**
+- **用法：**
 
   Register or retrieve a global component.
+  注册或获取全局组件。
 
   ``` js
   // register an extended constructor
+  // 注册组件，传入一个扩展的构造器
   Vue.component('my-component', Vue.extend({ /* ... */ }))
 
   // register an options object (automatically call Vue.extend)
+  // 注册组件，传入一个选项对象（自动调用 Vue.extend）
   Vue.component('my-component', { /* ... */ })
 
   // retrieve a registered component (always return constructor)
+  // 获取注册的组件（始终返回构造器）
   var MyComponent = Vue.component('my-component')
   ```
 
 - **See also:** [Components](/guide/components.html)
+- **另见：** [组件](/guide/components.html)
 
 <h3 id="Vue-use">Vue.use( plugin )</h3>
 
 - **Arguments:**
+- **参数：**
   - `{Object | Function} plugin`
 
 - **Usage:**
+- **用法：**
 
   Install a Vue.js plugin. If the plugin is an Object, it must expose an `install` method. If it is a function itself, it will be treated as the install method. The install method will be called with Vue as the argument.
+  安装 Vue.js 插件。如果传入的插件是一个对象，则必须暴露一个 `install` 方法。如果是一个函数，它会被直接作为安装方法。该安装方法会已 Vue 为参数被调用。
 
   When this method is called on the same plugin multiple times, the plugin will be installed only once.
+  即使安装方法在相同的插件上调用多次，该插件也只会被安装一次。
 
 - **See also:** [Plugins](/guide/plugins.html)
+- **另见：** [插件](/guide/plugins.html)
 
 <h3 id="Vue-mixin">Vue.mixin( mixin )</h3>
 
 - **Arguments:**
+- **参数：**
   - `{Object} mixin`
 
 - **Usage:**
+- **用法：**
 
   Apply a mixin globally, which affects every Vue instance created afterwards. This can be used by plugin authors to inject custom behavior into components. **Not recommended in application code**.
+  全局应用一个混合，将影响所有 Vue 实例。插件作者可以用它向组件注入自定义逻辑。**不推荐在应用代码中使用。**
 
 - **See also:** [Global Mixins](/guide/mixins.html#Global-Mixin)
+- **另见：** [全局混合](/guide/mixins.html#Global-Mixin)
 
 <h3 id="Vue-compile">Vue.compile( template )</h3>
 
 - **Arguments:**
+- **参数：**
   - `{string} template`
 
 - **Usage:**
+- **用法：**
 
   Compiles a template string into a render function. **Only available in the standalone build.**
+  将模板字符串编译成一个渲染函数。**仅在独立构建时有效。**
 
   ``` js
   var res = Vue.compile('<div><span>{{ msg }}</span></div>')
@@ -368,6 +429,7 @@ type: api
   ```
 
 - **See also:** [Render Functions](/guide/render-function.html)
+- **另见：** [Render Functions](/guide/render-function.html)
 
 ## Options / Data
 ## 选项 / 数据
