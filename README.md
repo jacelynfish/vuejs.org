@@ -36,49 +36,45 @@
 
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
-api/index#Global Config | mrwiredancer | egoist | 校对中
-api/index#Global API | pandazki |mrwiredancer | 校对中
-api/index#Options/Data |[milkmeowo](https://github.com/milkmeowo)| egoist| 已完成
-api/index#Options/DOM |[milkmeowo](https://github.com/milkmeowo)| | 校对中
-api/index#Options/Lifecycle Hooks |[milkmeowo](https://github.com/milkmeowo)| | 校对中
-api/index#Options/Assets|[milkmeowo](https://github.com/milkmeowo)| | 翻译中
-api/index#Options/misc |[milkmeowo](https://github.com/milkmeowo)| | 翻译中
-api/index#Instance Properties | [dmxj](https://github.com/dmxj) |mrwiredancer| 校对中
-api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egoist| 校对中
-api/index#Instance Methods/Eevents |[dmxj](https://github.com/dmxj)| | 翻译中
-api/index#Instance Methods/Lifecycle |[dmxj](https://github.com/dmxj)| | 翻译中
-api/index#Directives |[dmxj](https://github.com/dmxj)| | 翻译中
-api/index#Special Attributes |[CoderKwong](https://github.com/CoderKwong)| | 翻译中
+api/index#Global Config | mrwiredancer | egoist | **校对中**
+api/index#Global API | pandazki |mrwiredancer | **校对中**
+api/index#Options/Data |[milkmeowo](https://github.com/milkmeowo)| egoist| ~~已完成~~
+api/index#Options/DOM |[milkmeowo](https://github.com/milkmeowo)| | **校对中**
+api/index#Options/Lifecycle Hooks |[milkmeowo](https://github.com/milkmeowo)| | **校对中**
+api/index#Options/Assets|[milkmeowo](https://github.com/milkmeowo)| | `翻译中`
+api/index#Options/misc |[milkmeowo](https://github.com/milkmeowo)| | `翻译中`
+api/index#Instance Properties | [dmxj](https://github.com/dmxj) |mrwiredancer| **校对中**
+api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egoist| **校对中**
+api/index#Instance Methods/Eevents |[dmxj](https://github.com/dmxj)| |`翻译中`
+api/index#Instance Methods/Lifecycle |[dmxj](https://github.com/dmxj)| | `翻译中`
+api/index#Directives |[dmxj](https://github.com/dmxj)| |`翻译中`
+api/index#Special Attributes |[CoderKwong](https://github.com/CoderKwong)| | `翻译中`
 api/index#Built-in Components |
 api/index#VNode Interface |
 api/index#Server-Side Rendering |
-guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | 校对中
-guide/index | [mrwiredancer](https://github.com/Mr-Wiredancer) | | 翻译中
-guide/instance |               
+guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | **校对中**
+guide/index | [mrwiredancer](https://github.com/Mr-Wiredancer) | | `翻译中`
+guide/instance |
 guide/syntax |
-<<<<<<< 7b8d4a6fefa62e2ea48a0e4737a05781abc4372b
-guide/computed | [gongph](https://github.com/gongph) | | 翻译中         
-=======
-guide/computed |[gongph](https://github.com/gongph) | | 翻译中                 
->>>>>>> Update README.md
-guide/class-and-style |      
-guide/conditional |[MechanicianW](https://github.com/MechanicianW) | | 校对中            
-guide/list |                   
-guide/events |                 
-guide/forms |   
-guide/components |[MechanicianW](https://github.com/MechanicianW) | | 翻译中             
+guide/computed | [gongph](https://github.com/gongph) | | 翻译中
+guide/class-and-style |
+guide/conditional |[MechanicianW](https://github.com/MechanicianW) | | **校对中**
+guide/list |
+guide/events |
+guide/forms |
+guide/components |[MechanicianW](https://github.com/MechanicianW) | | `翻译中`
 guide/transitions |
 guide/transitioning-state |
-guide/render-function |        
+guide/render-function |
 guide/reactivity |
 guide/custom-directive |
-guide/mixins |                 
-guide/plugins |                
+guide/mixins |
+guide/plugins |
 guide/single-file-components |
 guide/routing |
-guide/state-management |       
+guide/state-management |
 guide/unit-testing |
-guide/ssr |                    
-guide/migration |              
-guide/comparison |             
-guide/join | 
+guide/ssr |
+guide/migration |
+guide/comparison |
+guide/join |
