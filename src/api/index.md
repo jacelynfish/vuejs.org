@@ -457,19 +457,11 @@ type: api
     props: {
       // just type check
       // 只检测类型
-<<<<<<< 9a13905fcf91ac5ee07a9867d0dddbd306f367a4
       height: Number,
       // type check plus other validations
       // 类型检测 + 其他验证
       age: {
         type: Number,
-=======
-      size: Number,
-      // type check plus other validations
-      // 类型检测 + 其他验证
-      name: {
-        type: string,
->>>>>>> trans options / data
         default: 0,
         required: true,
         validator: function (value) {
@@ -520,13 +512,9 @@ type: api
 - **Details:**
 
   Computed properties to be mixed into the Vue instance. All getters and setters have their `this` context automatically bound to the Vue instance.
-<<<<<<< 9a13905fcf91ac5ee07a9867d0dddbd306f367a4
   实例的计算属性。getter 和 setter 的 `this` 自动地绑定到实例。
 
   <p class="tip">Note that __you should not use an arrow function to define a computed property__ (e.g. `aDouble: () => this.a * 2`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.a` will be undefined.<br>注意，__你不应该用箭头函数来定义一个计算属性__（比如 `aDouble: () => this.a * 2`）。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.a` 的值会是 undefined。</p>
-=======
-  实例计算属性。getter 和 setter 的 `this` 自动地绑定到实例。
->>>>>>> trans options / data
 
   Computed properties are cached, and only re-computed on reactive dependency changes.
   计算属性会被缓存，只有在响应依赖改变的时候才会重计算。
@@ -1180,7 +1168,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **用法：**
 
   Watch an expression or a computed function on the Vue instance for changes. The callback gets called with the new value and the old value. The expression can be a single keypath or any valid binding expressions.
-  
+
   观察 Vue 实例变化的一个表达式或计算函数。回调的参数为新值和旧值。表达式可以是某个键路径或任意合法绑定表达式。
 
 <p class="tip">Note: when mutating (rather than replacing) an Object or an Array, the old value will be the same as new value because they reference the same Object/Array. Vue doesn't keep a copy of the pre-mutate value.</p>
@@ -1219,7 +1207,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```
 
   `vm.$watch` returns an unwatch function that stops firing the callback:
-  
+
   `vm.$watch` 返回一个取消观察函数，用来停止触发回调：
 
   ``` js
@@ -1232,7 +1220,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **Option: deep**
 
   To also detect nested value changes inside Objects, you need to pass in `deep: true` in the options argument. Note that you don't need to do so to listen for Array mutations.
-  
+
   为了发现对象内部值的变化，可以在选项参数中指定 deep: true。注意监听数组的变动不需要这么做。
 
   ``` js
@@ -1247,7 +1235,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **Option: immediate**
 
   Passing in `immediate: true` in the option will trigger the callback immediately with the current value of the expression:
-  
+
   在选项参数中指定 `immediate: true` 将立即以表达式的当前值触发回调：
 
   ``` js
@@ -1273,7 +1261,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **用法**
 
   This is the **alias** of the global `Vue.set`.
-  
+
   这是全局 `Vue.set`的 **别名**
 
 - **See also:** [Vue.set](#Vue-set)
@@ -1290,7 +1278,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **用法：**
 
   This is the **alias** of the global `Vue.delete`.
-  
+
   这是全局 `Vue.delete` 的 **别名**
 
 - **See also:** [Vue.delete](#Vue-delete)
