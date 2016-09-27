@@ -759,7 +759,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   Called after the instance has just been mounted where `el` is replaced by the newly created `vm.$el`. If the root instance is mounted to an in-document element, `vm.$el` will also be in-document when `mounted` is called.
   在挂载完成， `el` 被新建的 `vm.$el` 替换之后调用。如果根实例是挂载在文档中的元素，那么当 `mounted` 被调用的时候 `vm.$el` 也会在文档中
-  
+
   > 译者注: 因为 Vue 2.0 使用了虚拟 Dom，所以挂载之后不一定在文档中(in-document)，也有可能是在上下文中(contextual)。
 
   **This hook is not called during server-side rendering.**
@@ -885,40 +885,56 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
 ## Options / Assets
+## 选项 / 资源
 
 ### directives
 
 - **Type:** `Object`
+- **类型:** `Object`
 
 - **Details:**
 
   A hash of directives to be made available to the Vue instance.
+  一个对象，包含指令。
 
 - **See also:**
   - [Custom Directives](/guide/custom-directive.html)
   - [Assets Naming Convention](/guide/components.html#Assets-Naming-Convention)
+- **另见:**
+  - [自定义指令](/guide/custom-directive.html)
+  - [资源命名约定](/guide/components.html#Assets-Naming-Convention)
 
 ### filters
 
 - **Type:** `Object`
+- **类型:** `Object`
 
 - **Details:**
+- **详细:**
 
   A hash of filters to be made available to the Vue instance.
+  一个对象，包含过滤器
 
 - **See also:**
+  - [`Vue.filter`](#Vue-filter)
+- **另见：**
   - [`Vue.filter`](#Vue-filter)
 
 ### components
 
 - **Type:** `Object`
+- **类型:** `Object`
 
 - **Details:**
+- **详细:**
 
   A hash of components to be made available to the Vue instance.
+  一个对象，包含组件
 
 - **See also:**
   - [Components](/guide/components.html)
+- **另见:**
+  - [组件](/guide/components.html)
 
 ## Options / Misc
 
