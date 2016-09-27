@@ -16,11 +16,27 @@ In-template expressions are very convenient, but they are really only meant for 
 </div>
 ```
 
+``` html
+<div id="example">
+  {{ message.split('').reverse().join('') }}
+</div>
+```
+
 At this point, the template is no longer simple and declarative. You have to look at it for a second before realizing that it displays `message` in reverse. The problem is made worse when you want to include the reversed message in your template more than once.
+这个时候，模版不再是单一的去做一件事情了。当你看一会这串代码才会意识到原来它展示的是反转之后的 `message` 。当你希望在你的模版中包含多次这种反转代码时，问题就变得更糟了。
 
 That's why for any complex logic, you should use a **computed property**.
+这就是为什么 Vue.js 将绑定表达式限制为一个表达式。如果需要多于一个表达式的逻辑，应当使用计算属性。
 
 ### Basic Example
+### 基础例子
+
+``` html
+<div id="example">
+  <p>Original message: "{{ message }}"</p>
+  <p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+```
 
 ``` html
 <div id="example">
@@ -39,6 +55,22 @@ var vm = new Vue({
     // a computed getter
     reversedMessage: function () {
       // `this` points to the vm instance
+      return this.message.split('').reverse().join('')
+    }
+  }
+})
+```
+
+``` js
+var vm = new Vue({
+  el: '#example',
+  data: {
+    message: 'Hello'
+  },
+  computed: {
+    // 一个计算属性的 getter
+    reversedMessage: function () {
+      // `this` 指向 vm 实例
       return this.message.split('').reverse().join('')
     }
   }
@@ -67,7 +99,36 @@ var vm = new Vue({
 </script>
 {% endraw %}
 
+Result:
+
+{% raw %}
+<div id="example" class="demo">
+  <p>Original message: "{{ message }}"</p>
+  <p>Computed reversed message: "{{ reversedMessage }}"</p>
+</div>
+<script>
+var vm = new Vue({
+  el: '#example',
+  data: {
+    message: 'Hello'
+  },
+  computed: {
+    reversedMessage: function () {
+      return this.message.split('').reverse().join('')
+    }
+  }
+})
+</script>
+{% endraw %}
+
 Here we have declared a computed property `reversedMessage`. The function we provided will be used as the getter function for the property `vm.reversedMessage`:
+这里我们声明了一个计算属性 `reversedMessage` 。 我们提供的函数将用作属性 `vm.reversedMessage` 的 getter：
+
+``` js
+console.log(vm.reversedMessage) // -> 'olleH'
+vm.message = 'Goodbye'
+console.log(vm.reversedMessage) // -> 'eybdooG'
+```
 
 ``` js
 console.log(vm.reversedMessage) // -> 'olleH'
@@ -76,6 +137,7 @@ console.log(vm.reversedMessage) // -> 'eybdooG'
 ```
 
 You can open the console and play with the example vm yourself. The value of `vm.reversedMessage` is always dependent on the value of `vm.message`.
+你可以打开浏览器控制台，修改 vm。`vm.reverseMessage` 的值始终取决于 `vm.message` 的值。
 
 You can data-bind to computed properties in templates just like a normal property. Vue is aware that `vm.reversedMessage` depends on `vm.message`, so it will update any bindings that depend on `vm.reversedMessage` when `vm.message` changes. And the best part is that we've created this dependency relationship declaratively: the computed getter function is pure and has no side effects, which makes it easy to test and reason about.
 
