@@ -45,9 +45,9 @@ api/index#Options/Assets|[milkmeowo](https://github.com/milkmeowo)| | 翻译中
 api/index#Options/misc |[milkmeowo](https://github.com/milkmeowo)| | 翻译中
 api/index#Instance Properties | [dmxj](https://github.com/dmxj) |mrwiredancer| 校对中
 api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egoist| 校对中
-api/index#Instance Methods/Eevents |
-api/index#Instance Methods/Lifecycle |
-api/index#Directives |
+api/index#Instance Methods/Eevents |[dmxj](https://github.com/dmxj)| | 翻译中
+api/index#Instance Methods/Lifecycle |[dmxj](https://github.com/dmxj)| | 翻译中
+api/index#Directives |[dmxj](https://github.com/dmxj)| | 翻译中
 api/index#Special Attributes |[CoderKwong](https://github.com/CoderKwong)| | 翻译中
 api/index#Built-in Components |
 api/index#VNode Interface |
@@ -66,7 +66,7 @@ guide/conditional |[MechanicianW](https://github.com/MechanicianW) | | 校对中
 guide/list |                   
 guide/events |                 
 guide/forms |   
-guide/components |             
+guide/components |[MechanicianW](https://github.com/MechanicianW) | | 翻译中             
 guide/transitions |
 guide/transitioning-state |
 guide/render-function |        
