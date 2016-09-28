@@ -62,7 +62,7 @@ api/index#Instance Methods/Lifecycle |[dmxj](https://github.com/dmxj)| | `翻译
 api/index#Directives |[dmxj](https://github.com/dmxj)| |`翻译中`
 api/index#Special Attributes |[CoderKwong](https://github.com/CoderKwong)| | `翻译中`
 api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| | `翻译中`
-api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | `翻译中`
+api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | **校对中**
 api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| | **校对中**
 guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | 待合并
 guide/index | [mrwiredancer](https://github.com/Mr-Wiredancer) | | `翻译中`
