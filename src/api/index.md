@@ -2177,5 +2177,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - Please refer to the [VNode class declaration](https://github.com/vuejs/vue/blob/dev/src/core/vdom/vnode.js).
 
 ## Server-Side Rendering
+## 服务端渲染
 
-- Please refer to the [vue-server-renderer package documentation](https://github.com/vuejs/vue/tree/dev/packages/vue-server-renderer).
+- Please refer to the [vue-server-renderer package documentation](https://github.com/vuejs/vue/tree/next/packages/vue-server-renderer).
+- 请参阅 [Vue 服务端渲染文档](https://github.com/vuejs/vue/tree/next/packages/vue-server-renderer).
