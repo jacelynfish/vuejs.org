@@ -2173,8 +2173,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **See also:** [Content Distribution with Slots](/guide/components.html#Content-Distribution-with-Slots)
 
 ## VNode Interface
+## VNode 接口
 
-- Please refer to the [VNode class declaration](https://github.com/vuejs/vue/blob/dev/src/core/vdom/vnode.js).
+- Please refer to the [VNode class declaration](https://github.com/vuejs/vue/blob/next/src/core/vdom/vnode.js).
+- 请参阅 [VNode 类声明](https://github.com/vuejs/vue/blob/next/src/core/vdom/vnode.js).
 
 ## Server-Side Rendering
 ## 服务端渲染
