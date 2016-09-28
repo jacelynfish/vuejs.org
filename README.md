@@ -51,11 +51,11 @@ functional | 函数化| e.g. `functional component` ：函数化组件
 api/index#Global Config | mrwiredancer | egoist | **校对中**
 api/index#Global API | pandazki |mrwiredancer | **校对中**
 api/index#Options/Data |[milkmeowo](https://github.com/milkmeowo)| egoist| ~~已完成~~
-api/index#Options/DOM |[milkmeowo](https://github.com/milkmeowo)| | 待合并
+api/index#Options/DOM |[milkmeowo](https://github.com/milkmeowo)| | _待合并_
 api/index#Options/Lifecycle Hooks |[milkmeowo](https://github.com/milkmeowo)| | **待校对**
-api/index#Options/Assets|[milkmeowo](https://github.com/milkmeowo)| |  待合并
+api/index#Options/Assets|[milkmeowo](https://github.com/milkmeowo)| |  _待合并_
 api/index#Options/misc |[milkmeowo](https://github.com/milkmeowo)| | **待校对**
-api/index#Instance Properties | [dmxj](https://github.com/dmxj) |mrwiredancer| 待合并
+api/index#Instance Properties | [dmxj](https://github.com/dmxj) |mrwiredancer| _待合并_
 api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egoist| **校对中** `待修改`
 api/index#Instance Methods/Eevents |[dmxj](https://github.com/dmxj)| |`翻译中`
 api/index#Instance Methods/Lifecycle |[dmxj](https://github.com/dmxj)| | `翻译中`
@@ -64,13 +64,13 @@ api/index#Special Attributes |[CoderKwong](https://github.com/CoderKwong)| | `�
 api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| | `翻译中`
 api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | **校对中**
 api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| | **校对中**
-guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | 待合并
+guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | _待合并_
 guide/index | [mrwiredancer](https://github.com/Mr-Wiredancer) | | `翻译中`
 guide/instance |
 guide/syntax |
 guide/computed |[gongph](https://github.com/gongph) | | `翻译中`
 guide/class-and-style |
-guide/conditional |[MechanicianW](https://github.com/MechanicianW) | | **校对中** `待修改`
+guide/conditional |[MechanicianW](https://github.com/MechanicianW) | | _待合并_
 guide/list |
 guide/events |
 guide/forms |
