@@ -1006,28 +1006,38 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   - [组件](/guide/components.html)
 
 ## Options / Misc
+## 选项 / 杂项
 
 ### parent
 
 - **Type:** `Vue instance`
+- **类型：** `Vue 实例`
 
 - **Details:**
+- **详细：**
 
   Specify the parent instance for the instance to be created. Establishes a parent-child relationship between the two. The parent will be accessible as `this.$parent` for the child, and the child will be pushed into the parent's `$children` array.
+  指定实例的父实例，在两者之间建立父子关系。子实例可以用 `this.$parent` 访问父实例，子实例被推入父实例的 `$children` 数组中。
 
   <p class="tip">Use `$parent` and `$children` sparringly - they mostly serve as an escape-hatch. Prefer using props and events for parent-child communication.</p>
+  <p class="tip">尽可能不去使用 `$parent` 和 `$children`。它们更多地是提供另外一种方法来实现父子间通信而已。在父子间通信中更**推荐**使用 props 和 events。</p>
 
 ### mixins
 
 - **Type:** `Array<Object>`
+- **类型：** `Array<Object>`
 
 - **Details:**
+- **详细：**
 
   The `mixins` option accepts an array of mixin objects. These mixin objects can contain instance options just like normal instance objects, and they will be merged against the eventual options using the same option merging logic in `Vue.extend()`. e.g. If your mixin contains a created hook and the component itself also has one, both functions will be called.
+  一个包含混合对象的数组。这些混合对象可以像普通实例对象一样包含实例选项，它们将合并成一个最终选项对象，合并策略同 `Vue.extend()`。比如，如果混合对象包含一个 `created` 钩子，组件自身也包含一个，两个钩子函数都会被调用。
 
   Mixin hooks are called in the order they are provided, and called before the component's own hooks.
+  混合后的钩子按它们出现顺序调用，并且是在调用组件自己的钩子之前调用。
 
 - **Example:**
+- **示例：**
 
   ``` js
   var mixin = {
@@ -1042,35 +1052,47 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```
 
 - **See also:** [Mixins](/guide/mixins.html)
+- **另见:** [Mixins](/guide/mixins.html)
 
 ### name
 
 - **Type:** `string`
+- **类型：** `string`
 
 - **Restriction:** only respected when used as a component option.
+- **限制：** 只在组件选项中使用。
 
 - **Details:**
+- **详细：**
 
   Allow the component to recursively invoke itself in its template. Note that when a component is registered globally with `Vue.component()`, the global ID is automatically set as its name.
+  允许组件在它的模板内递归地调用它自己。注意如果组件是由 `Vue.component()` 全局注册，全局 ID 自动作为它的名字。
 
   Another benefit of specifying a `name` option is debugging. Named components result in more helpful warning messages. Also, when inspecting an app in the [vue-devtools](https://github.com/vuejs/vue-devtools), unnamed components will show up as `<AnonymousComponent>`, which isn't very informative. By providing the `name` option, you will get a much more informative component tree.
+  指定 `name` 选项的另一个好处是方便检查。 有命名的组件可以打印出更多有用的信息。同时，当使用 [vue-devtools](https://github.com/vuejs/vue-devtools) 调试的时候, 未命名的组件只会显示 `<AnonymousComponent>` 这对于调试来说没任何意义。传入 `name` 选项后， 你可以得到一个更有用的组件树结构，同时可以知道正在检查哪个组件。
 
 ### extends
 
 - **Type:** `Object | Function`
+- **类型：** `Object | Function`
 
 - **Details:**
+- **详细：**
 
   Allows declaratively extending another component (could be either a plain options object or a constructor) without having to use `Vue.extend`. This is primarily intended to make it easier to extend between single file components.
+  使用声明的方式来扩展另一个组件（可以是选项对象或者构造器），而不必使用 `Vue.extend`。主要作用是更容易的扩展单文件组件。
 
   This is similar to `mixins`, the difference being that the component's own options takes higher priority than the source component being extended.
+  这类似于 `mixins`，不同的是组件的选项比待扩展的源组件的选项优先。
 
 - **Example:**
+- **示例：**
 
   ``` js
   var CompA = { ... }
 
   // extend CompA without having to call Vue.extend on either
+  // 扩展 CompA，不用调用 Vue.extend
   var CompB = {
     extends: CompA,
     ...
@@ -1080,12 +1102,16 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 ### delimiters
 
 - **Type:** `Array<string>`
+- **类型：** `Array<string>`
 
 - **default:** `["{{", "}}"]`
+- **默认：** `["{{", "}}"]`
 
 - **Details:**
+- **详细：**
 
   Change the plain text interpolation delimiters. **This option is only available in the standalone build.**
+  修改文本插值的定界符。 **这选项只在独立编译版本有效**
 
 - **Example:**
 
@@ -1095,17 +1121,22 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   })
 
   // Delimiters changed to ES6 template string style
+  // 定界符改为ES6 模板字符串形式
   ```
 
 ### functional
 
 - **Type:** `boolean`
+- **类型：** `boolean`
 
 - **Details:**
+- **详细：**
 
   Causes a component to be stateless (no `data`) and instanceless (no `this` context). They are simply a `render` function that returns virtual nodes making them much cheaper to render.
+  使组件变成一个无状态（没有 `data`），无实例（没有 `this` 上下文）的函数化组件 这导致使用 `render` 函数把它们渲染成虚拟节点的时候变得更加高效。
 
 - **See also:** [Functional Components](/guide/render-function.html#Functional-Components)
+- **另见：** [函数化组件](/guide/render-function.html#Functional-Components)
 
 ## Instance Properties
 ##  实例属性
