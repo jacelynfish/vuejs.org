@@ -178,7 +178,6 @@ type: api
   ```
 
   ``` js
-<<<<<<< 74bc943b83ec67e5f39c1dcc43cfbcaeb75f275a
   // create constructor
   // 创建的构造函数
   var Profile = Vue.extend({
@@ -1301,7 +1300,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **另见：** [服务器端渲染](/guide/ssr.html)
 
 ## Instance Methods / Data
-## 实例方法／数据
+## 实例方法 ／ 数据
 
 <h3 id="vm-watch">vm.$watch( expOrFn, callback, [options] )</h3>
 
@@ -1310,8 +1309,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   - `{string | Function} expOrFn`
   - `{Function} callback`
   - `{Object} [options]`
-    - `{boolean} deep`
-    - `{boolean} immediate`
+  - `{boolean} deep`
+  - `{boolean} immediate`
 
 - **Returns:** `{Function} unwatch`
 - **返回值：** `{Function} unwatch`
@@ -1413,8 +1412,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **用法**
 
   This is the **alias** of the global `Vue.set`.
-
-  这是全局 `Vue.set`的 **别名**
+  这是全局 `Vue.set` 的 **别名**
 
 - **See also:** [Vue.set](#Vue-set)
 - **另见：** [Vue.set](#Vue-set)
@@ -1434,7 +1432,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   这是全局 `Vue.delete` 的 **别名**
 
 - **See also:** [Vue.delete](#Vue-delete)
-- - **另见：** [Vue.delete](#Vue-delete)
+- **另见：** [Vue.delete](#Vue-delete)
 
 ## Instance Methods / Events
 
