@@ -29,7 +29,7 @@ Plugins usually add global-level functionality to Vue. There is no strictly defi
 5. 一个库，提供自己的 API，同时提供上面提到的一个或多个功能，如 vue-router
 
 A Vue.js plugin should expose an `install` method. The method will be called with the `Vue` constructor as the first argument, along with possible options:
-Vue.js 的插件应当有一个公开方法 install。这个方法的第一个参数是 Vue 构造器，第二个参数是一个可选的选项对象：
+Vue.js 的插件应当有一个公开方法 install 。这个方法的第一个参数是 Vue 构造器，第二个参数是一个可选的选项对象：
 
 ``` js
 MyPlugin.install = function (Vue, options) {
@@ -41,7 +41,7 @@ MyPlugin.install = function (Vue, options) {
   }
 
   // 2. add a global asset
-  添加全局资源
+ // 添加全局资源
   Vue.directive('my-directive', {
     bind (el, binding, vnode, oldVnode) {
       // something logic ...
@@ -51,7 +51,7 @@ MyPlugin.install = function (Vue, options) {
   })
 
   // 3. inject some component options
-  添加组件对象
+ // 添加组件对象
   Vue.mixin({
     created: function () {
       // something logic ...
@@ -61,7 +61,7 @@ MyPlugin.install = function (Vue, options) {
   })
 
   // 4. add an instance method
-        添加实例方法
+       // 添加实例方法
   Vue.prototype.$myMethod = function (options) {
     // something logic ...
     // 逻辑代码
@@ -86,12 +86,12 @@ Vue.use(MyPlugin, { someOption: true })
 ```
 
 `Vue.use` automatically prevents you from using the same plugin more than once, so calling it multiple times on the same plugin will install the plugin only once.
-'Vue.use' 自动阻止你使用相同的插件超过一次，所以当你重复的使用这个插件时，你只能安装一次。
+`Vue.use` 自动阻止你使用相同的插件超过一次，所以当你重复的使用这个插件时，你只能安装一次。
 Some plugins provided by Vue.js official plugins such as `vue-router` automatically calls `Vue.use()` if `Vue` is available as a global variable. However in a module environment such as CommonJS, you always need to call `Vue.use()` explicitly:
-一些vue.js官方提供的插件，比如当'Vue'可以被当作全局变量时，'vue-router'会自动的调用'Vue.use()' 
+一些vue.js官方提供的插件，比如当 `Vue` 可以被当作全局变量时，`vue-router` 会自动的调用 `Vue.use()` 
 ``` js
 // When using CommonJS via Browserify or Webpack
-// 通过Browserify 或 Webpack 使用 CommonJS 兼容模块
+// 通过 Browserify 或 Webpack 使用 CommonJS 兼容模块
 var Vue = require('vue')
 var VueRouter = require('vue-router')
 
@@ -102,7 +102,7 @@ Vue.use(VueRouter)
 
 Checkout [awesome-vue](https://github.com/vuejs/awesome-vue#libraries--plugins) for a huge collection of community-contributed plugins and libraries.
 
-检查 awesome-vue(https://github.com/vuejs/awesome-vue#libraries--plugins)获得大量的社区贡献的插件和资料
+访问 awesome-vue (https://github.com/vuejs/awesome-vue#libraries--plugins) 获得大量社区贡献的插件和资料
 
 
 
