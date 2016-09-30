@@ -778,7 +778,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **详细:**
 
   Called synchronously after the instance has just been initialized, before data observation and event/watcher setup.
-  在实例开始初始化时同步调用。此时数据观察，事件和 watcher 都尚未初始化。
+  在实例初始化之前同步调用。此时数据观察还没开始，事件和监听器也还没设置。
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
 - **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
@@ -792,7 +792,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **详细:**
 
   Called synchronously after the instance is created. At this stage, the instance has finished processing the options which means the following have been set up: data observation, computed properties, methods, watch/event callbacks. However, the mounting phase has not been started, and the `$el` property will not be available yet.
-  在实例创建之后同步调用。此时实例已经结束解析选项，这意味着已建立：数据绑定，计算属性，方法，watcher/事件回调。但是还没有开始挂载，所以 `$el` 还不存在。
+  在实例创建之后同步调用。此时实例已经结束解析选项，这意味着已建立：数据绑定，计算属性，方法，监听器/事件回调。但是还没有开始挂载，所以 `$el` 还不存在。
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
 - **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
@@ -865,7 +865,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   在数据改变，虚拟 Dom 重新渲染和打补丁之后调用。
 
   The component's DOM will be in updated state when this hook is called, so you can perform DOM-dependent operations in this hook. However, in most cases you should avoid changing state in this hook, because it may lead to an infinite update loop.
-  当钩子被调用的时候，组件的 DOM 将会处于更新状态, 因此你可以在这钩子中执行 Dom 相关操作. 但是，在绝大多数情况下，你应该避免在这钩子中改变状态，因为这有可能会导致死循环。
+  当钩子被调用的时候，组件的 DOM 将会处于更新状态, 因此你可以在这钩子中执行 DOM 相关操作. 但是，在绝大多数情况下，你应该避免在这钩子中改变状态，因为这有可能会导致死循环。
 
   **This hook is not called during server-side rendering.**
   **这钩子在服务端渲染的时候不会被调用**
