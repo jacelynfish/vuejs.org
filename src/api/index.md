@@ -1031,10 +1031,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **详细：**
 
   The `mixins` option accepts an array of mixin objects. These mixin objects can contain instance options just like normal instance objects, and they will be merged against the eventual options using the same option merging logic in `Vue.extend()`. e.g. If your mixin contains a created hook and the component itself also has one, both functions will be called.
-  一个包含混合对象的数组。这些混合对象可以像普通实例对象一样包含实例选项，它们将合并成一个最终选项对象，合并策略同 `Vue.extend()`。比如，如果混合对象包含一个 `created` 钩子，组件自身也包含一个，两个钩子函数都会被调用。
+  一个包含混合对象（mixin objects）的数组。这些混合对象可以像普通实例对象一样包含实例选项，它们将合并成一个最终选项对象，合并策略同 `Vue.extend()`。比如，如果混合对象包含一个 `created` 钩子，组件自身也包含一个，两个钩子函数都会被调用。
 
   Mixin hooks are called in the order they are provided, and called before the component's own hooks.
-  混合后的钩子按它们出现顺序调用，并且是在调用组件自己的钩子之前调用。
+  混合对象的钩子会按它们的出现顺序被调用，但是在组件自己的钩子之前被调用。
 
 - **Example:**
 - **示例：**
