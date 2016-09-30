@@ -2085,7 +2085,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **用法：**
 
   `<transition>` serve as transition effects for **single** element/component. The `<transition>` does not render an extra DOM element, nor does it show up in the inspected component hierarchy. It simply applies the transition behavior to the wrapped content inside.
-  `<transition>` 用于 **单** 元素/组件的过渡效果。`<transition>` 不会渲染额外的 DOM 元素, 也不显示在组件的层次结构中。它只适用于在内部的包裹内容的过渡行为。
+  `<transition>` 用于 **单** 元素/组件的过渡效果。`<transition>` 不会渲染额外的 DOM 元素, 也不显示在组件的层次结构中。它只对内部的包裹内容产生过渡行为。
 
   ```html
   <!-- simple element -->
@@ -2148,10 +2148,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   `<transition-group>` 用于 **多** 元素/组件的过渡效果。 `<transition-group>` 会渲染真实的 DOM 元素。 默认它会渲染一个 `<span>` 标签， 当然你也可以通过 `tag` 属性来配置它渲染什么标签元素。
 
   Note every child in a `<transition-group>` must be **uniquely keyed** for the animations to work properly.
-  注意 `<transition-group>` 里的每一个子元素必须要有唯一的标识，动画才能正常工作。
+  注意 `<transition-group>` 里的每一个子元素必须要有唯一的 `key` 属性标识，动画才能正常工作。
 
   `<transition-group>` supports moving transitions via CSS transform. When a child's position on screen has changed after an updated, it will get applied a moving CSS class (auto generated from the `name` attribute or configured with the `move-class` attribute). If the CSS `transform` property is "transition-able" when the moving class is applied, the element will be smoothly animated to its destination using the [FLIP technique](https://aerotwist.com/blog/flip-your-animations/).
-  `<transition-group>` 支持 CSS transform 来定义切换时的过渡效果。当更新之后，子元素在屏幕中的位置发生变化时，它会调用离开时的 CSS 过渡样式（自动通过 `name` 属性或者 `move-class` 属性来生成）。当调用离开时 CSS 过渡样式时，并且CSS 的 `transform` 属性是 "transition-able"， 元素会使用 [FLIP technique](https://aerotwist.com/blog/flip-your-animations/) 圆滑过渡到它的目标位置。
+  `<transition-group>` 支持 CSS transform 来定义切换时的过渡效果。当更新之后，子元素在屏幕中的位置发生变化时，它会调用离开时的 CSS 过渡样式（自动通过 `name` 属性或者 `move-class` 属性来生成）。当调用离开时 CSS 过渡样式时，并且CSS 的 `transform` 属性是 "可过渡"， 元素会使用 [FLIP technique](https://aerotwist.com/blog/flip-your-animations/) 圆滑过渡到它的目标位置。
 
   ```html
   <transition-group tag="ul" name="slide">
