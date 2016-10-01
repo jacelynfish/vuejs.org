@@ -144,6 +144,8 @@ A lot of components' render output are primarily determined by the props they re
 
 ## 编写可测试的组件
 
+很多组件的渲染结果基本上都基于它们接收到的属性。事实上，如果一个组件的渲染结果仅仅取决于它的属性，测试它就会很直观。这就像根据不同的参数，断言一个纯函数的返回值。看下面这个虚构的例子：
+
 ``` html
 <template>
   <p>{{ msg }}</p>
@@ -226,6 +228,8 @@ Since Vue [performs DOM updates asynchronously](/guide/reactivity.html#Async-Upd
 
 ## 断言异步更新
 
+由于 Vue [异步执行DOM更新](/guide/reactivity.html#Async-Update-Queue)，对状态变化引起的DOM更新的断言，需要放在一个 `Vue.nextTick` 的回调里。
+
 ``` js
 // Inspect the generated HTML after a state update
 it('updates the rendered message when vm.message updates', done => {
@@ -247,7 +251,7 @@ it('updates the rendered message when vm.message updates', done => {
   vm.message = 'foo'
 
   // wait a "tick" after state change before asserting DOM updates
-  //在状态变化之后，断言DOM更新之前，先等待一个tick动作
+  //在状态变化之后，断言DOM更新之前，先等待一次nextTick的执行
   Vue.nextTick(() => {
     expect(vm.$el.textContent).toBe('foo')
     done()
