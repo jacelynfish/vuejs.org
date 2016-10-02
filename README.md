@@ -60,7 +60,7 @@ api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egois
 api/index#Instance Methods/Eevents |[dmxj](https://github.com/dmxj)| |`翻译中`
 api/index#Instance Methods/Lifecycle |[dmxj](https://github.com/dmxj)| | `翻译中`
 api/index#Directives |[dmxj](https://github.com/dmxj)| |`翻译中`
-api/index#Special Attributes |[CoderKwong](https://github.com/CoderKwong)| | `翻译中`
+api/index#Special Attributes |[aliencyl7](https://github.com/aliencyl7)| | `翻译中`
 api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| mrwiredancer| **校对中**
 api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | **校对中**
 api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| | **校对中**
