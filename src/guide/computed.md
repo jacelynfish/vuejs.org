@@ -406,7 +406,7 @@ var watchExampleVM = new Vue({
 ``` html
 <!-- 因为有了一个丰富的ajax服务库和通用的方法集合类库 -->
 <!-- Vue.js的核心文件才能不重复造轮子保持的这么小，这也 -->
-<!-- 给你了足够的自由让你使用熟悉的东西。 -->
+<!-- 给你了足够的自由让你使用熟悉的东西。-->
 <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
 <script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
 <script>
