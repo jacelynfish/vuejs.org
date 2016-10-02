@@ -88,7 +88,7 @@ Vue.use(MyPlugin, { someOption: true })
 `Vue.use` automatically prevents you from using the same plugin more than once, so calling it multiple times on the same plugin will install the plugin only once.
 `Vue.use` 自动阻止你使用相同的插件超过一次，所以当你重复的使用这个插件时，你只能安装一次。
 Some plugins provided by Vue.js official plugins such as `vue-router` automatically calls `Vue.use()` if `Vue` is available as a global variable. However in a module environment such as CommonJS, you always need to call `Vue.use()` explicitly:
-一些vue.js官方提供的插件，比如当 `Vue` 可以被当作全局变量时，`vue-router` 会自动的调用 `Vue.use()` 
+如果 Vue 加载成为全局变量，那么某些官方插件，比如 vue-router， 会自动调用 Vue.use。但是在一个模块运行环境，比如 CommonJS，你必须明文调用 Vue.use()：
 ``` js
 // When using CommonJS via Browserify or Webpack
 // 通过 Browserify 或 Webpack 使用 CommonJS 兼容模块
@@ -102,7 +102,7 @@ Vue.use(VueRouter)
 
 Checkout [awesome-vue](https://github.com/vuejs/awesome-vue#libraries--plugins) for a huge collection of community-contributed plugins and libraries.
 
-访问 awesome-vue (https://github.com/vuejs/awesome-vue#libraries--plugins) 获得大量社区贡献的插件和资料
+访问 awesome-vue (https://github.com/vuejs/awesome-vue#libraries--plugins) 获得大量社区贡献的插件和资料。
 
 
 
