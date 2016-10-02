@@ -122,7 +122,7 @@ var vm = new Vue({
 {% endraw %}
 
 Here we have declared a computed property `reversedMessage`. The function we provided will be used as the getter function for the property `vm.reversedMessage`:
-这里我们声明了一个计算属性 `reversedMessage` 。 我们提供的函数将用作属性 `vm.reversedMessage` 的 getter：
+这里我们声明了一个计算属性 `reversedMessage` 。我们提供的函数将用作属性 `vm.reversedMessage` 的 getter：
 
 ``` js
 console.log(vm.reversedMessage) // -> 'olleH'
@@ -137,13 +137,13 @@ console.log(vm.reversedMessage) // -> 'eybdooG'
 ```
 
 You can open the console and play with the example vm yourself. The value of `vm.reversedMessage` is always dependent on the value of `vm.message`.
-你可以打开浏览器控制台，修改 vm。`vm.reverseMessage` 的值始终取决于 `vm.message` 的值。
+你可以打开浏览器控制台，修改 vm。 `vm.reverseMessage` 的值始终取决于 `vm.message` 的值。
 
-You can data-bind to computed properties in templates just like a normal property. Vue is aware that `vm.reversedMessage` depends on `vm.message`, so it will update any bindings that depend on `vm.reversedMessage` when `vm.message` changes. And the best part is that we've created this dependency relationship declaratively: the computed getter function is pure and has no side effects, which makes it easy to test and reason about.
-你可以像绑定普通属性一样在模板中绑定计算属性。Vue 知道 `vm.reversedMessage` 依赖于 `vm.message`，因此当 `vm.message` 发生改变时，依赖于 `vm.reversedMessage` 的绑定也会更新。而且最妙的是我们是声明式地创建这种依赖关系：计算属性的 getter 是干净无副作用的，因此也是易于测试和理解的。
+You can data-bind to computed properties in templates just like a normal property. Vue is aware that `vm.reversedMessage` depends on `vm.message` , so it will update any bindings that depend on `vm.reversedMessage` when `vm.message` changes. And the best part is that we've created this dependency relationship declaratively: the computed getter function is pure and has no side effects, which makes it easy to test and reason about.
+你可以像绑定普通属性一样在模板中绑定计算属性。Vue 知道 `vm.reversedMessage` 依赖于 `vm.message` ，因此当 `vm.message` 发生改变时，依赖于 `vm.reversedMessage` 的绑定也会更新。而且最妙的是我们是声明式地创建这种依赖关系：计算属性的 getter 是干净无副作用的，因此也是易于测试和理解的。
 
 ### Computed Caching vs Methods
-###  计算缓存 vs Methods
+### 计算缓存 vs Methods
 
 You may have noticed we can achieve the same result by invoking a method in the expression:
 你可能已经注意到了在表达式中调用一个方法我们也可以实现相同的结果：
