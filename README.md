@@ -44,7 +44,7 @@ functional | 函数化| e.g. `functional component` ：函数化组件
 * 校对通过则将 PR 改为`待合并`，并分配给协调员
 * 校对不通过则将 PR 改为 `待修改`，并分配给 PR 提交者
 
-## 进度表 (最后更新：2016/09/28 16:53)
+## 进度表 (最后更新：2016-10-3 08:17)
 
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
@@ -61,9 +61,9 @@ api/index#Instance Methods/Eevents |[dmxj](https://github.com/dmxj)| |`翻译中
 api/index#Instance Methods/Lifecycle |[dmxj](https://github.com/dmxj)| | `翻译中`
 api/index#Directives |[dmxj](https://github.com/dmxj)| |`翻译中`
 api/index#Special Attributes |[aliencyl7](https://github.com/aliencyl7)| | `翻译中`
-api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| mrwiredancer| **校对中**
+api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| mrwiredancer|~~已完成~~
 api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | **校对中**
-api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| | **校对中**
+api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| hayeah | ~~已完成~~
 guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | ~~已完成~~
 guide/index | [mrwiredancer](https://github.com/Mr-Wiredancer) | | `翻译中`
 guide/instance | [baurine](https://github.com/baurine)| mrwiredancer| **校对中**
