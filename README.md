@@ -66,8 +66,8 @@ api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | **校对
 api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| | **校对中**
 guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | ~~已完成~~
 guide/index | [mrwiredancer](https://github.com/Mr-Wiredancer) | | `翻译中`
-guide/instance |
-guide/syntax |
+guide/instance | [baurine](https://github.com/baurine)| mrwiredancer| **校对中**
+guide/syntax |[baurine](https://github.com/baurine)|egoist| **校对中**
 guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | **校对中**
 guide/class-and-style |
 guide/conditional |[MechanicianW](https://github.com/MechanicianW) | hayeah | ~~已完成~~
