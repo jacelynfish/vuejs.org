@@ -4,19 +4,13 @@ type: guide
 order: 23
 ---
 
----
-标题: 单元测试
-类型: 指引
-序号: 22
----
-
 ## Setup and Tooling
 
 Anything compatible with a module-based build system will work, but if you're looking for a specific recommendation, try the [Karma](http://karma-runner.github.io) test runner. It has a lot of community plugins, including support for [Webpack](https://github.com/webpack/karma-webpack) and [Browserify](https://github.com/Nikku/karma-browserify). For detailed setup, please refer to each project's respective documentation, though these example Karma configurations for [Webpack](https://github.com/vuejs/vue-loader-example/blob/master/build/karma.conf.js) and [Browserify](https://github.com/vuejs/vueify-example/blob/master/karma.conf.js) may help you get started.
 
 ## 安装与工具
 
-任何测试工具，只要与模块化构建系统兼容，都可以使用。当然，我们更推荐使用 [Karma](http://karma-runner.github.io/0.12/index.html)。它有很多的社区插件，包括对 [Webpack](https://github.com/webpack/karma-webpack) 和 [Browserify](https://github.com/Nikku/karma-browserify) 的支持。至于具体的安装细节，请参考各个项目的文档。这里有两个karma的配置实例，也许能够帮助你快速入门。一个是对 [Webpack](https://github.com/vuejs/vue-loader-example/blob/master/build/karma.conf.js)，另一个是对 [Browserify](https://github.com/vuejs/vueify-example/blob/master/karma.conf.js)。
+你可以使用任何兼容模块化构建的测试工具。如果你需要个具体建议，可以试试 [Karma](http://karma-runner.github.io/0.12/index.html)。它有很多的社区插件，包括对 [Webpack](https://github.com/webpack/karma-webpack) 和 [Browserify](https://github.com/Nikku/karma-browserify) 的支持。至于具体的安装细节，请参考各个项目的文档。这里有两个karma的配置实例，能够帮助你快速入门。一个是对 [Webpack](https://github.com/vuejs/vue-loader-example/blob/master/build/karma.conf.js)，另一个是对 [Browserify](https://github.com/vuejs/vueify-example/blob/master/karma.conf.js)。
 
 ## Simple Assertions
 
@@ -66,7 +60,7 @@ In terms of code structure for testing, you don't have to do anything special in
 
 When you test that component, all you have to do is import the object along with Vue to make many common assertions:
 
-当你测试这个组件时，你只要同时引入vue和这个组件，就能做很多常用的断言了。
+当你测试这个组件时，你只要同时引入 Vue 和这个组件，就能做很多常用的断言了。
 
 ``` js
 // Import Vue and the component being tested
@@ -105,7 +99,7 @@ describe('MyComponent', () => {
 ```
 
 ``` js
-// 引入Vue和待测试的组件
+// 引入 Vue 和待测试的组件
 import Vue from 'vue'
 import MyComponent from 'path/to/MyComponent.vue'
 
@@ -144,7 +138,7 @@ A lot of components' render output are primarily determined by the props they re
 
 ## 编写可测试的组件
 
-很多组件的渲染结果基本上都基于它们接收到的属性。事实上，如果一个组件的渲染结果仅仅取决于它的属性，测试它就会很直观。这就像根据不同的参数，断言一个纯函数的返回值。看下面这个虚构的例子：
+很多组件的渲染结果基本上都取决于它们接收到的属性。如果一个组件的渲染结果仅仅取决于它的属性，测试它就会很直观。这就像根据不同的参数，断言一个纯函数的返回值。看下面这个虚构的例子：
 
 ``` html
 <template>
@@ -228,7 +222,7 @@ Since Vue [performs DOM updates asynchronously](/guide/reactivity.html#Async-Upd
 
 ## 断言异步更新
 
-由于 Vue [异步执行DOM更新](/guide/reactivity.html#Async-Update-Queue)，对状态变化引起的DOM更新的断言，需要放在一个 `Vue.nextTick` 的回调里。
+由于 Vue [异步执行 DOM 更新](/guide/reactivity.html#Async-Update-Queue)，对状态变化引起的 DOM 更新的断言，需要放在一个 `Vue.nextTick` 的回调里。
 
 ``` js
 // Inspect the generated HTML after a state update
@@ -261,4 +255,4 @@ it('updates the rendered message when vm.message updates', done => {
 
 We are planning to work on a collection of common test helpers that makes it even simpler to render components with different constraints (e.g. shallow rendering that ignores child components) and assert their output.
 
-我们正计划做一个通用的测试辅助器集合。根据不同的限制(比如不渲染子组件的浅层渲染)去渲染组件，断言输出，这样的集合能让测试变得更简单。
+我们正计划做一个通用的测试辅助器集合。根据不同的限制(比如不渲染子组件的浅层渲染)去渲染组件，断言输出。这样的集合能让测试变得更简单。
