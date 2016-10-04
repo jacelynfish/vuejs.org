@@ -1772,8 +1772,8 @@ type: api
 
   The `key` special attribute is primarily used as a hint for Vue's virtual DOM algorithm to identify VNodes when diffing the new list of nodes against the old list. Without keys, Vue uses an algorithm that minimizes element movement and tries to patch/reuse elements of the same type in-place as much as possible. With keys, it will reorder elements based on the order change of keys, and elements with keys that are no longer present will always be removed/destroyed.
 
-  当 VNodes 差分计算新的节点列表和旧的节点列表，来识别 VNodes 时，key 这个特殊属性会为 Vue 的虚拟 DOM 算法提供线索。在不使用 keys 的情况下，Vue 会使用一个算法来最小化元素的移动，并且尽可能在适当的位置，来修补/重新使用相同类型的元素。在使用 keys 的情况下，Vue 会基于 keys 的变化顺序来重新排列元素，那些包含 keys 但不再出现的元素通常将被移除/销毁。
-
+  当 Vue 的虚拟 DOM 算法差分计算新的节点列表和旧的节点列表，来识别 VNodes 时，key 这个特殊属性会为该算法提供线索。在不使用 keys 的情况下，Vue 会使用一个算法来减少元素的移动，并且尽可能在适当的位置，来修补/重新使用相同类型的元素。在使用 keys 的情况下，Vue 会基于 keys 的变化顺序来重新排列元素，那些包含 keys 但不再出现的元素通常将被移除/销毁。
+  
   Children of the same common parent must have **unique keys**. Duplicate keys will cause render errors.
 
   具有相同父元素的子元素必须使用唯一 keys。重复 keys 会导致渲染报错。
@@ -1809,7 +1809,7 @@ type: api
 
   When `text` changes, the `<span>` will always be replaced instead of patched, so a transition will be triggered.
 
-  当 text 变化时，<span> 元素也会跟着一起被替换而不是修补，因此会触发一个过渡。
+  当 text 变化时，<span> 元素也会跟着一起被替换而不是被修补，因此会触发一个过渡。
 
 ### ref
 
@@ -1839,11 +1839,11 @@ type: api
 
   When used on elements/components with `v-for`, the registered reference will be an Array containing DOM nodes or component instances.
 
-  当在元素/组件上使用 `v-for` 属性 ，被注册的引用会变成一个包含各 DOM 节点或者组件实例的数组。
+  当在含有 v-for 的元素/组件上使用 ref 属性时，被注册的引用会变成一个包含各 DOM 节点或者组件实例的数组。
 
   An important note about the ref registration timing: because the refs themselves are created as a result of the render function, you cannot access them on the initial render - they don't exist yet! `$refs` is also non-reactive, therefore you should not attempt to use it in templates for data-binding.
 
-  需要注意的一点是关于 ref 的注册时间点： 因为 refs 自身是作为 render 函数执行完后所创造的一个结果，所以开发者不能再初始 render 时去使用它们，因为他们还不存在。`$refs` 也是不可交互的，因此开发者不要尝试在模板中为了数据绑定去使用 `$refs`。
+  需要注意的一点是关于 ref 的注册时间点： 因为 refs 自身是作为 render 函数执行完后所创造的一个结果值，所以开发者不能再初始 render 时去使用它们，因为 refs 还不存在。$refs 也是不可交互的，因此开发者不要尝试在模板中为了数据绑定去使用它。
 
 - **See also:** [Child Component Refs](/guide/components.html#Child-Component-Refs)
 - **另见：** [Child Component Refs](/guide/components.html#Child-Component-Refs)
