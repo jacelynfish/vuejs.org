@@ -44,7 +44,7 @@ functional | 函数化| e.g. `functional component` ：函数化组件
 * 校对通过则将 PR 改为`待合并`，并分配给协调员
 * 校对不通过则将 PR 改为 `待修改`，并分配给 PR 提交者
 
-## 进度表 (最后更新：2016-10-3 08:17)
+## 进度表 (最后更新：2016-10-5 08:52)
 
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
@@ -82,7 +82,7 @@ guide/reactivity |[pandazki](https://github.com/pandazki) | | `翻译中`
 guide/custom-directive |
 guide/mixins | [leon0204](https://github.com/leon0204) | | `翻译中`
 guide/plugins |[leon0204](https://github.com/leon0204) | milkmeowo|**校对中**
-guide/single-file-components |
+guide/single-file-components | [seaify](https://github.com/seaify) | | `翻译中`
 guide/routing |
 guide/state-management |
 guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | mrwiredancer | **校对中**
