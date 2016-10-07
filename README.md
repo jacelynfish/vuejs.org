@@ -49,12 +49,12 @@ functional | 函数化| e.g. `functional component` ：函数化组件
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
 api/index#Global Config | mrwiredancer | egoist | ~~已完成~~
-api/index#Global API | pandazki |mrwiredancer | **校对中**
+api/index#Global API | pandazki |mrwiredancer |  ~~已完成~~
 api/index#Options/Data |[milkmeowo](https://github.com/milkmeowo)| egoist| ~~已完成~~
 api/index#Options/DOM |[milkmeowo](https://github.com/milkmeowo)| Mr-Wiredancer | ~~已完成~~
-api/index#Options/Lifecycle Hooks |[milkmeowo](https://github.com/milkmeowo)| | **待校对**
+api/index#Options/Lifecycle Hooks |[milkmeowo](https://github.com/milkmeowo)| hayeah |  ~~已完成~~
 api/index#Options/Assets|[milkmeowo](https://github.com/milkmeowo)| Mr-Wiredancer|  ~~已完成~~
-api/index#Options/misc |[milkmeowo](https://github.com/milkmeowo)| | **校对中**
+api/index#Options/misc |[milkmeowo](https://github.com/milkmeowo)| hayeah |  ~~已完成~~
 api/index#Instance Properties | [dmxj](https://github.com/dmxj) |mrwiredancer| ~~已完成~~
 api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egoist| **校对中** `待修改`
 api/index#Instance Methods/Eevents |[dmxj](https://github.com/dmxj)| |`翻译中`
@@ -72,15 +72,15 @@ guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | **校对中*
 guide/class-and-style |
 guide/conditional |[MechanicianW](https://github.com/MechanicianW) | hayeah | ~~已完成~~
 guide/list |
-guide/events |
+guide/events | [rayax86](https://github.com/rayax86) | | `翻译中`
 guide/forms |
-guide/components |[MechanicianW](https://github.com/MechanicianW) | | `翻译中`
+guide/components |[MechanicianW](https://github.com/MechanicianW) |egoist | **校对中**
 guide/transitions |
 guide/transitioning-state |
-guide/render-function |
-guide/reactivity |[pandazki](https://github.com/pandazki) | | `翻译中`
+guide/render-function | [pandazki](https://github.com/pandazki
+guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer | **校对中**
 guide/custom-directive |
-guide/mixins | [leon0204](https://github.com/leon0204) | | `翻译中`
+guide/mixins | [leon0204](https://github.com/leon0204) | mrwiredancer | **校对中**
 guide/plugins |[leon0204](https://github.com/leon0204) | milkmeowo|**校对中**
 guide/single-file-components | [seaify](https://github.com/seaify) | | `翻译中`
 guide/routing |
