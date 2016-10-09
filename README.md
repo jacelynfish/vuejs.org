@@ -77,7 +77,7 @@ guide/events | [rayax86](https://github.com/rayax86) | | `翻译中`
 guide/forms |
 guide/components |[MechanicianW](https://github.com/MechanicianW) |egoist | **校对中**
 guide/transitions |
-guide/transitioning-state |
+guide/transitioning-state |[gongph](https://github.com/gongph)| | `翻译中`
 guide/render-function | [pandazki](https://github.com/pandazki
 guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer | **校对中**
 guide/custom-directive |
