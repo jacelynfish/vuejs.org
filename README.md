@@ -88,6 +88,6 @@ guide/routing |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中**
 guide/state-management |
 guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | mrwiredancer | **校对中**
 guide/ssr |
-guide/migration |[RiXiong](https://github.com/RiXiong)| |**校对中**
+guide/migration |[RiXiong](https://github.com/RiXiong)| mrwiredancer|**校对中**
 guide/comparison |
-guide/join |
+guide/join |[leon0204](https://github.com/leon0204)| mrwiredancer| **校对中**
