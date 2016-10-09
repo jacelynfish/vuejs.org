@@ -1530,27 +1530,39 @@ type: api
   - [组件 —— 自定义事件](/guide/components.html#Custom-Events)
 
 ### v-bind
+### v-bind
 
 - **Shorthand:** `:`
+- **缩写:** `:`
 
 - **Expects:** `any (with argument) | Object (without argument)`
+- **类型:** `any (with argument) | Object (without argument)`
 
 - **Argument:** `attrOrProp (optional)`
+- **参数:** `attrOrProp (optional)`
 
 - **Modifiers:**
   - `.prop` - Used for binding DOM attributes.
+- **修饰符:**
+  - `.prop` - 用于绑定DOM属性。
 
 - **Usage:**
+- **用法:**
 
   Dynamically bind one or more attributes, or a component prop to an expression.
+  动态绑定一个或多个属性，或一个组件prop到一个表达式。
 
   When used to bind the `class` or `style` attribute, it supports additional value types such as Array or Objects. See linked guide section below for more details.
+  在绑定 `class` 或 `style` 时，支持其它类型的值，如数组或对象。下面指导部分的链接有更详细的介绍。
 
   When used for prop binding, the prop must be properly declared in the child component.
+  在绑定 prop 时，prop 必须在子组件中声明。
 
   When used without an argument, can be used to bind an object containing attribute name-value pairs. Note in this mode `class` and `style` does not support Array or Objects.
+  没有参数时，可以用来绑定到一个包含键值对的对象。注意此时 `class` 和 `style` 绑定不支持数组和对象。
 
 - **Example:**
+- **示例:**
 
   ```html
   <!-- bind an attribute -->
@@ -1584,53 +1596,82 @@ type: api
 - **See also:**
   - [Class and Style Bindings](/guide/class-and-style.html)
   - [Components - Component Props](/guide/components.html#Props)
+- **另见:**
+  - [Class 和 Style 绑定](/guide/class-and-style.html)
+  - [组件 Props](/guide/components.html#Props)
 
+### v-model
 ### v-model
 
 - **Expects:** varies based on value of form inputs element or output of components
+- **类型:** 随着表单输入控件的值的不同或组件输出的不同而不同
 
 - **Limited to:**
   - `<input>`
   - `<select>`
   - `<textarea>`
   - components
+- **限制:**
+  - `<input>`
+  - `<select>`
+  - `<textarea>`
+  - 组件
 
 - **Modifiers:**
   - [`.lazy`](/guide/forms.html#lazy) - listen to `change` events instead of `input`
   - [`.number`](/guide/forms.html#number) - cast input string to numbers
   - [`.trim`](/guild/forms.html#trim) - trim input
+- **修饰符:**
+  - [`.lazy`](/guide/forms.html#lazy) - 监听 `change` 事件而不是`input`事件
+  - [`.number`](/guide/forms.html#number) - 将输入的字符串转换成数值
+  - [`.trim`](/guild/forms.html#trim) - 去除输入内容的首位空格
 
 - **Usage:**
+- **用法:**
 
   Create a two-way binding on a form input element or a component. For detailed usage, see guide section linked below.
+  在表单控件或组件上创建一个双向绑定。可以查看下面指导部分的链接查看更详细的用法。
 
 - **See also:**
   - [Form Input Bindings](/guide/forms.html)
   - [Components - Form Input Components using Custom Events](/guide/components.html#Form-Input-Components-using-Custom-Events)
+- **另见:**
+  - [表单控件绑定](/guide/forms.html)
+  - [组件 —— 表单控件组件使用自定义事件](/guide/components.html#Form-Input-Components-using-Custom-Events)
 
+### v-pre
 ### v-pre
 
 - **Does not expect expression**
+- **不需要表达式**
 
 - **Usage**
+- **用法**
 
   Skip compilation for this element and all its children. You can use this for displaying raw mustache tags. Skipping large numbers of nodes with no directives on them can also speed up compilation.
+  不去编译这个元素和它的子元素。可以用来显示原生 Mustache 标签。跳过大量没有指令的节点会加快编译。
 
 - **Example:**
+- **示例:**
 
   ```html
   <span v-pre>{{ this will not be compiled }}</span>
    ```
 
 ### v-cloak
+### v-cloak
 
 - **Does not expect expression**
+- **不需要表达式**
 
 - **Usage:**
+- **用法:**
 
   This directive will remain on the element until the associated Vue instance finishes compilation. Combined with CSS rules such as `[v-cloak] { display: none }`, this directive can be used to hide un-compiled mustache bindings until the Vue instance is ready.
+  这个指令保持在元素上直到关联实例结束编译。和 CSS 规则如 `[v-cloak] { display: none }` 一起用时，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕。
 
 - **Example:**
+- **示例:**
 
   ```css
   [v-cloak] {
@@ -1645,14 +1686,19 @@ type: api
   ```
 
   The `<div>` will not be visible until the compilation is done.
+  `<div>` 不会显示，直到编译结束。
 
+### v-once
 ### v-once
 
 - **Does not expect expression**
+- **不需要表达式**
 
 - **Details:**
+- **详细:**
 
   Render the element and component **once** only. On subsequent re-renders, the element/component and all its children will be treated as static content and skipped. This can be used to optimize update performance.
+  只渲染元素和组件 **一次**。在后面的重新渲染中，这个元素/组件以及它们所有的子元素都会被当作静态内容去忽略掉。这个指令可以用来优化更新性能。
 
   ```html
   <!-- single element -->
@@ -1673,6 +1719,9 @@ type: api
 - **See also:**
   - [Data Binding Syntax - interpolations](/guide/syntax.html#Text)
   - [Components - Cheap Static Components with v-once](/guide/components.html#Cheap-Static-Components-with-v-once)
+- **另见:**
+  - [数据绑定语法 —— 插值](/guide/syntax.html#Text)
+  - [组件 —— 使用v-once的轻量级静态组件](/guide/components.html#Cheap-Static-Components-with-v-once)
 
 ## Special Attributes
 
