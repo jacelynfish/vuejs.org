@@ -80,11 +80,11 @@ guide/transitions |
 guide/transitioning-state |[gongph](https://github.com/gongph)| | `翻译中`
 guide/render-function | [pandazki](https://github.com/pandazki
 guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer | **校对中**
-guide/custom-directive |
+guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中** 
 guide/mixins | [leon0204](https://github.com/leon0204) | mrwiredancer | **校对中**
 guide/plugins |[leon0204](https://github.com/leon0204) | milkmeowo|**校对中**
 guide/single-file-components | [seaify](https://github.com/seaify) | | `翻译中`
-guide/routing |
+guide/routing |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中** 
 guide/state-management |
 guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | mrwiredancer | **校对中**
 guide/ssr |
