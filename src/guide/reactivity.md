@@ -10,18 +10,15 @@ order: 15
 ---
 
 We've covered most of the basics - now it's time to take a deep dive! One of Vue's most distinct features is the unobtrusive reactivity system. Models are just plain JavaScript objects. When you modify them, the view updates. It makes state management very simple and intuitive, but it's also important to understand how it works to avoid some common gotchas. In this section, we are going to dig into some of the lower-level details of Vue's reactivity system.
-
 前面的章节中，我们已经覆盖了大部分基础内容，是时候来点有深度的了。Vue 最具特色的一个功能是响应式系统。模型只作为普通对象存在。当你修改它们，视图会随之更新。这让状态管理非常简单且直观，不过，理解它的工作原理对于避免踩一些常见的坑来说，也是很重要的。在本节中，我们将探究一些 Vue 的响应式系统的浅层细节。
 
 ## How Changes Are Tracked
 ## 如何追踪变化
 
 When you pass a plain JavaScript object to a Vue instance as its `data` option, Vue will walk through all of its properties and convert them to getter/setters using [Object.defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty). This is an ES5-only and un-shimmable feature, which is why Vue doesn't support IE8 and below.
-
 把一个普通对象传给 Vue 实例作为它的 `data` 选项，Vue 将遍历它的属性，并通过 [Object.defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) 将它们转为 getter/setter。这是 ES5 特性，不能通过打补丁实现，这也是为什么 Vue 不支持 IE8 及更低版本。
 
 The getter/setters are invisible to the user, but under the hood they enable Vue to perform dependency-tracking and change-notification when properties are accessed or modified. One caveat is that browser consoles format getter/setters differently when converted data objects are logged, so you may want to install [vue-devtools](https://github.com/vuejs/vue-devtools) for a more inspection-friendly interface.
-
 getter/setters 对用户来说是透明的，但是它们让 Vue 有机会追踪依赖，并在属性被访问和修改时得到更变通知。一个需要注意的点是，在浏览器控制台打印数据对象时对于 getter/setter 的格式处理方式不尽相同，你可以考虑使用 [vue-devtools](https://github.com/vuejs/vue-devtools) 来得到更为方便追踪数据（inspection-friendly）的界面。
 
 Every component instance has a corresponding **watcher** instance, which records any properties "touched" during the component's render as dependencies. Later on when a dependency's setter is triggered, it notifies the watcher, which in turn causes the component to re-render.
