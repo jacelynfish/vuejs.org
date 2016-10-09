@@ -57,19 +57,19 @@ api/index#Options/Lifecycle Hooks |[milkmeowo](https://github.com/milkmeowo)| ha
 api/index#Options/Assets|[milkmeowo](https://github.com/milkmeowo)| Mr-Wiredancer|  ~~已完成~~
 api/index#Options/misc |[milkmeowo](https://github.com/milkmeowo)| hayeah |  ~~已完成~~
 api/index#Instance Properties | [dmxj](https://github.com/dmxj) |mrwiredancer| ~~已完成~~
-api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egoist| **校对中** `待修改`
+api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egoist| ~~已完成~~
 api/index#Instance Methods/Eevents |[dmxj](https://github.com/dmxj)| |`翻译中`
 api/index#Instance Methods/Lifecycle |[dmxj](https://github.com/dmxj)| | `翻译中`
 api/index#Directives |[dmxj](https://github.com/dmxj)| |`翻译中`
 api/index#Special Attributes |[aliencyl7](https://github.com/aliencyl7)| | **待校对**
 api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| mrwiredancer|~~已完成~~
-api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | **校对中**
+api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | ~~已完成~~
 api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| hayeah | ~~已完成~~
 guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | ~~已完成~~
 guide/index | [mrwiredancer](https://github.com/Mr-Wiredancer) | | `翻译中`
 guide/instance | [baurine](https://github.com/baurine)| mrwiredancer| **校对中**
-guide/syntax |[baurine](https://github.com/baurine)|egoist| **校对中**
-guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | **校对中**
+guide/syntax |[baurine](https://github.com/baurine)|egoist| ~~已完成~~
+guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | ~~已完成~~
 guide/class-and-style |
 guide/conditional |[MechanicianW](https://github.com/MechanicianW) | hayeah | ~~已完成~~
 guide/list |
