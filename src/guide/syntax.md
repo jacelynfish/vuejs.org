@@ -57,7 +57,7 @@ The contents are inserted as plain HTML - data bindings are ignored. Note that y
 ### 特性
 
 Mustaches cannot be used inside HTML attributes, instead use a [v-bind directive](/api/#v-bind):
-Mustaches 标签不能用在 HTML 特性内，使用 [v-bind 指令](/api/#v-bind) 替代：
+Mustaches 标签不能用在 HTML 属性内，使用 [v-bind 指令](/api/#v-bind) 替代：
 
 ``` html
 <div v-bind:id="dynamicId"></div>
@@ -245,4 +245,4 @@ The `v-` prefix serves as a visual cue for identifying Vue-specific attributes i
 ```
 
 They may look a bit different from normal HTML, but `:` and `@` are valid chars for attribute names and all Vue.js supported browsers can parse it correctly. In addition, they do not appear in the final rendered markup. The shorthand syntax is totally optional, but you will likely appreciate it when you learn more about its usage later.
-它们看起来跟「合法」的 HTML 有点不同，但是 `:` 和 `@` 是用于特性命名的有效字符，而且在所有 Vue.js 支持的浏览器中都能被正确解析，并且不会出现在最终渲染的标记中。缩写语法完全是可选的，不过随着一步步学习的深入，你会庆幸拥有它们。
+它们看起来跟平常的 HTML 有点不同，但是 `:` 和 `@` 是用于特性命名的有效字符，而且在所有 Vue.js 支持的浏览器中都能被正确解析，并且不会出现在最终渲染的标记中。缩写语法完全是可选的，不过随着一步步学习的深入，你会庆幸拥有它们。
