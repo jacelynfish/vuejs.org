@@ -54,7 +54,7 @@ The contents are inserted as plain HTML - data bindings are ignored. Note that y
 
 
 ### Attributes
-### 特性
+### 属性
 
 Mustaches cannot be used inside HTML attributes, instead use a [v-bind directive](/api/#v-bind):
 Mustaches 标签不能用在 HTML 属性内，使用 [v-bind 指令](/api/#v-bind) 替代：
@@ -64,7 +64,7 @@ Mustaches 标签不能用在 HTML 属性内，使用 [v-bind 指令](/api/#v-bin
 ```
 
 It also works for boolean attributes - the attribute will be removed if the condition evaluates to a falsy value:
-同样可以用于布尔特性——如果条件为假，这个特性将会被移除。
+同样可以用于布尔属性——如果条件为假，这个属性将会被移除。
 
 ``` html
 <button v-bind:disabled="someDynamicCondition">Button</button>
@@ -170,14 +170,14 @@ Here, the `v-if` directive would remove/insert the `<p>` element based on the tr
 ### 参数
 
 Some directives can take an "argument", denoted by a colon after the directive name. For example, the `v-bind` directive is used to reactively update an HTML attribute:
-有些指令可以在其名称后面带一个「参数」，中间放一个冒号隔开。例如，`v-bind` 指令用于响应地更新 HTML 特性：
+有些指令可以在其名称后面带一个「参数」，中间放一个冒号隔开。例如，`v-bind` 指令用于响应式地更新 HTML 属性：
 
 ``` html
 <a v-bind:href="url"></a>
 ```
 
 Here `href` is the argument, which tells the `v-bind` directive to bind the element's `href` attribute to the value of the expression `url`.
-这里 `href` 是参数，它告诉 `v-bind` 指令将元素的 `href` 特性跟表达式 `url` 的值绑定。
+这里 `href` 是参数，它告诉 `v-bind` 指令将元素的 `href` 属性跟表达式 `url` 的值绑定。
 
 Another example is the `v-on` directive, which listens to DOM events:
 另一个例子是 `v-on` 指令，它用于监听 DOM 事件：
@@ -206,7 +206,7 @@ We will see more use of modifiers later when we take a more thorough look at `v-
 ## 缩写
 
 The `v-` prefix serves as a visual cue for identifying Vue-specific attributes in your templates. This is useful when you are using Vue.js to apply dynamic behavior to some existing markup, but can feel verbose for some frequently used directives. At the same time, the need for the `v-` prefix becomes less important when you are building an [SPA](https://en.wikipedia.org/wiki/Single-page_application) where Vue.js manages every template. Therefore, Vue.js provides special shorthands for two of the most often used directives, `v-bind` and `v-on`:
-`v-` 前缀是一种标识模板中特定的 Vue 特性的视觉暗示。当你需要在一些现有的 HTML 代码中添加动态行为时，这些前缀可以起到很好的区分效果。但你在使用一些常用指令的时候，你会感觉一直这么写实在是啰嗦。而且在构建[单页应用](https://en.wikipedia.org/wiki/Single-page_application)时，Vue.js 会管理所有的模板，此时 `v-` 前缀也没那么重要了。因此 Vue.js 为两个最常用的指令 `v-bind` 和 `v-on` 提供特别的缩写：
+`v-` 前缀是一种标识模板中特定的 Vue 属性的视觉暗示。当你需要在一些现有的 HTML 代码中添加动态行为时，这些前缀可以起到很好的区分效果。但你在使用一些常用指令的时候，你会感觉一直这么写实在是啰嗦。而且在构建[单页应用](https://en.wikipedia.org/wiki/Single-page_application)时，Vue.js 会管理所有的模板，此时 `v-` 前缀也没那么重要了。因此 Vue.js 为两个最常用的指令 `v-bind` 和 `v-on` 提供特别的缩写：
 
 ### `v-bind` Shorthand
 ### `v-bind` 缩写
@@ -245,4 +245,4 @@ The `v-` prefix serves as a visual cue for identifying Vue-specific attributes i
 ```
 
 They may look a bit different from normal HTML, but `:` and `@` are valid chars for attribute names and all Vue.js supported browsers can parse it correctly. In addition, they do not appear in the final rendered markup. The shorthand syntax is totally optional, but you will likely appreciate it when you learn more about its usage later.
-它们看起来跟平常的 HTML 有点不同，但是 `:` 和 `@` 是用于特性命名的有效字符，而且在所有 Vue.js 支持的浏览器中都能被正确解析，并且不会出现在最终渲染的标记中。缩写语法完全是可选的，不过随着一步步学习的深入，你会庆幸拥有它们。
+它们看起来跟平常的 HTML 有点不同，但是 `:` 和 `@` 是用于属性命名的有效字符，而且在所有 Vue.js 支持的浏览器中都能被正确解析，并且不会出现在最终渲染的标记中。缩写语法完全是可选的，不过随着一步步学习的深入，你会庆幸拥有它们。
