@@ -7,7 +7,7 @@ order: 10
 ## Basic Usage
 ## 基本用法
 You can use the `v-model` directive to create two-way data bindings on form input and textarea elements. It automatically picks the correct way to update the element based on the input type. Although a bit magical, `v-model` is essentially syntax sugar for updating data on user input events, plus special care for some edge cases.
-你可以使用 `v-model` 指令在表单 input 和 textarea 元素上创建双向数据邦定，Vue会选择正确的方法根据控件的类型自动更新相应的元素。尽管这看起来很神奇，`v-model` 实际上是基于用户输入事件更新数据的语法糖，并对极端的情况给予特殊处理。
+你可以使用 `v-model` 指令在表单`input`和`textarea`元素上创建双向数据邦定，Vue会选择正确的方法根据控件的类型自动更新相应的元素。尽管这看起来很神奇，`v-model` 实际上是基于用户输入事件更新数据的语法糖，并对极端的情况给予特殊处理。
 <p class="tip">`v-model` doesn't care about the initial value provided to an input or a textarea. It will always treat the Vue instance data as the source of truth.</p>
 
 ### Text
