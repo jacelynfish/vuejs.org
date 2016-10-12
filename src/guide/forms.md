@@ -65,7 +65,7 @@ new Vue({
 ### Checkbox
 
 Single checkbox, boolean value:
-单个钩选框，布尔值：
+单个勾选框，布尔值：
 ``` html
 <input type="checkbox" id="checkbox" v-model="checked">
 <label for="checkbox">{{ checked }}</label>
@@ -273,7 +273,7 @@ new Vue({
 ## Value Bindings
 ## 绑定 Value
 For radio, checkbox and select options, the `v-model` binding values are usually static strings (or booleans for checkbox):
-对于单选按钮、钩选框和选择框选项，`v-model` 绑定的值通常是静态字符串（对于钩选框来说是布尔值）：
+对于单选按钮、勾选框和选择框选项，`v-model` 绑定的值通常是静态字符串（对于勾选框来说是布尔值）：
 ``` html
 <!-- `picked` is a string "a" when checked -->
 <input type="radio" v-model="picked" value="a">
