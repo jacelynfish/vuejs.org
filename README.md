@@ -67,27 +67,27 @@ api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | ~~已完
 api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| hayeah | ~~已完成~~
 guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | ~~已完成~~
 guide/index | [mrwiredancer](https://github.com/Mr-Wiredancer) | | `翻译中`
-guide/instance | [baurine](https://github.com/baurine)| mrwiredancer| **校对中**
-guide/syntax |[baurine](https://github.com/baurine)|egoist| ~~已完成~~
+guide/instance | [baurine](https://github.com/baurine)| mrwiredancer| ~~已完成~~
+guide/syntax |[baurine](https://github.com/baurine)|milkmeowo| ~~已完成~~
 guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | ~~已完成~~
 guide/class-and-style |
 guide/conditional |[MechanicianW](https://github.com/MechanicianW) | hayeah | ~~已完成~~
 guide/list |
 guide/events | [rayax86](https://github.com/rayax86) | | `翻译中`
-guide/forms |
+guide/forms | jacelynfish | milmeowo | ~~已完成~~
 guide/components |[MechanicianW](https://github.com/MechanicianW) |egoist | **校对中**
 guide/transitions |
 guide/transitioning-state |[gongph](https://github.com/gongph)| | `翻译中`
 guide/render-function | [pandazki](https://github.com/pandazki
-guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer | **校对中**
+guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer |~~已完成~~
 guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中** 
-guide/mixins | [leon0204](https://github.com/leon0204) | mrwiredancer | **校对中**
-guide/plugins |[leon0204](https://github.com/leon0204) | milkmeowo|**校对中**
+guide/mixins | [leon0204](https://github.com/leon0204) | hayeah | ~~已完成~~
+guide/plugins |[leon0204](https://github.com/leon0204) | milkmeowo, hayeah|~~已完成~~
 guide/single-file-components | [seaify](https://github.com/seaify) | | `翻译中`
 guide/routing |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中** 
 guide/state-management |
-guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | mrwiredancer | **校对中**
+guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | hayeah | ~~已完成~~
 guide/ssr |
 guide/migration |[RiXiong](https://github.com/RiXiong)| mrwiredancer|**校对中**
 guide/comparison |
-guide/join |[leon0204](https://github.com/leon0204)| mrwiredancer| **校对中**
+guide/join |[leon0204](https://github.com/leon0204)| mrwiredancer| ~~已完成~~
