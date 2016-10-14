@@ -75,7 +75,7 @@ type: api
   合并策略会接受在父实例和子实例中定义的选项值，以它们来分别作为第一和第二个参数。Vue 实例所在的上下文会作为第三个参数传递。
 
 - **See also**: [Custom Option Merging Strategies](/guide/mixins.html#Custom-Option-Merge-Strategies)
-- **请参考**：[Custom Option Merging Strategies](/guide/mixins.html#Custom-Option-Merge-Strategies)
+- **另见**：[Custom Option Merging Strategies](/guide/mixins.html#Custom-Option-Merge-Strategies)
 
 ### devtools
 ### devtools
