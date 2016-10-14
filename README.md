@@ -66,7 +66,7 @@ api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| mrwire
 api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | ~~已完成~~
 api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| hayeah | ~~已完成~~
 guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | ~~已完成~~
-guide/index | [mrwiredancer](https://github.com/Mr-Wiredancer) | | `翻译中`
+guide/index | 
 guide/instance | [baurine](https://github.com/baurine)| mrwiredancer| ~~已完成~~
 guide/syntax |[baurine](https://github.com/baurine)|milkmeowo| ~~已完成~~
 guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | ~~已完成~~
@@ -77,7 +77,7 @@ guide/events | [rayax86](https://github.com/rayax86) | | `翻译中`
 guide/forms | jacelynfish | milmeowo | ~~已完成~~
 guide/components |[MechanicianW](https://github.com/MechanicianW) |egoist | **校对中**
 guide/transitions |
-guide/transitioning-state |[gongph](https://github.com/gongph)| | `翻译中`
+guide/transitioning-state |[gongph](https://github.com/gongph)| milkmeowo | **校对中**
 guide/render-function | [pandazki](https://github.com/pandazki
 guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer |~~已完成~~
 guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中** 
