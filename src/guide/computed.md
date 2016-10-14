@@ -1,5 +1,5 @@
 ---
-title: Computed Properties and Watchers
+title: 计算属性和监视器 (Computed Properties and Watchers)
 type: guide
 order: 5
 ---
