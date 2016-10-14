@@ -58,10 +58,10 @@ api/index#Options/Assets|[milkmeowo](https://github.com/milkmeowo)| Mr-Wiredance
 api/index#Options/misc |[milkmeowo](https://github.com/milkmeowo)| hayeah |  ~~已完成~~
 api/index#Instance Properties | [dmxj](https://github.com/dmxj) |mrwiredancer| ~~已完成~~
 api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egoist| ~~已完成~~
-api/index#Instance Methods/Eevents |[dmxj](https://github.com/dmxj)| |`翻译中`
-api/index#Instance Methods/Lifecycle |[dmxj](https://github.com/dmxj)| | `翻译中`
-api/index#Directives |[dmxj](https://github.com/dmxj)| |`翻译中`
-api/index#Special Attributes |[aliencyl7](https://github.com/aliencyl7)| | **待校对**
+api/index#Instance Methods/Eevents |[dmxj](https://github.com/dmxj)| mrwiredancer | 校对中
+api/index#Instance Methods/Lifecycle |[dmxj](https://github.com/dmxj)|mrwiredancer | 校对中
+api/index#Directives |[dmxj](https://github.com/dmxj)|mrwiredancer | 校对中
+api/index#Special Attributes |[aliencyl7](https://github.com/aliencyl7)| mrwiredancer | 校对中
 api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| mrwiredancer|~~已完成~~
 api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | ~~已完成~~
 api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| hayeah | ~~已完成~~
