@@ -78,7 +78,7 @@ guide/forms | jacelynfish | milmeowo | ~~已完成~~
 guide/components |[MechanicianW](https://github.com/MechanicianW) |egoist | **校对中**
 guide/transitions |
 guide/transitioning-state |[gongph](https://github.com/gongph)| milkmeowo | **校对中**
-guide/render-function | [pandazki](https://github.com/pandazki
+guide/render-function | [pandazki](https://github.com/pandazki | | 翻译中
 guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer |~~已完成~~
 guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中** 
 guide/mixins | [leon0204](https://github.com/leon0204) | hayeah | ~~已完成~~
