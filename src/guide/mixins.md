@@ -140,8 +140,8 @@ var strategies = Vue.config.optionMergeStrategies
 strategies.myOption = strategies.methods
 ```
 
-A more advanced example can be found on [Vuex](https://github.com/vuejs/vuex)'s merging strategy:
-在 Vuex 项目(https://github.com/vuejs/vuex)能看到更进阶的合并策略示例：
+A more advanced example can be found on [Vuex](https://github.com/vuejs/vuex)'s 1.x merging strategy:
+在 [Vuex 1.x](https://github.com/vuejs/vuex) 和合并策略中，可以找到更多的进阶示例：
 
 ``` js
 const merge = Vue.config.optionMergeStrategies.computed

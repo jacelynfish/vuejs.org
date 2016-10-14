@@ -1,12 +1,16 @@
 ---
 title: 单元测试 (Unit Testing)
 type: guide
-order: 22
+order: 23
 ---
 
 ## Setup and Tooling
 
-Anything compatible with a module-based build system will work, but if you're looking for a specific recommendation, try the [Karma](http://karma-runner.github.io/0.12/index.html) test runner. It has a lot of community plugins, including support for [Webpack](https://github.com/webpack/karma-webpack) and [Browserify](https://github.com/Nikku/karma-browserify). For detailed setup, please refer to each project's respective documentation, though these example Karma configurations for [Webpack](https://github.com/vuejs/vue-loader-example/blob/master/build/karma.conf.js) and [Browserify](https://github.com/vuejs/vueify-example/blob/master/karma.conf.js) may help you get started.
+Anything compatible with a module-based build system will work, but if you're looking for a specific recommendation, try the [Karma](http://karma-runner.github.io) test runner. It has a lot of community plugins, including support for [Webpack](https://github.com/webpack/karma-webpack) and [Browserify](https://github.com/Nikku/karma-browserify). For detailed setup, please refer to each project's respective documentation, though these example Karma configurations for [Webpack](https://github.com/vuejs/vue-loader-example/blob/master/build/karma.conf.js) and [Browserify](https://github.com/vuejs/vueify-example/blob/master/karma.conf.js) may help you get started.
+
+## 安装与工具
+
+你可以使用任何兼容模块化构建的测试工具。如果你需要个具体建议，可以试试 [Karma](http://karma-runner.github.io/0.12/index.html)。它有很多的社区插件，包括对 [Webpack](https://github.com/webpack/karma-webpack) 和 [Browserify](https://github.com/Nikku/karma-browserify) 的支持。至于具体的安装细节，请参考各个项目的文档。这里有两个karma的配置实例，能够帮助你快速入门。一个是对 [Webpack](https://github.com/vuejs/vue-loader-example/blob/master/build/karma.conf.js)，另一个是对 [Browserify](https://github.com/vuejs/vueify-example/blob/master/karma.conf.js)。
 
 ## 安装与工具
 
@@ -173,6 +177,30 @@ import Vue from 'vue'
 import MyComponent from './MyComponent.vue'
 
 // helper function that mounts and returns the rendered text
+function getRenderedText (Component, propsData) {
+  const Ctor = Vue.extend(Component)
+  const vm = new Ctor({ propsData }).$mount()
+  return vm.$el.textContent
+}
+
+describe('MyComponent', () => {
+  it('render correctly with different props', () => {
+    expect(getRenderedText(MyComponent, {
+      msg: 'Hello'
+    })).toBe('Hello')
+
+    expect(getRenderedText(MyComponent, {
+      msg: 'Bye'
+    })).toBe('Bye')
+  })
+})
+```
+
+``` js
+import Vue from 'vue'
+import MyComponent from './MyComponent.vue'
+
+//装载并返回被渲染文本的辅助函数
 function getRenderedText (Component, propsData) {
   const Ctor = Vue.extend(MyComponent)
   const vm = new Ctor({ propsData }).$mount()

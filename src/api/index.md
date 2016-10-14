@@ -127,6 +127,9 @@ type: api
   Assign a handler for uncaught errors during component render and watchers. The handler gets called with the error and the Vue instance.
   为渲染过程和监视器中的未捕捉错误，分配一个处理器。这个处理器被调用的时候会得到错误和 Vue 实例。
 
+  > [Sentry](https://sentry.io), an error tracking service, provides [official integration](https://sentry.io/for/vue/) using this option.
+
+### keyCodes
 ### keyCodes
 ### keyCodes
 
@@ -140,13 +143,21 @@ type: api
 - **用法：**
 
   ``` js
+  Vue.config.keyCodes = {
+    v: 86,
+    f1: 112,
+    mediaPlayPause: 179
+  }
+  ```
+  ``` js
   Vue.config.keyCodes = { esc: 27 }
   ```
   ``` js
   Vue.config.keyCodes = { esc: 27 }
   ```
 
-  Define custom key aliases for v-on.
+
+  Define custom key alias(es) for v-on.
   为 v-on 定义自定义的按键别名。
 
 ## Global API
@@ -164,31 +175,29 @@ type: api
   Create a "subclass" of the base Vue constructor. The argument should be an object containing component options.
   创建基础 Vue 构造器的“子类”。参数为包含组件选项的对象。
 
-  The special cases to note here are `el` and `data` options - they must be functions when used with `Vue.extend()`.
-  这里要注意的特例是，在使用 `Vue.extend()` 时，`el` 和 `data` 这两个选项必须为函数。
+  The special case to note here is the `data` option - it must be a function when used with `Vue.extend()`.
+  这里要注意的特例是，在使用 `Vue.extend()` 时，`data` 选项必须是一个函数。
 
   ``` html
   <div id="mount-point"></div>
   ```
 
   ``` js
-  // create reusable constructor
-  // 创建可复用的构造器
+  // create constructor
+  // 创建的构造函数
   var Profile = Vue.extend({
-    template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>'
-  })
-  // create an instance of Profile
-  // 创建一个 Profile 实例
-  var profile = new Profile({
-    data: {
-      firstName: 'Walter',
-      lastName: 'White',
-      alias: 'Heisenberg'
+    template: '<p>{{firstName}} {{lastName}} aka {{alias}}</p>',
+    data: function () {
+      return {
+        firstName: 'Walter',
+        lastName: 'White',
+        alias: 'Heisenberg'
+      }
     }
   })
-  // mount it on an element
-  // 挂载到一个元素上
-  profile.$mount('#mount-point')
+  // create an instance of Profile and mount it on an element
+  // 创建一个 Profile 实例然后将它挂载到一个元素上
+  new Profile().$mount('#mount-point')
   ```
 
   Will result in:
@@ -482,6 +491,8 @@ type: api
   })
   ```
 
+  <p class="tip">Note that __you should not use an arrow function with the `data` property__ (e.g. `data: () => { return { a: this.myProp }}`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.myProp` will be undefined.<br>注意，__你不应该用箭头函数给 `data` 属性赋值__（比如 `data: () => { return { a: this.myProp }}`）。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.myProp` 的值会是 undefined。</p>
+
 - **See also:** [Reactivity in Depth](/guide/reactivity.html)
 - **另见:** [深入响应式原理](/guide/reactivity.html)
 
@@ -512,15 +523,15 @@ type: api
     props: {
       // just type check
       // 只检测类型
-      size: Number,
+      height: Number,
       // type check plus other validations
       // 类型检测 + 其他验证
-      name: {
-        type: string,
+      age: {
+        type: Number,
         default: 0,
         required: true,
         validator: function (value) {
-          return value > 0
+          return value >= 0
         }
       }
     }
@@ -567,7 +578,9 @@ type: api
 - **Details:**
 
   Computed properties to be mixed into the Vue instance. All getters and setters have their `this` context automatically bound to the Vue instance.
-  实例计算属性。getter 和 setter 的 `this` 自动地绑定到实例。
+  实例的计算属性。getter 和 setter 的 `this` 自动地绑定到实例。
+
+  <p class="tip">Note that __you should not use an arrow function to define a computed property__ (e.g. `aDouble: () => this.a * 2`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.a` will be undefined.<br>注意，__你不应该用箭头函数来定义一个计算属性__（比如 `aDouble: () => this.a * 2`）。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.a` 的值会是 undefined。</p>
 
   Computed properties are cached, and only re-computed on reactive dependency changes.
   计算属性会被缓存，只有在响应依赖改变的时候才会重计算。
@@ -617,6 +630,8 @@ type: api
   Methods to be mixed into the Vue instance. You can access these methods directly on the VM instance, or use them in directive expressions. All methods will have their `this` context automatically bound to the Vue instance.
   实例方法。实例可以直接访问这些方法，也可以用在指令表达式内。方法的 `this` 自动绑定到实例。
 
+  <p class="tip">Note that __you should not use an arrow function to define a method__ (e.g. `plus: () => this.a++`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.a` will be undefined.<br>注意，__你不应该用箭头函数来定义一个方法__（比如 `plus: () => this.a++`)。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.a` 的值会是 undefined。</p>
+
 - **Example:**
 - **示例:**
 
@@ -652,10 +667,12 @@ type: api
   ``` js
   var vm = new Vue({
     data: {
-      a: 1
+      a: 1,
+      b: 2,
+      c: 3
     },
     watch: {
-      'a': function (val, oldVal) {
+      a: function (val, oldVal) {
         console.log('new: %s, old: %s', val, oldVal)
       },
       // string method name
@@ -671,6 +688,8 @@ type: api
   })
   vm.a = 2 // -> new: 2, old: 1
   ```
+
+  <p class="tip">Note that __you should not use an arrow function to define a watcher__ (e.g. `searchQuery: newValue => this.updateAutocomplete(newValue)`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.updateAutocomplete` will be undefined.<br>注意，__你不应该用箭头函数来定义监视器__（比如 `searchQuery: newValue => this.updateAutocomplete(newValue)`）。因为尖头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.updateAutocomplete` 的值会是 undefined。</p>
 
 - **See also:** [Instance Methods - vm.$watch](#vm-watch)
 - **另见:** [实例方法 - vm.$watch](#vm-watch)
@@ -690,8 +709,8 @@ type: api
 - **Details：**
 - **详细：**
 
-  Provide the Vue instance an existing DOM element to mount on. It can be a CSS selector string or an actual HTMLElement. 
-  为实例提供一个已有的 DOM 元素来挂载。它的值可以是 CSS 选择器，或者一个具体的 HTMLElement。
+  Provide the Vue instance an existing DOM element to mount on. It can be a CSS selector string or an actual HTMLElement.
+  为实例提供挂载元素。值可以是 CSS 选择器，或实际 HTML 元素。
 
   After the instance is mounted, the resolved element will be accessible as `vm.$el`.
   在实例挂载之后，可以通过 `vm.$el` 访问关联元素。
@@ -753,6 +772,9 @@ type: api
 ## Options / Lifecycle Hooks
 ## 选项 / 生命周期钩子
 
+All lifecycle hooks automatically have their `this` context bound to the instance, so that you can access data, computed properties, and methods. This means __you should not use an arrow function to define a lifecycle method__ (e.g. `created: () => this.fetchTodos()`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.fetchTodos` will be undefined.
+所有的生命周期钩子都会将它们的 `this` 自动绑定到实例，所以你可以访问通过 `this` 来访问数据，计算属性和方法。这意味着 __你不应该用箭头函数给 `data` 属性赋值__（比如 `created: () => this.fetchTodos()`）。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.fetchTodos` 的值会是 undefined。
+
 ### beforeCreate
 
 - **Type:** `Function`
@@ -808,7 +830,7 @@ type: api
 
   Called after the instance has just been mounted where `el` is replaced by the newly created `vm.$el`. If the root instance is mounted to an in-document element, `vm.$el` will also be in-document when `mounted` is called.
   在挂载完成， `el` 被新建的 `vm.$el` 替换之后调用。如果根实例是挂载在文档中的元素，那么当 `mounted` 被调用的时候 `vm.$el` 也会在文档中
-  
+
   > 译者注: 因为 Vue 2.0 使用了虚拟 Dom，所以挂载之后不一定在文档中(in-document)，也有可能是在上下文中(contextual)。
 
   **This hook is not called during server-side rendering.**
@@ -968,11 +990,9 @@ type: api
   一个哈希表，包含了对 Vue 实例可见的过滤器。
 
 - **See also:**
-  - [Custom Filters](/guide/custom-filter.html)
-  - [Assets Naming Convention](/guide/components.html#Assets-Naming-Convention)
+  - [`Vue.filter`](#Vue-filter)
 - **另见：**
-  - [自定义过滤器](/guide/custom-filter.html)
-  - [资源命名约定](/guide/components.html#Assets-Naming-Convention)
+  - [`Vue.filter`](#Vue-filter)
 
 ### components
 ### components
@@ -1054,8 +1074,9 @@ type: api
   Allow the component to recursively invoke itself in its template. Note that when a component is registered globally with `Vue.component()`, the global ID is automatically set as its name.
   允许组件在它的模板内递归地调用它自己。注意如果组件是由 `Vue.component()` 全局注册，全局 ID 自动作为它的名字。
 
-  Another benefit of specifying a `name` option is debugging. Named components result in more helpful warning messages. Also, when inspecting an app in the Vue devtool, unnamed components will show up as `<AnonymousComponent>`, which isn't very informative. By providing the `name` option, you will get a much more informative component tree.
-  指定 `name` 选项的另一个好处是方便检查。 有命名的组件可以打印出更多有用的信息。同时，当使用 Vue devtool 调试的时候, 未命名的组件只会显示 `<AnonymousComponent>` 这对于调试来说没任何意义。传入 `name` 选项后， 你可以得到一个更有用的组件树结构，同时可以知道正在检查哪个组件。
+
+  Another benefit of specifying a `name` option is debugging. Named components result in more helpful warning messages. Also, when inspecting an app in the [vue-devtools](https://github.com/vuejs/vue-devtools), unnamed components will show up as `<AnonymousComponent>`, which isn't very informative. By providing the `name` option, you will get a much more informative component tree.
+  指定 `name` 选项的另一个好处是方便检查。 有命名的组件可以打印出更多有用的信息。同时，当使用 [vue-devtools](https://github.com/vuejs/vue-devtools) 调试的时候, 未命名的组件只会显示 `<AnonymousComponent>` 这对于调试来说没任何意义。传入 `name` 选项后， 你可以得到一个更有用的组件树结构，同时可以知道正在检查哪个组件。
 
 ### extends
 
@@ -1136,9 +1157,8 @@ type: api
 - **Details:**
 - **详细：**
 
-  The data object that the Vue instance is observing. You can swap it with a new object. The Vue instance proxies access to the properties on its data object.
-  Vue 实例在观察的数据对象。你可以使用一个新的对象替换。Vue 实例代理了对这个数据对象的属性的访问。
-  
+  The data object that the Vue instance is observing. The Vue instance proxies access to the properties on its data object.
+  Vue 实例绑定的数据对象。Vue 实例代理了这个数据对象的属性的访问。
 
 - **See also:** [Options - data](#data)
 - **另见：** [Options - data](#data)
@@ -1227,6 +1247,67 @@ type: api
   The direct child components of the current instance. **Note there's no order guarantee for `$children`, and it is not reactive.** If you find yourself trying to use `$children` for data binding, consider using an Array and `v-for` to generate child components, and use the Array as the source of truth.
   当前实例的直接子组件。**注意，这里不保证 `$children` 是有序的, 而且它不是反应式的。**如果你想要尝试使用 `$children` 来进行数据绑定，可以考虑使用一个数组和`v-for`来生成子组件，然后使用这个数组来作为数据来源。
 
+### vm.$slots
+### vm.$slots
+
+- **Type:** `Object`
+- **类型：** `Object`
+
+- **Read only**
+- **只读**
+
+- **Details:**
+- **详情：**
+
+  Used to access content [distributed by slots](/guide/components.html#Content-Distribution-with-Slots). Each [named slot](/guide/components.html#Named-Slots) has its own corresponding property (e.g. the contents of `slot="foo"` will be found at `vm.$slots.foo`). The `default` property contains any nodes not included in a named slot.
+  用来访问 [用 slot 分发](/guide/components.html#Content-Distribution-with-Slots) 的内容。每一个 [命名 slot](/guide/components.html#Named-Slots) 都有对应的属性（比如 `slot="foo"` 的内容就是在 `vm.$slots.foo`）。`default` 属性包含了一个命名 slot 中没有的节点。
+
+  Accessing `vm.$slots` is most useful when writing a component with a [render function](/guide/render-function.html).
+  当你在用 [render 函数](/guide/render-function.html) 来编写一个组件时，访问 `vm.$slots` 时最为有用的。
+
+- **Example:**
+- **示例**：
+
+  ```html
+  <blog-post>
+    <h1 slot="header">
+      About Me
+    </h1>
+
+    <p>Here's some page content, which will be included in vm.$slots.default, because it's not inside a named slot.</p>
+
+    <p slot="footer">
+      Copyright 2016 Evan You
+    </p>
+
+    <p>If I have some content down here, it will also be included in vm.$slots.default.</p>.
+  </blog-post>
+  ```
+
+  ```js
+  Vue.component('blog-post', {
+    render: function (createElement) {
+      var header = this.$slots.header
+      var body   = this.$slots.default
+      var footer = this.$slots.footer
+      return createElement('div', [
+        createElement('header', header)
+        createElement('main', body)
+        createElement('footer', footer)
+      ])
+    }
+  })
+  ```
+
+- **See also:**
+- **另见：**
+  - [`<slot>` Component](#slot)
+  - [`<slot>` 组件](#slot)
+  - [Content Distribution with Slots](/guide/components.html#Content-Distribution-with-Slots)
+  - [使用 slot 分发内容](/guide/components.html#Content-Distribution-with-Slots)
+  - [Render Functions](/guide/render-function.html)
+  - [Render 函数](/guide/render-function.html)
+
 ### vm.$refs
 ### vm.$refs
 
@@ -1287,7 +1368,9 @@ type: api
 - **用法：**
 
   Watch an expression or a computed function on the Vue instance for changes. The callback gets called with the new value and the old value. The expression can be a single keypath or any valid binding expressions.
-  
+
+  观察 Vue 实例变化的一个表达式或计算函数。回调的参数为新值和旧值。表达式可以是某个键路径或任意合法绑定表达式。
+
   观察 Vue 实例变化的一个表达式或计算函数。回调的参数为新值和旧值。表达式可以是某个键路径或任意合法绑定表达式。
 
 <p class="tip">Note: when mutating (rather than replacing) an Object or an Array, the old value will be the same as new value because they reference the same Object/Array. Vue doesn't keep a copy of the pre-mutate value.</p>
@@ -1326,7 +1409,9 @@ type: api
   ```
 
   `vm.$watch` returns an unwatch function that stops firing the callback:
-  
+
+  `vm.$watch` 返回一个取消观察函数，用来停止触发回调：
+
   `vm.$watch` 返回一个取消观察函数，用来停止触发回调：
 
   ``` js
@@ -1339,7 +1424,9 @@ type: api
 - **Option: deep**
 
   To also detect nested value changes inside Objects, you need to pass in `deep: true` in the options argument. Note that you don't need to do so to listen for Array mutations.
-  
+
+  为了发现对象内部值的变化，可以在选项参数中指定 deep: true。注意监听数组的变动不需要这么做。
+
   为了发现对象内部值的变化，可以在选项参数中指定 deep: true。注意监听数组的变动不需要这么做。
 
   ``` js
@@ -1354,7 +1441,9 @@ type: api
 - **Option: immediate**
 
   Passing in `immediate: true` in the option will trigger the callback immediately with the current value of the expression:
-  
+
+  在选项参数中指定 `immediate: true` 将立即以表达式的当前值触发回调：
+
   在选项参数中指定 `immediate: true` 将立即以表达式的当前值触发回调：
 
   ``` js
@@ -1380,7 +1469,7 @@ type: api
 - **用法**
 
   This is the **alias** of the global `Vue.set`.
-  
+
   这是全局 `Vue.set` 的 **别名**
 
 - **See also:** [Vue.set](#Vue-set)
@@ -1397,7 +1486,9 @@ type: api
 - **用法：**
 
   This is the **alias** of the global `Vue.delete`.
-  
+
+  这是全局 `Vue.delete` 的 **别名**
+
   这是全局 `Vue.delete` 的 **别名**
 
 - **See also:** [Vue.delete](#Vue-delete)
@@ -1492,7 +1583,7 @@ type: api
 
   // or, render off-document and append afterwards:
   var component = new MyComponent().$mount()
-  document.getElementById('app').appendChild(vm.$el)
+  document.getElementById('app').appendChild(component.$el)
   ```
 
 - **See also:**
@@ -1890,13 +1981,13 @@ type: api
 
 ### key
 
-- **Expects:** `string` 
+- **Expects:** `string`
 - **特性：** `string`
 
   The `key` special attribute is primarily used as a hint for Vue's virtual DOM algorithm to identify VNodes when diffing the new list of nodes against the old list. Without keys, Vue uses an algorithm that minimizes element movement and tries to patch/reuse elements of the same type in-place as much as possible. With keys, it will reorder elements based on the order change of keys, and elements with keys that are no longer present will always be removed/destroyed.
 
   当 Vue 的虚拟 DOM 算法差分计算新的节点列表和旧的节点列表，来识别 VNodes 时，key 这个特殊属性会为该算法提供线索。在不使用 keys 的情况下，Vue 会使用一个算法来减少元素的移动，并且尽可能在适当的位置，来修补/重新使用相同类型的元素。在使用 keys 的情况下，Vue 会基于 keys 的变化顺序来重新排列元素，那些包含 keys 但不再出现的元素通常将被移除/销毁。
-  
+
   Children of the same common parent must have **unique keys**. Duplicate keys will cause render errors.
 
   具有相同父元素的子元素必须使用唯一 keys。重复 keys 会导致渲染报错。
@@ -2038,7 +2129,7 @@ type: api
 - **属性:**
   - `name` - string，自动生成 CSS 过渡动画样式名字 例如： `name: 'fade'` 将会生成 `.fade-enter`， `.fade-enter-active`等等。 默认是 `"v"`。
   - `appear` - boolean，初始渲染的时候是否执行过渡动画。默认 `false`.
-  - `css` - boolean，是否使用 CSS 过渡动画样式。 默认 `true`。 如果设置为 `false`，只会触发在组件事件中注册的 JavaScript 钩子。 
+  - `css` - boolean，是否使用 CSS 过渡动画样式。 默认 `true`。 如果设置为 `false`，只会触发在组件事件中注册的 JavaScript 钩子。
   - `type` - string，指定过渡事件的类型，以确定过渡结束时间，可用的值有 `"transition"` and `"animation"`。它会将持续时间较长的类型作为默认值。
   - `mode` - string， 控制离开/进入过渡动画的时间顺序。可用的模式有 `"out-in"` and `"in-out"`； 默认是同时。
   - `enter-class` - string

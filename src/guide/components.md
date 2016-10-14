@@ -12,7 +12,7 @@ Components are one of the most powerful features of Vue. They help you extend ba
 
 ### Registration
 
-We've learned in the previous sections that we can create a new Vue instances with:
+We've learned in the previous sections that we can create a new Vue instance with:
 
 ``` js
 new Vue({
@@ -212,8 +212,6 @@ new Vue({
 })
 </script>
 {% endraw %}
-
-The `el` option also requires a function value when used in a component instance, for exactly the same reason.
 
 ### Composing Components
 
@@ -417,7 +415,7 @@ The `type` can be one of the following native constructors:
 
 In addition, `type` can also be a custom constructor function and the assertion will be made with an `instanceof` check.
 
-When a prop validation fails, Vue will refuse to set the value on the child component and throw a warning if using the development build.
+When a prop validation fails, Vue will produce a console warning (if using the development build).
 
 ## Custom Events
 
@@ -936,6 +934,8 @@ Vue.component(
   () => System.import('./my-async-component')
 )
 ```
+
+<p class="tip">If you're a <strong>Browserify</strong> user that would like to use async components, it's unfortunately not possible and probably never will be, as its creator has [made it clear](https://github.com/substack/node-browserify/issues/58#issuecomment-21978224) that async loading "is not something that Browserify will ever support." If this is a feature that's important to you, we recommend using Webpack instead.</p>
 
 ### Component Naming Conventions
 

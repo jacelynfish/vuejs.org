@@ -88,12 +88,15 @@ Since Vue doesn't allow dynamically adding root-level reactive properties, this 
 var vm = new Vue({
   data: {
     // declare message with an empty value
+    // 用空字符串声明 message
     message: ''
   },
   template: '<div>{{ message }}</div>'
 })
 // set `message` later
+// 后续设置 `message` 的值
 vm.message = 'Hello!'
+
 ```
 ``` js
 var vm = new Vue({
@@ -116,8 +119,8 @@ There are technical reasons behind this restriction - it eliminates a class of e
 ## Async Update Queue
 ## 异步更新队列
 
-In case you haven't noticed yet, Vue performs DOM updates **asynchronously**. Whenever a data change is observed, it will open a queue and buffer all the data changes that happen in the same event loop. If the same watcher is triggered multiple times, it will be pushed into the queue only once. This buffered de-duplication is important in avoiding unnecessary calculations and DOM manipulations. Then, in the next event loop "tick", Vue flushes the queue and performs the actual (already de-duped) work. Internally Vue uses `MutationObserver` if available for the asynchronous queuing and falls back to `setTimeout(fn, 0)`.
-如果你还没有注意到，Vue 是**异步**执行 DOM 更新的。当 Vue 观察到数据变化时，它会开启一个队列，然后将该事件循环里所有的数据更新缓存在该队列中。如果相同的 watcher 被触发了多次，也只会被推到队列中一次。这个缓冲去重（buffered de-duplication）机制对于避免重复计算和多余的 DOM 操作来说是至关重要的。之后，在下个事件循环帧中，Vue 刷新队列并执行实际的（已被去重的）工作。Vue 内部优先使用 MutationObserver 来实现异步队列，如果不支持则使用 setTimeout(fn, 0)。
+In case you haven't noticed yet, Vue performs DOM updates **asynchronously**. Whenever a data change is observed, it will open a queue and buffer all the data changes that happen in the same event loop. If the same watcher is triggered multiple times, it will be pushed into the queue only once. This buffered de-duplication is important in avoiding unnecessary calculations and DOM manipulations. Then, in the next event loop "tick", Vue flushes the queue and performs the actual (already de-duped) work. Internally Vue tries native `Promise.then` and `MutationObserver` for the asynchronous queuing and falls back to `setTimeout(fn, 0)`.
+如果你还没有注意到，Vue 是**异步**执行 DOM 更新的。当数据更变被观察到时，它会开启一个队列并缓存相同事件循环中所有的数据更变到该队列中。如果相同的 watcher 被触发了多次，也只会被推到队列中一次。这个缓冲去重（buffered de-duplication）机制对于避免重复计算和多余的 DOM 操作来说是至关重要的。之后，在下个事件循环帧中，Vue 刷新队列并执行实际的（已被去重的）工作。在内部优先使用 `Promise.then` 和 `MutationObserver` 来实现异步队列，如果不支持则使用 setTimeout(fn, 0)。
 
 For example, when you set `vm.someData = 'new value'`, the component will not re-render immediately. It will update in the next "tick", when the queue is flushed. Most of the time we don't need to care about this, but it can be tricky when you want to do something that depends on the post-update DOM state. Although Vue.js generally encourages developers to think in a "data-driven" fashion and avoid touching the DOM directly, sometimes it might be necessary to get your hands dirty. In order to wait until Vue.js has finished updating the DOM after a data change, you can use `Vue.nextTick(callback)` immediately after the data is changed. The callback will be called after the DOM has been updated. For example:
 例如，当你设置 `vm.someData = 'new value'` 时，DOM 并不会立即更新。它将在下一次事件循环清空队列时更新。大多数情况下下我们不太需要关心这个，但是如果想在 DOM 状态更新后做点什么就会有些麻烦了。尽管 Vue.js 鼓励开发者秉承数据驱动的思想，不要直接接触 DOM，但是有些场景确是难以避免需要这样做。为了在数据变化之后等待 Vue.js 完成 DOM 更新，可以在数据变化之后立即使用 `Vue.nextTick(callback)`。callback 将在 DOM 更新完成后调用。例如：
@@ -136,7 +139,7 @@ var vm = new Vue({
     message: '123'
   }
 })
-vm.message = 'new message' // change data
+vm.message = 'new message' // change data // 修改数据
 vm.$el.textContent === 'new message' // false
 Vue.nextTick(function () {
   vm.$el.textContent === 'new message' // true

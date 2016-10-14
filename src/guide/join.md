@@ -1,12 +1,17 @@
 ---
 title: Join the Vue.js Community!
 type: guide
-order: 26
+order: 29
 ---
 ---
 标题: 加入 vue.js 社区！
 类型: 指南
-排序: 26 
+排序: 26
+---
+---
+标题: 加入 vue.js 社区！
+类型: 指南
+排序: 26
 ---
 
 Vue's community is growing incredibly fast and if you're reading this, there's a good chance you're ready to join it. So... welcome!
@@ -32,8 +37,8 @@ Now we'll answer both what the community can do for and what you can do for the 
 
 - [The Awesome Vue Page](https://github.com/vuejs/awesome-vue): See what other awesome resources have been published by other awesome people.
 - [The Awesome Vue Page](https://github.com/vuejs/awesome-vue): 看看其他牛人发布的好资源。
-- [The "Show and Tell" Subforum](http://forum.vuejs.org/category/15/show-tell): Another great place to check out what others have built with and for the growing Vue ecosystem.
-- [The "Show and Tell" 子论坛](http://forum.vuejs.org/category/15/show-tell): 另一个查看 Vue.js 相关项目的好地方。
+- [The "Show and Tell" Subforum](http://forum.vuejs.org/c/show-and-tell): Another great place to check out what others have built with and for the growing Vue ecosystem.
+- [The "Show and Tell" 子论坛](http://forum.vuejs.org/c/show-and-tell): 另一个看看别人的贡献的好地方。
 
 ## What You Can Do
 ## 你可以做的

@@ -1,7 +1,7 @@
 ---
-title: Migration from 1.x
+title: Migration from Vue 1.x
 type: guide
-order: 24
+order: 25
 ---
 
 ## FAQ
@@ -29,6 +29,12 @@ It depends on a few factors:
 - How many times you get distracted and start playing with a cool new feature. 😉 &nbsp;Not judging, it also happened to us while building 2.0!
 
 - Which deprecated features you're using. Most can be upgraded with find-and-replace, but others might take a few minutes. If you're not currently following best practices, Vue 2.0 will also try harder to force you to. This is a good thing in the long run, but could also mean a significant (though possibly overdue) refactor.
+
+> If I upgrade to Vue 2, will I also have to upgrade Vuex and Vue-Router?
+
+Only Vue-Router 2 is compatible with Vue 2, so yes, you'll have to follow the [migration path for Vue-Router](migration-vue-router.html) as well. Fortunately, most applications don't have a lot of router code, so this likely won't take more than an hour.
+
+As for Vuex, even version 0.8 is compatible with Vue 2, so you're not forced to upgrade. The only reason you may want to upgrade immediately is to take advantage of the new features in Vuex 2, such as modules and reduced boilerplate.
 
 ## Templates
 
@@ -221,6 +227,17 @@ You would now write:
 </div>
 {% endraw %}
 
+### `v-for` Range Values
+
+Previously, `v-for="number in 10"` would have `number` starting at 0 and ending at 9. Now it starts at 1 and ends at 10.
+
+{% raw %}
+<div class="upgrade-path">
+  <h4>Upgrade Path</h4>
+  <p>Search your codebase for the regex <code>/\w+ in \d+/</code>. Wherever it appears in a <code>v-for</code>, check to see if you may be affected.</p>
+</div>
+{% endraw %}
+
 ## Props
 
 ### `coerce` Prop Option <sup>deprecated</sup>
@@ -273,7 +290,7 @@ Props are now always one-way down. To produce side effects in the parent scope, 
 
 - [Custom component events](components.html#Custom-Events)
 - [Custom input components](components.html#Form-Input-Components-using-Custom-Events) (using component events)
-- [Global state managment](state-management.html)
+- [Global state management](state-management.html)
 
 {% raw %}
 <div class="upgrade-path">
@@ -288,7 +305,7 @@ Props are now always one-way down. To produce side effects in the parent scope, 
 
 - [Custom component events](components.html#Custom-Events)
 - [Custom input components](components.html#Form-Input-Components-using-Custom-Events) (using component events)
-- [Global state managment](state-management.html)
+- [Global state management](state-management.html)
 
 {% raw %}
 <div class="upgrade-path">
@@ -315,7 +332,7 @@ Most use cases of mutating a prop can be replaced by one of these options:
 
 ### Props on a Root Instance <sup>deprecated</sup>
 
-On root Vue instances (i.e. instances created with `new Vue({ ... })`), you must use `propsData` instead instead of `props`.
+On root Vue instances (i.e. instances created with `new Vue({ ... })`), you must use `propsData` instead of `props`.
 
 {% raw %}
 <div class="upgrade-path">
@@ -636,7 +653,7 @@ Directives have a greatly reduced scope of responsibility: they are now only use
 Some of the most notable differences include:
 
 - Directives no longer have instances. This means there's no more `this` inside directive hooks. Instead, they receive everything they might need as arguments. If you really must persist state across hooks, you can do so on `el`.
-- Options such as `acceptStatement`, `deep`, `priority`, etc are all deprecated.
+- Options such as `acceptStatement`, `deep`, `priority`, etc are all deprecated. To replace `twoWay` directives, see [this example](#Two-Way-Filters-deprecated).
 - Some of the current hooks have different behavior and there are also a couple new hooks.
 
 Fortunately, since the new directives are much simpler, you can master them more easily. Read the new [Custom Directives guide](custom-directive.html) to learn more.
@@ -645,6 +662,29 @@ Fortunately, since the new directives are much simpler, you can master them more
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
   <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of defined directives. The helper will flag all of them, as it's likely in most cases that you'll want to refactor to a component.</p>
+</div>
+{% endraw %}
+
+### Directive `.literal` Modifier <sup>deprecated</sup>
+
+The `.literal` modifier has been removed, as the same can be easily achieved by just providing a string literal as the value.
+
+For example, you can update:
+
+``` js
+<p v-my-directive.literal="foo bar baz"></p>
+```
+
+to just:
+
+``` html
+<p v-my-directive="'foo bar baz'"></p>
+```
+
+{% raw %}
+<div class="upgrade-path">
+  <h4>Upgrade Path</h4>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the `.literal` modifier on a directive.</p>
 </div>
 {% endraw %}
 
@@ -661,6 +701,17 @@ Vue's transition system has changed quite drastically and now uses `<transition>
 </div>
 {% endraw %}
 
+### `Vue.transition` for Reusable Transitions <sup>deprecated</sup>
+
+With the new transition system, you can now just [use components for reusable transitions](http://rc.vuejs.org/guide/transitions.html#Reusable-Transitions).
+
+{% raw %}
+<div class="upgrade-path">
+  <h4>Upgrade Path</h4>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of <code>Vue.transition</code>.</p>
+</div>
+{% endraw %}
+
 ### Transition `stagger` Attribute <sup>deprecated</sup>
 
 If you need to stagger list transitions, you can control timing by setting and accessing a `data-index` (or similar attribute) on an element. See [an example here](transitions.html#Staggering-List-Transitions).
@@ -673,6 +724,10 @@ If you need to stagger list transitions, you can control timing by setting and a
 {% endraw %}
 
 ## Events
+
+### `events` option <sup>deprecated</sup>
+
+The `events` option has been deprecated. Event handlers should now be registered in the `created` hook instead. Check out the [`$dispatch` and `$broadcast` migration guide](#dispatch-and-broadcast-deprecated) for a detailed example.
 
 ### `Vue.directive('on').keyCodes` <sup>deprecated</sup>
 
@@ -695,7 +750,9 @@ Vue.config.keyCodes.f1 = 112
 
 The problem is event flows that depend on a component's tree structure can be hard to reason about and very brittle when the tree becomes large. It simply doesn't scale well and we don't want to set you up for pain later. `$dispatch` and `$broadcast` also do not solve communication between sibling components.
 
-For the simplest possible upgrade from `$dispatch` and `$broadcast`, you can use a centralized event hub that allows components to communicate no matter where they are in the component tree. Because Vue instances implement an event emitter interface, you can actually use an empty Vue instance for this purpose.
+One of the most common uses for these methods is to communicate between a parent and its direct children. In these cases, you can actually [listen to an `$emit` from a child with `v-on`](http://vuejs.org/guide/components.html#Form-Input-Components-using-Custom-Events). This allows you to keep the convenience of events with added explicitness.
+
+However, when communicating between distant descendants/ancestors, `$emit` won't help you. Instead, the simplest possible upgrade would be to use a centralized event hub. This has the added benefit of allowing you to communicate between components no matter where they are in the component tree - even between siblings! Because Vue instances implement an event emitter interface, you can actually use an empty Vue instance for this purpose.
 
 For example, let's say we have a todo app structured like this:
 
@@ -850,8 +907,9 @@ Use JavaScript's built-in [`.filter` method](https://developer.mozilla.org/en-US
 ``` js
 computed: {
   filteredUsers: function () {
-    return this.users.filter(function (user) {
-      return user.name.indexOf(this.searchQuery)
+    var self = this
+    return self.users.filter(function (user) {
+      return user.name.indexOf(self.searchQuery) !== -1
     })
   }
 }
@@ -860,8 +918,9 @@ computed: {
 JavaScript's native `.filter` can also manage much more complex filtering operations, because you have access to the full power of JavaScript within computed properties. For example, if you wanted to find all active users and case-insensitively match against both their name and email:
 
 ``` js
-this.users.filter(function (user) {
-  var searchRegex = new RegExp(this.searchQuery, 'i')
+var self = this
+self.users.filter(function (user) {
+  var searchRegex = new RegExp(self.searchQuery, 'i')
   return user.isActive && (
     searchRegex.test(user.name) ||
     searchRegex.test(user.email)
@@ -962,7 +1021,7 @@ function pluralizeKnife (count) {
   if (count === 0) {
     return 'no knives'
   } else if (count === 1) {
-    return count + 'knife'
+    return '1 knife'
   } else {
     return count + 'knives'
   }
@@ -977,12 +1036,54 @@ For a very naive implementation, you could just do something like this:
 '$' + price.toFixed(2)
 ```
 
-In many cases though, you'll still run into strange behavior (e.g. `0.035.toFixed(2)` rounds up to `0.4`, but `0.045` rounds down to `0.4`). To work around these issues, you can use the [`accounting`](http://openexchangerates.github.io/accounting.js/) library to more reliably format currencies.
+In many cases though, you'll still run into strange behavior (e.g. `0.035.toFixed(2)` rounds up to `0.04`, but `0.045` rounds down to `0.04`). To work around these issues, you can use the [`accounting`](http://openexchangerates.github.io/accounting.js/) library to more reliably format currencies.
 
 {% raw %}
 <div class="upgrade-path">
   <h4>Upgrade Path</h4>
   <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of the deprecated text filters. If you miss any, you should also see <strong>console errors</strong>.</p>
+</div>
+{% endraw %}
+
+### Two-Way Filters <sup>deprecated</sup>
+
+Some users have enjoyed using two-way filters with `v-model` to create interesting inputs with very little code. While _seemingly_ simple however, two-way filters can also hide a great deal of complexity - and even encourage poor UX by delaying state updates. Instead, components wrapping an input are recommended as a more explicit and feature-rich way of creating custom inputs.
+
+As an example, we'll now walk the migration of a two-way currency filter:
+
+<iframe width="100%" height="300" src="https://jsfiddle.net/chrisvfritz/6744xnjk/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+It mostly works well, but the delayed state updates can cause strange behavior. For example, click on the `Result` tab and try entering `9.999` into one of those inputs. When the input loses focus, its value will update to `$10.00`. When looking at the calculated total however, you'll see that `9.999` is what's stored in our data. The version of reality that the user sees is out of sync!
+
+To start transitioning towards a more robust solution using Vue 2.0, let's first wrap this filter in a new `<currency-input>` component:
+
+<iframe width="100%" height="300" src="https://jsfiddle.net/chrisvfritz/943zfbsh/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+This allows us add behavior that a filter alone couldn't encapsulate, such as selecting the content of an input on focus. Now the next step will be to extract the business logic from the filter. Below, we pull everything out into an external [`currencyValidator` object](https://gist.github.com/chrisvfritz/5f0a639590d6e648933416f90ba7ae4e):
+
+<iframe width="100%" height="300" src="https://jsfiddle.net/chrisvfritz/9c32kev2/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+This increased modularity not only makes it easier to migrate to Vue 2, but also allows currency parsing and formatting to be:
+
+- unit tested in isolation from your Vue code
+- used by other parts of your application, such as to validate the payload to an API endpoint
+
+Having this validator extracted out, we've also more comfortably built it up into a more robust solution. The state quirks have been eliminated and it's actually impossible for users to enter anything wrong, similar to what the browser's native number input tries to do.
+
+We're still limited however, by filters and by Vue 1.0 in general, so let's complete the upgrade to Vue 2.0:
+
+<iframe width="100%" height="300" src="https://jsfiddle.net/chrisvfritz/1oqjojjx/embedded/js,html,result" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+You may notice that:
+
+- Every aspect of our input is more explicit, using lifecycle hooks and DOM events in place of the hidden behavior of two-way filters.
+- We can now use `v-model` directly on our custom inputs, which is not only more consistent with normal inputs, but also means our component is Vuex-friendly.
+- Since we're no longer using filter options that require a value to be returned, our currency work could actually be done asynchronously. That means if we had a lot of apps that had to work with currencies, we could easily refactor this logic into a shared microservice.
+
+{% raw %}
+<div class="upgrade-path">
+  <h4>Upgrade Path</h4>
+  <p>Run the <a href="https://github.com/vuejs/vue-migration-helper">migration helper</a> on your codebase to find examples of filters used in directives like <code>v-model</code>. If you miss any, you should also see <strong>console errors</strong>.</p>
 </div>
 {% endraw %}
 
@@ -1057,7 +1158,7 @@ When used together with `<transition>`, make sure to nest it inside:
 Interpolation within attributes is no longer valid. For example:
 
 ``` html
-<button v-bind:class="btn btn-{{ size }}"></button>
+<button class="btn btn-{{ size }}"></button>
 ```
 
 Should either be updated to use an inline expression:
@@ -1432,7 +1533,11 @@ Use components instead.
 
 ### `Vue.partial` <sup>deprecated</sup>
 
-Use [functional components](render-function.html#Functional-Components) instead.
+Partials have been deprecated in favor of more explicit data flow between components, using props. Unless you're using a partial in a performance-critical area, the recommendation is to simply use a [normal component](components.html) instead. If you were dynamically binding the `name` of a partial, you can use a [dynamic component](http://vuejs.org/guide/components.html#Dynamic-Components).
+
+If you happen to be using partials in a performance-critical part of your app, then you should upgrade to [functional components](render-function.html#Functional-Components). They must be in a plain JS/JSX file (rather than in a `.vue` file) and are stateless and instanceless, just like partials. This makes rendering extremely fast.
+
+A benefit of functional components over partials is that they can be much more dynamic, because they grant you access to the full power of JavaScript. There is a cost to this power however. If you've never used a component framework with render functions before, they may take a bit longer to learn.
 
 {% raw %}
 <div class="upgrade-path">

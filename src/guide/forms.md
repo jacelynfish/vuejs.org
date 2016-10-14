@@ -38,7 +38,7 @@ new Vue({
 ### 多行文本
 ``` html
 <span>Multiline message is:</span>
-<p>{{ message }}</p>
+<p style="white-space: pre">{{ message }}</p>
 <br>
 <textarea v-model="message" placeholder="add multiple lines"></textarea>
 ```
@@ -87,8 +87,9 @@ new Vue({
 </script>
 {% endraw %}
 
-Mutiple checkboxes, bound to the same Array:
-多个勾选框，绑定到同一数组：
+Multiple checkboxes, bound to the same Array:
+多个钩选框，绑定到同一数组：
+
 ``` html
 <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
 <label for="jack">Jack</label>
