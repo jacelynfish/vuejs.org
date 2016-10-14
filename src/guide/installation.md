@@ -1,14 +1,5 @@
 ---
-title: Installation
-type: guide
-order: 1
-vue_version: 2.0.1
-dev_size: "184.49"
-min_size: "61.72"
-gz_size: "22.58"
----
----
-title: 安装
+title: 安装 (Installation)
 type: guide
 order: 1
 vue_version: 2.0.1
@@ -17,39 +8,32 @@ min_size: "61.72"
 gz_size: "22.58"
 ---
 
-### Compatibility Note
-### 兼容性
+### 兼容性 (Compatibility Note)
 
 Vue does **not** support IE8 and below, because it uses ECMAScript 5 features that are un-shimmable in IE8. However it supports all [ECMAScript 5 compliant browsers](http://caniuse.com/#feat=es5).
 Vue.js **不支持** IE8 及其以下版本，因为 Vue.js 使用了 IE8 无法实现的 ECMAScript 5 特性。 Vue.js 支持所有[兼容 ECMAScript 5 的浏览器]((http://caniuse.com/#feat=es5))。
 
-### Release Notes
-### 更新日志
+### 更新日志 (Release Notes)
 
 Detailed release notes for each version are available on [GitHub](https://github.com/vuejs/vue/releases).
 每个版本的更新日志见 [GitHub](https://github.com/vuejs/vue/releases)。
 
-## Standalone
-## 独立版本
+## 独立版本 (Standalone)
 
 Simply download and include with a script tag. `Vue` will be registered as a global variable.
 直接下载并用 `<script>` 标签引入，`Vue` 会被注册为一个全局变量。
 
-<p class="tip">Don't use the minified version during development. You will miss out all the nice warnings for common mistakes!</p>
-<p class="tip">重要提示：在开发时请用开发版本，遇到常见错误它会给出友好的警告。</p>
+<p class="tip">Don't use the minified version during development. You will miss out all the nice warnings for common mistakes!
+重要提示：在开发时请用开发版本，遇到常见错误它会给出友好的警告。</p>
 
 <div id="downloads">
 <a class="button" href="/js/vue.js" download>Development Version</a><span class="light info">With full warnings and debug mode</span>
-
-<a class="button" href="/js/vue.min.js" download>Production Version</a><span class="light info">Warnings stripped, {{gz_size}}kb min+gzip</span>
-</div>
-<div id="downloads">
 <a class="button" href="/js/vue.js" download>开发版本</a><span class="light info">包含完整的警告和调试模式</span>
 
+<a class="button" href="/js/vue.min.js" download>Production Version</a><span class="light info">Warnings stripped, {{gz_size}}kb min+gzip</span>
 <a class="button" href="/js/vue.min.js" download>生产版本</a><span class="light info">删除了警告，{{gz_size}}kb min+gzip</span>
 </div>
 
-### CDN
 ### CDN
 
 Recommended: [unpkg](https://unpkg.com/vue/dist/vue.js), which will reflect the latest version as soon as it is published to npm. You can also browse the source of the npm package at [unpkg.com/vue/](https://unpkg.com/vue/).
@@ -58,7 +42,6 @@ Recommended: [unpkg](https://unpkg.com/vue/dist/vue.js), which will reflect the 
 Also available on [jsdelivr](//cdn.jsdelivr.net/vue/{{vue_version}}/vue.js) or [cdnjs](//cdnjs.cloudflare.com/ajax/libs/vue/{{vue_version}}/vue.js), but these two services take some time to sync so the latest release may not be available yet.
 你还可以从 [jsdelivr](//cdn.jsdelivr.net/vue/{{vue_version}}/vue.min.js) 或 [cdnjs](//cdnjs.cloudflare.com/ajax/libs/vue/{{vue_version}}/vue.min.js) 获取（版本更新可能略滞后）。
 
-## NPM
 ## NPM
 
 NPM is the recommended installation method when building large scale applications with Vue. It pairs nicely with module bundlers such as [Webpack](http://webpack.github.io/) or [Browserify](http://browserify.org/). Vue also provides accompanying tools for authoring [Single File Components](single-file-components.html).
@@ -69,13 +52,8 @@ NPM is the recommended installation method when building large scale application
 # 最新稳定版本
 $ npm install vue
 ```
-``` bash
-# 最新稳定版本
-$ npm install vue@next
-```
 
-### Standalone vs. Runtime-only Build
-### 独立版本和运行时版本
+### 独立版本和运行时版本 (Standalone vs. Runtime-only Build)
 
 There are two builds available, the standalone build and the runtime-only build.
 Vue.js 有两个版本：独立版本和运行时版本。
@@ -102,8 +80,7 @@ For Browserify, you can use [aliasify](https://github.com/benbria/aliasify) to a
 
 <p class="tip">Do NOT do `import Vue from 'vue/dist/vue'` - since some tools or 3rd party libraries may import vue as well, this may cause the app to load both the runtime and standalone builds at the same time and lead to errors.<br>不要写成 `import Vue from 'vue/dist/vue'` —— 因为某些工具或者第三方库也可能导入 vue，这可能会导致应用同时倒入运行时版本和独立版本，导致错误发生。</p>
 
-### CSP environments
-### CSP 环境
+### CSP 环境 (CSP environments)
 
 Some environments, such as Google Chrome Apps, enforce Content Security Policy (CSP), which prohibits the use of `new Function()` for evaluating expressions. The standalone build depends on this feature to compile templates, so is unusable in these environments.
 有些环境，例如 Google Chrome Apps，会强制应用内容安全策略（CSP），这会让用来对表达式求值的 `new Function()` 无法使用。独立版本依赖于这个特性来编译模版，所以在这些环境中你无法使用独立版本。
@@ -111,8 +88,7 @@ Some environments, such as Google Chrome Apps, enforce Content Security Policy (
 On the other hand, the runtime-only build is fully CSP-compliant. When using the runtime-only build with [Webpack + vue-loader](https://github.com/vuejs-templates/webpack-simple) or [Browserify + vueify](https://github.com/vuejs-templates/browserify-simple), your templates will be precompiled into `render` functions which work perfectly in CSP environments.
 另外，运行时版本是完美兼容 CSP 的。当你将运行时版本和 [Webpack + vue-loader](https://github.com/vuejs-templates/webpack-simple-2.0) 或者 [Browserify + vueify](https://github.com/vuejs-templates/browserify-simple-2.0) 一起使用时，你的模版会被预编译到 `render` 函数中，而这在 CSP 环境中是完全没有问题的。
 
-## CLI
-## 命令行工具
+## 命令行工具 (CLI)
 
 Vue.js provides an [official CLI](https://github.com/vuejs/vue-cli) for quickly scaffolding ambitious Single Page Applications. It provides batteries-included build setups for a modern frontend workflow. It takes only a few minutes to get up and running with hot-reload, lint-on-save, and production-ready builds:
 Vue.js 提供了一个 [官方命令行工具](https://github.com/vuejs/vue-cli)，用来快速构建大型单页应用。该工具提供开箱即用的构建工具配置，带来现代化的前端开发流程。只需一分钟即可启动带热重载、保存时静态检查以及可用于生产环境的构建配置的项目：
@@ -130,19 +106,8 @@ $ cd my-project
 $ npm install
 $ npm run dev
 ```
-``` bash
-# 安装 vue-cli
-$ npm install --global vue-cli
-# 使用 `webpack` 模版来构建一个新项目
-$ vue init webpack my-project
-# 安装依赖，走起！
-$ cd my-project
-$ npm install
-$ npm run dev
-```
 
-## Dev Build
-## 开发版本
+## 开发版本 (Dev Build)
 
 **Important**: the built files in GitHub's `/dist` folder are only checked-in during releases. To use Vue from the latest source code on GitHub, you will have to build it yourself!
 **重点**：只有在版本发布时，我们才会将构建好的文件放在 Github 的 `dist` 目录里。所以，如果要使用 Github 上的最新源码，你需要自己构建！
@@ -153,15 +118,7 @@ cd node_modules/vue
 npm install
 npm run build
 ```
-``` bash
-git clone https://github.com/vuejs/vue.git node_modules/vue
-cd node_modules/vue
-git checkout next
-npm install
-npm run build
-```
 
-## Bower
 ## Bower
 
 ``` bash
@@ -169,13 +126,8 @@ npm run build
 # 最新稳定版本
 $ bower install vue
 ```
-``` bash
-# 最新稳定版本
-$ bower install vue#next
-```
 
-## AMD Module Loaders
-## AMD 模块加载器
+## AMD 模块加载器 (AMD Module Loaders)
 
 The standalone downloads or versions installed via Bower are wrapped with UMD so they can be used directly as an AMD module.
 独立版本或者通过 Bower 安装的版本已用 UMD 包装，因此它们可以被当作 AMD 模块来直接使用。
