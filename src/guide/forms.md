@@ -1,5 +1,5 @@
 ---
-title: Form Input Bindings
+title: 表单控件绑定 (Form Input Bindings)
 type: guide
 order: 10
 ---
@@ -225,7 +225,7 @@ new Vue({
 {% endraw %}
 
 Dynamic options rendered with `v-for`:
-由 `v-for` 渲染出来的动态选项： 
+由 `v-for` 渲染出来的动态选项：
 ``` html
 <select v-model="selected">
   <option v-for="option in options" v-bind:value="option.value">
