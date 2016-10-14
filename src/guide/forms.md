@@ -1,5 +1,5 @@
 ---
-title: Form Input Bindings
+title: 表单控件绑定 (Form Input Bindings)
 type: guide
 order: 10
 ---
