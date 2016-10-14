@@ -1,31 +1,20 @@
 ---
 type: api
 ---
----
-type: api
----
 
-## Global Config
-## 全局配置
+## 全局配置 (Global Config)
 
 `Vue.config` is an object containing Vue's global configurations. You can modify its properties listed below before bootstrapping your application:
 `Vue.config` 是一个对象，包含 Vue 的全局配置。可以在启动应用之前修改以下属性：
 
 ### silent
-### silent
 
-- **Type:** `boolean`
 - **类型：** `boolean`
 
-- **Default:** `false`
 - **默认值：** `false`
 
-- **Usage:**
 - **用法：**
 
-  ``` js
-  Vue.config.silent = true
-  ```
   ``` js
   Vue.config.silent = true
   ```
@@ -34,28 +23,13 @@ type: api
   禁用 Vue.js 的所有日志和警告。
 
 ### optionMergeStrategies
-### optionMergeStrategies
 
-- **Type:** `{ [key: string]: Function }`
 - **类型：** `{ [key: string]: Function }`
 
-- **Default:** `{}`
 - **默认值：** `{}`
 
-- **Usage:**
 - **用法：**
 
-  ``` js
-  Vue.config.optionMergeStrategies._my_option = function (parent, child, vm) {
-    return child + 1
-  }
-
-  const Profile = Vue.extend({
-    _my_option: 1
-  })
-
-  // Profile.options._my_option = 2
-  ```
   ``` js
   Vue.config.optionMergeStrategies._my_option = function (parent, child, vm) {
     return child + 1
@@ -74,26 +48,18 @@ type: api
   The merge strategy receives the value of that option defined on the parent and child instances as the first and second arguments, respectively. The context Vue instance is passed as the third argument.
   合并策略会接受在父实例和子实例中定义的选项值，以它们来分别作为第一和第二个参数。Vue 实例所在的上下文会作为第三个参数传递。
 
-- **See also**: [Custom Option Merging Strategies](/guide/mixins.html#Custom-Option-Merge-Strategies)
 - **另见**：[Custom Option Merging Strategies](/guide/mixins.html#Custom-Option-Merge-Strategies)
 
 ### devtools
-### devtools
 
-- **Type:** `boolean`
 - **类型：** `boolean`
 
-- **Default:** `true` (`false` in production builds)
 - **默认值：** `true` (`false` in production builds)
 
-- **Usage:**
 - **用法：**
 
   ``` js
   // make sure to set this synchronously immediately after loading Vue
-  Vue.config.devtools = true
-  ```
-  ``` js
   // 要保证在加载 Vue 之后同步地立刻设置
   Vue.config.devtools = true
   ```
@@ -102,24 +68,16 @@ type: api
   配置是否允许 [vue-devtools](https://github.com/vuejs/vue-devtools) 进行检查。开发版默认为 `true`，生产版默认为 `false`。你可以在生产版中将它设为 `true` 来启用检查。
 
 ### errorHandler
-### errorHandler
 
-- **Type:** `Function`
 - **类型：** `Function`
 
-- **Default:** Error is thrown in place
 - **默认值：** Error is thrown in place
 
-- **Usage:**
 - **用法：**
 
   ``` js
   Vue.config.errorHandler = function (err, vm) {
     // handle error
-  }
-  ```
-  ``` js
-  Vue.config.errorHandler = function (err, vm) {
     // 处理错误
   }
   ```
@@ -130,16 +88,11 @@ type: api
   > [Sentry](https://sentry.io), an error tracking service, provides [official integration](https://sentry.io/for/vue/) using this option.
 
 ### keyCodes
-### keyCodes
-### keyCodes
 
-- **Type:** `{ [key: string]: number }`
 - **类型：** `{ [key: string]: number }`
 
-- **Default:** `{}`
 - **默认值：** `{}`
 
-- **Usage:**
 - **用法：**
 
   ``` js
@@ -149,27 +102,17 @@ type: api
     mediaPlayPause: 179
   }
   ```
-  ``` js
-  Vue.config.keyCodes = { esc: 27 }
-  ```
-  ``` js
-  Vue.config.keyCodes = { esc: 27 }
-  ```
-
 
   Define custom key alias(es) for v-on.
   为 v-on 定义自定义的按键别名。
 
-## Global API
-## 全局 API
+## 全局 API (Global API)
 
 <h3 id="Vue-extend">Vue.extend( options )</h3>
 
-- **Arguments:**
 - **参数：**
   - `{Object} options`
 
-- **Usage:**
 - **用法：**
 
   Create a "subclass" of the base Vue constructor. The argument should be an object containing component options.
@@ -207,17 +150,14 @@ type: api
   <p>Walter White aka Heisenberg</p>
   ```
 
-- **See also:** [Components](/guide/components.html)
 - **另见：** [组件](/guide/components.html)
 
 <h3 id="Vue-nextTick">Vue.nextTick( callback, [context] )</h3>
 
-- **Arguments:**
 - **参数：**
   - `{Function} callback`
   - `{Object} [context]`
 
-- **Usage:**
 - **用法：**
 
   Defer the callback to be executed after the next DOM update cycle. Use it immediately after you've changed some data to wait for the DOM update.
@@ -240,7 +180,6 @@ type: api
 
 <h3 id="Vue-set">Vue.set( object, key, value )</h3>
 
-- **Arguments:**
 - **参数：**
   - `{Object} object`
   - `{string} key`
@@ -249,7 +188,6 @@ type: api
 - **Returns:** the set value.
 - **返回值：** 设置的值.
 
-- **Usage:**
 - **用法：**
 
   Set a property on an object. If the object is reactive, ensure the property is created as a reactive property and trigger view updates. This is primarily used to get around the limitation that Vue cannot detect property additions.
@@ -258,17 +196,14 @@ type: api
   **Note the object cannot be a Vue instance, or the root data object of a Vue instance.**
   **注意，这个对象不可以是 Vue 的实例或者 Vue 实例的根对象。**
 
-- **See also:** [Reactivity in Depth](/guide/reactivity.html)
 - **另见：** [深入响应式原理](/guide/reactivity.html)
 
 <h3 id="Vue-delete">Vue.delete( object, key )</h3>
 
-- **Arguments:**
 - **参数：**
   - `{Object} object`
   - `{string} key`
 
-- **Usage:**
 - **用法：**
 
   Delete a property on an object. If the object is reactive, ensure the deletion triggers view updates. This is primarily used to get around the limitation that Vue cannot detect property deletions, but you should rarely need to use it.
@@ -277,17 +212,14 @@ type: api
   **Note the object cannot be a Vue instance, or the root data object of a Vue instance.**
   **注意，这个对象不可以是 Vue 的实例或者 Vue 实例的根对象。**
 
-- **See also:** [Reactivity in Depth](/guide/reactivity.html)
 - **另见：** [深入响应式原理](/guide/reactivity.html)
 
 <h3 id="Vue-directive">Vue.directive( id, [definition] )</h3>
 
-- **Arguments:**
 - **参数：**
   - `{string} id`
   - `{Function | Object} [definition]`
 
-- **Usage:**
 - **用法：**
 
   Register or retrieve a global directive.
@@ -316,17 +248,14 @@ type: api
   var myDirective = Vue.directive('my-directive')
   ```
 
-- **See also:** [Custom Directives](/guide/custom-directive.html)
 - **另见：** [自定义指令](/guide/custom-directive.html)
 
 <h3 id="Vue-filter">Vue.filter( id, [definition] )</h3>
 
-- **Arguments:**
 - **参数：**
   - `{string} id`
   - `{Function} [definition]`
 
-- **Usage:**
 - **用法：**
 
   Register or retrieve a global filter.
@@ -347,12 +276,10 @@ type: api
 
 <h3 id="Vue-component">Vue.component( id, [definition] )</h3>
 
-- **Arguments:**
 - **参数：**
   - `{string} id`
   - `{Function | Object} [definition]`
 
-- **Usage:**
 - **用法：**
 
   Register or retrieve a global component.
@@ -372,16 +299,13 @@ type: api
   var MyComponent = Vue.component('my-component')
   ```
 
-- **See also:** [Components](/guide/components.html)
 - **另见：** [组件](/guide/components.html)
 
 <h3 id="Vue-use">Vue.use( plugin )</h3>
 
-- **Arguments:**
 - **参数：**
   - `{Object | Function} plugin`
 
-- **Usage:**
 - **用法：**
 
   Install a Vue.js plugin. If the plugin is an Object, it must expose an `install` method. If it is a function itself, it will be treated as the install method. The install method will be called with Vue as the argument.
@@ -390,16 +314,13 @@ type: api
   When this method is called on the same plugin multiple times, the plugin will be installed only once.
   即使安装方法在相同的插件上调用多次，该插件也只会被安装一次。
 
-- **See also:** [Plugins](/guide/plugins.html)
 - **另见：** [插件](/guide/plugins.html)
 
 <h3 id="Vue-mixin">Vue.mixin( mixin )</h3>
 
-- **Arguments:**
 - **参数：**
   - `{Object} mixin`
 
-- **Usage:**
 - **用法：**
 
   Apply a mixin globally, which affects every Vue instance created afterwards. This can be used by plugin authors to inject custom behavior into components. **Not recommended in application code**.
@@ -410,11 +331,9 @@ type: api
 
 <h3 id="Vue-compile">Vue.compile( template )</h3>
 
-- **Arguments:**
 - **参数：**
   - `{string} template`
 
-- **Usage:**
 - **用法：**
 
   Compiles a template string into a render function. **Only available in the standalone build.**
@@ -432,16 +351,12 @@ type: api
   })
   ```
 
-- **See also:** [Render Functions](/guide/render-function.html)
 - **另见：** [Render Functions](/guide/render-function.html)
 
-## Options / Data
-## 选项 / 数据
+## 选项 / 数据 (Options / Data)
 
 ### data
-### data
 
-- **Type:** `Object | Function`
 - **类型:** `Object | Function`
 
 - **Restriction:** Only accepts `Function` when used in a component definition.
@@ -468,7 +383,6 @@ type: api
   If required, a deep clone of the original object can be obtained by passing `vm.$data` through `JSON.parse(JSON.stringify(...))`.
   如果有需要，可以通过将 `vm.$data` 传入 `JSON.parse(JSON.stringify(...))` 得到原始数据对象。
 
-- **Example:**
 - **示例:**
 
   ``` js
@@ -493,12 +407,10 @@ type: api
 
   <p class="tip">Note that __you should not use an arrow function with the `data` property__ (e.g. `data: () => { return { a: this.myProp }}`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.myProp` will be undefined.<br>注意，__你不应该用箭头函数给 `data` 属性赋值__（比如 `data: () => { return { a: this.myProp }}`）。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.myProp` 的值会是 undefined。</p>
 
-- **See also:** [Reactivity in Depth](/guide/reactivity.html)
 - **另见:** [深入响应式原理](/guide/reactivity.html)
 
 ### props
 
-- **Type:** `Array<string> | Object`
 - **类型:** `Array<string> | Object`
 
 - **Details:**
@@ -507,7 +419,6 @@ type: api
   A list/hash of attributes that are exposed to accept data from the parent component. It has a simple Array-based syntax and an alternative Object-based syntax that allows advanced configurations such as type checking, custom validation and default values.
   用来接收父组件数据的 list/hash 属性。可以是数组或对象，对象用于高级配置，如类型检查，自定义验证，默认值等。
 
-- **Example:**
 - **示例:**
 
   ``` js
@@ -538,12 +449,10 @@ type: api
   })
   ```
 
-- **See also:** [Props](/guide/components.html#Props)
 - **另见:** [Props](/guide/components.html#Props)
 
 ### propsData
 
-- **Type:** `{ [key: string]: any }`
 - **类型:** `{ [key: string]: any }`
 
 - **Restriction:** only respected in instance creation via `new`.
@@ -554,7 +463,6 @@ type: api
   Pass props to an instance during its creation. This is primarily intended to make unit testing easier.
   在创建实例的过程传递 props。主要作用是方便测试。
 
-- **Example:**
 - **示例:**
 
   ``` js
@@ -572,7 +480,6 @@ type: api
 
 ### computed
 
-- **Type:** `{ [key: string]: Function | { get: Function, set: Function } }`
 - **类型:** `{ [key: string]: Function | { get: Function, set: Function } }`
 
 - **Details:**
@@ -586,6 +493,7 @@ type: api
   计算属性会被缓存，只有在响应依赖改变的时候才会重计算。
 
 - **Example:**
+- **示例：**
 
   ```js
   var vm = new Vue({
@@ -614,14 +522,12 @@ type: api
   vm.aDouble // -> 4
   ```
 
-- **See also:**
-  - [Computed Properties](/guide/computed.html)
 - **另见:**
+  - [Computed Properties](/guide/computed.html)
   - [计算属性](/guide/computed.html)
 
 ### methods
 
-- **Type:** `{ [key: string]: Function }`
 - **类型:** `{ [key: string]: Function }`
 
 - **Details:**
@@ -632,8 +538,7 @@ type: api
 
   <p class="tip">Note that __you should not use an arrow function to define a method__ (e.g. `plus: () => this.a++`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.a` will be undefined.<br>注意，__你不应该用箭头函数来定义一个方法__（比如 `plus: () => this.a++`)。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.a` 的值会是 undefined。</p>
 
-- **Example:**
-- **示例:**
+- **示例：**
 
   ```js
   var vm = new Vue({
@@ -653,7 +558,6 @@ type: api
 
 ### watch
 
-- **Type:** `{ [key: string]: string | Function | Object }`
 - **类型:** `{ [key: string]: string | Function | Object }`
 
 - **Details:**
@@ -663,6 +567,7 @@ type: api
   一个对象，键是观察表达式，值是对应回调。值也可以是方法名，或者是包含其他选项的对象。在实例化时为每个键调用 `$watch()` 。
 
 - **Example:**
+- **示例：**
 
   ``` js
   var vm = new Vue({
@@ -691,16 +596,12 @@ type: api
 
   <p class="tip">Note that __you should not use an arrow function to define a watcher__ (e.g. `searchQuery: newValue => this.updateAutocomplete(newValue)`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.updateAutocomplete` will be undefined.<br>注意，__你不应该用箭头函数来定义监视器__（比如 `searchQuery: newValue => this.updateAutocomplete(newValue)`）。因为尖头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.updateAutocomplete` 的值会是 undefined。</p>
 
-- **See also:** [Instance Methods - vm.$watch](#vm-watch)
 - **另见:** [实例方法 - vm.$watch](#vm-watch)
 
-## Options / DOM
-## 选项 / DOM
+## 选项 / DOM (Options / DOM)
 
 ### el
-### el
 
-- **Type:** `string | HTMLElement`
 - **类型：** `string | HTMLElement`
 
 - **Restriction:** only respected in instance creation via `new`.
@@ -718,16 +619,15 @@ type: api
   If this option is available at instantiation, the instance will immediately enter compilation; otherwise, the user will have to explicitly call `vm.$mount()` to manually start the compilation.
   如果在初始化时指定了这个选项，实例将立即进入编译过程; 否则，需要调用 `vm.$mount()` 手动开始编译。
 
-  <p class="tip">The provided element merely serves as a mounting point. Unlike in Vue 1.x, the mounted element will be replaced with Vue-generated DOM in all cases. It is therefore not recommended to mount the root instance to `<html>` or `<body>`.</p>
-  <p class="tip">提供的元素仅仅作为一个挂载点。 不同于 Vue 1.x， Vue 2.x 在任何情况下，被挂载的元素会被 Vue 生成的 DOM 替换掉。因此不建议把根实例挂载在 `<html>` 或 `<body>` </p>
+  <p class="tip">
+  The provided element merely serves as a mounting point. Unlike in Vue 1.x, the mounted element will be replaced with Vue-generated DOM in all cases. It is therefore not recommended to mount the root instance to `<html>` or `<body>`.
+  提供的元素仅仅作为一个挂载点。 不同于 Vue 1.x， Vue 2.x 在任何情况下，被挂载的元素会被 Vue 生成的 DOM 替换掉。因此不建议把根实例挂载在 `<html>` 或 `<body>`。</p>
 
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
 - **另见：** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
 ### template
-### template
 
-- **Type:** `string`
 - **类型：** `string`
 
 - **Details:**
@@ -739,20 +639,17 @@ type: api
   If the string starts with `#` it will be used as a querySelector and use the selected element's innerHTML as the template string. This allows the use of the common `<script type="x-template">` trick to include templates.
   如果这个字符串以 `#` 开头，那么它会被当作选择器来使用，然后用选中的元素的 innerHTML 作为模版。 常用的一个技巧是用 `<script type="x-template">` 来包含模版。
 
-  <p class="tip">From a security perspective, you should only use Vue templates that you can trust. Never use user-generated content as your template.</p>
-  <p class="tip">从安全角度出发，你应该只使用你能信赖的 Vue 模版。永远不用使用用户生成的内容作为你的模版。</p>
+  <p class="tip">From a security perspective, you should only use Vue templates that you can trust. Never use user-generated content as your template.
+  从安全角度出发，你应该只使用你能信赖的 Vue 模版。永远不用使用用户生成的内容作为你的模版。</p>
 
-- **See also:**
-  - [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-  - [Content Distribution](/guide/components.html#Content-Distribution-with-Slots)
 - **另见：**
+  - [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
   - [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
+  - [Content Distribution](/guide/components.html#Content-Distribution-with-Slots)
   - [内容分发](/guide/components.html#Content-Distribution-with-Slots)
 
 ### render
-### render
 
-  - **Type:** `Function`
   - **类型：** `Function`
 
   - **Details:**
@@ -764,20 +661,17 @@ type: api
     If the component is a functional component, the render function also receives an extra argument `context`, which provides access to contextual data since functional components are instance-less.
     如果组件是一个函数式组件, render 函数也接收一个额外的参数 `context`，它会为缺少实例的函数式组件提供上下文数据。
 
-  - **See also:**
-    - [Render Functions](/guide/render-function)
   - **另见：**
+    - [Render Functions](/guide/render-function)
     - [渲染函数](/guide/render-function)
 
-## Options / Lifecycle Hooks
-## 选项 / 生命周期钩子
+## 选项 / 生命周期钩子 (Options / Lifecycle Hooks)
 
 All lifecycle hooks automatically have their `this` context bound to the instance, so that you can access data, computed properties, and methods. This means __you should not use an arrow function to define a lifecycle method__ (e.g. `created: () => this.fetchTodos()`). The reason is arrow functions bind the parent context, so `this` will not be the Vue instance as you expect and `this.fetchTodos` will be undefined.
 所有的生命周期钩子都会将它们的 `this` 自动绑定到实例，所以你可以访问通过 `this` 来访问数据，计算属性和方法。这意味着 __你不应该用箭头函数给 `data` 属性赋值__（比如 `created: () => this.fetchTodos()`）。因为箭头函数会绑定父上下文，所以 `this` 并不是你所期待的 Vue 实例，而 `this.fetchTodos` 的值会是 undefined。
 
 ### beforeCreate
 
-- **Type:** `Function`
 - **类型:** `Function`
 
 - **Details:**
@@ -791,7 +685,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ### created
 
-- **Type:** `Function`
 - **类型:** `Function`
 
 - **Details:**
@@ -805,7 +698,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ### beforeMount
 
-- **Type:** `Function`
 - **类型:** `Function`
 
 - **Details:**
@@ -822,7 +714,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ### mounted
 
-- **Type:** `Function`
 - **类型:** `Function`
 
 - **Details:**
@@ -841,7 +732,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ### beforeUpdate
 
-- **Type:** `Function`
 - **类型:** `Function`
 
 - **Details:**
@@ -861,7 +751,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ### updated
 
-- **Type:** `Function`
 - **类型:** `Function`
 
 - **Details:**
@@ -881,7 +770,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ### activated
 
-- **Type:** `Function`
 - **类型:** `Function`
 
 - **Details:**
@@ -893,16 +781,12 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   **This hook is not called during server-side rendering.**
   **这钩子在服务端渲染的时候不会被调用**
 
-- **See also:**
-  - [Built-in Components - keep-alive](#keep-alive)
-  - [Dynamic Components - keep-alive](/guide/components.html#keep-alive)
 - **另见:**
   - [Built-in Components - keep-alive](#keep-alive)
   - [Dynamic Components - keep-alive](/guide/components.html#keep-alive)
 
 ### deactivated
 
-- **Type:** `Function`
 - **类型:** `Function`
 
 - **Details:**
@@ -914,16 +798,12 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   **This hook is not called during server-side rendering.**
   **这钩子在服务端渲染的时候不会被调用**
 
-- **See also:**
-  - [Built-in Components - keep-alive](#keep-alive)
-  - [Dynamic Components - keep-alive](/guide/components.html#keep-alive)
 - **另见:**
   - [Built-in Components - keep-alive](#keep-alive)
   - [Dynamic Components - keep-alive](/guide/components.html#keep-alive)
 
 ### beforeDestroy
 
-- **Type:** `Function`
 - **类型:** `Function`
 
 - **Details:**
@@ -940,7 +820,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ### destroyed
 
-- **Type:** `Function`
 - **类型:** `Function`
 
 - **Details:**
@@ -955,13 +834,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
 - **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
-## Options / Assets
-## 选项 / 资源
+## 选项 / 资源 (Options / Assets)
 
 ### directives
-### directives
 
-- **Type:** `Object`
 - **类型：** `Object`
 
 - **Details:**
@@ -970,17 +846,14 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   A hash of directives to be made available to the Vue instance.
   一个哈希表，包含了对 Vue 实例可见的指令。
 
-- **See also:**
-  - [Custom Directives](/guide/custom-directive.html)
-  - [Assets Naming Convention](/guide/components.html#Assets-Naming-Convention)
 - **另见：**
+  - [Custom Directives](/guide/custom-directive.html)
   - [自定义指令](/guide/custom-directive.html)
+  - [Assets Naming Convention](/guide/components.html#Assets-Naming-Convention)
   - [资源命名约定](/guide/components.html#Assets-Naming-Convention)
 
 ### filters
-### filters
 
-- **Type:** `Object`
 - **类型：** `Object`
 
 - **Details:**
@@ -989,15 +862,13 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   A hash of filters to be made available to the Vue instance.
   一个哈希表，包含了对 Vue 实例可见的过滤器。
 
-- **See also:**
-  - [`Vue.filter`](#Vue-filter)
 - **另见：**
   - [`Vue.filter`](#Vue-filter)
+  - [`Vue.filter`](#Vue-filter)
+
 
 ### components
-### components
 
-- **Type:** `Object`
 - **类型：** `Object`
 
 - **Details:**
@@ -1006,17 +877,14 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   A hash of components to be made available to the Vue instance.
   一个哈希表，包含了对 Vue 实例可见的组件。
 
-- **See also:**
-  - [Components](/guide/components.html)
 - **另见：**
+  - [Components](/guide/components.html)
   - [组件](/guide/components.html)
 
-## Options / Misc
-## 选项 / 杂项
+## 选项 / 杂项 (Options / Misc)
 
 ### parent
 
-- **Type:** `Vue instance`
 - **类型：** `Vue 实例`
 
 - **Details:**
@@ -1025,12 +893,13 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   Specify the parent instance for the instance to be created. Establishes a parent-child relationship between the two. The parent will be accessible as `this.$parent` for the child, and the child will be pushed into the parent's `$children` array.
   指定实例的父实例，在两者之间建立父子关系。子实例可以用 `this.$parent` 访问父实例，子实例被推入父实例的 `$children` 数组中。
 
-  <p class="tip">Use `$parent` and `$children` sparringly - they mostly serve as an escape-hatch. Prefer using props and events for parent-child communication.</p>
-  <p class="tip">尽可能不去使用 `$parent` 和 `$children`。它们更多地是提供另外一种方法来实现父子间通信而已。在父子间通信中更**推荐**使用 props 和 events。</p>
+  <p class="tip">
+  Use `$parent` and `$children` sparringly - they mostly serve as an escape-hatch. Prefer using props and events for parent-child communication.
+  尽可能不去使用 `$parent` 和 `$children`。它们更多地是提供另外一种方法来实现父子间通信而已。在父子间通信中更**推荐**使用 props 和 events。
+  </p>
 
 ### mixins
 
-- **Type:** `Array<Object>`
 - **类型：** `Array<Object>`
 
 - **Details:**
@@ -1042,7 +911,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   Mixin hooks are called in the order they are provided, and called before the component's own hooks.
   混合对象的钩子会按它们的出现顺序被调用，但是在组件自己的钩子之前被调用。
 
-- **Example:**
 - **示例：**
 
   ``` js
@@ -1057,12 +925,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   // -> 2
   ```
 
-- **See also:** [Mixins](/guide/mixins.html)
-- **另见:** [Mixins](/guide/mixins.html)
+- **另见：** [Mixins](/guide/mixins.html)
 
 ### name
 
-- **Type:** `string`
 - **类型：** `string`
 
 - **Restriction:** only respected when used as a component option.
@@ -1080,7 +946,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ### extends
 
-- **Type:** `Object | Function`
 - **类型：** `Object | Function`
 
 - **Details:**
@@ -1092,7 +957,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   This is similar to `mixins`, the difference being that the component's own options takes higher priority than the source component being extended.
   这类似于 `mixins`，不同的是组件的选项比待扩展的源组件的选项优先。
 
-- **Example:**
 - **示例：**
 
   ``` js
@@ -1108,11 +972,9 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ### delimiters
 
-- **Type:** `Array<string>`
 - **类型：** `Array<string>`
 
-- **default:** `["{{", "}}"]`
-- **默认：** `["{{", "}}"]`
+- **默认值：** `["{{", "}}"]`
 
 - **Details:**
 - **详细：**
@@ -1120,7 +982,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   Change the plain text interpolation delimiters. **This option is only available in the standalone build.**
   修改文本插值的定界符。 **这选项只在独立编译版本有效**
 
-- **Example:**
+- **示例：**
 
   ``` js
   new Vue({
@@ -1133,7 +995,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ### functional
 
-- **Type:** `boolean`
 - **类型：** `boolean`
 
 - **Details:**
@@ -1145,13 +1006,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **See also:** [Functional Components](/guide/render-function.html#Functional-Components)
 - **另见：** [函数化组件](/guide/render-function.html#Functional-Components)
 
-## Instance Properties
-##  实例属性
+##  实例属性 (Instance Properties)
 
 ### vm.$data
-### vm.$data
 
-- **Type:** `Object`
 - **类型：** `Object`
 
 - **Details:**
@@ -1160,16 +1018,12 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   The data object that the Vue instance is observing. The Vue instance proxies access to the properties on its data object.
   Vue 实例绑定的数据对象。Vue 实例代理了这个数据对象的属性的访问。
 
-- **See also:** [Options - data](#data)
 - **另见：** [Options - data](#data)
 
 ### vm.$el
-### vm.$el
 
-- **Type:** `HTMLElement`
 - **类型：** `HTMLElement`
 
-- **Read only**
 - **只读**
 
 - **Details:**
@@ -1179,12 +1033,9 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   Vue 实例所管理管理的根 DOM 元素。
 
 ### vm.$options
-### vm.$options
 
-- **Type:** `Object`
 - **类型：** `Object`
 
-- **Read only**
 - **只读**
 
 - **Details:**
@@ -1203,12 +1054,9 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```
 
 ### vm.$parent
-### vm.$parent
 
-- **Type:** `Vue instance`
 - **类型：** `Vue 实例`
 
-- **Read only**
 - **只读**
 
 - **Details:**
@@ -1218,12 +1066,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   如果当前 Vue 实例有父实例的话，这个代表它的父实例。
 
 ### vm.$root
-### vm.$root
 
 - **Type:** `Vue instance`
 - **类型：** `Vue 实例`
 
-- **Read only**
 - **只读**
 
 - **Details:**
@@ -1233,12 +1079,9 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   当前组件树的根 Vue 实例。如果当前实例没有父实例，那么这个值就是当前 Vue 实例本身。
 
 ### vm.$children
-### vm.$children
 
-- **Type:** `Array<Vue instance>`
 - **类型：** `Array<Vue instance>`
 
-- **Read only**
 - **只读**
 
 - **Details:**
@@ -1248,12 +1091,9 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   当前实例的直接子组件。**注意，这里不保证 `$children` 是有序的, 而且它不是反应式的。**如果你想要尝试使用 `$children` 来进行数据绑定，可以考虑使用一个数组和`v-for`来生成子组件，然后使用这个数组来作为数据来源。
 
 ### vm.$slots
-### vm.$slots
 
-- **Type:** `Object`
 - **类型：** `Object`
 
-- **Read only**
 - **只读**
 
 - **Details:**
@@ -1265,8 +1105,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   Accessing `vm.$slots` is most useful when writing a component with a [render function](/guide/render-function.html).
   当你在用 [render 函数](/guide/render-function.html) 来编写一个组件时，访问 `vm.$slots` 时最为有用的。
 
-- **Example:**
-- **示例**：
+- **示例：**：
 
   ```html
   <blog-post>
@@ -1299,7 +1138,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   })
   ```
 
-- **See also:**
 - **另见：**
   - [`<slot>` Component](#slot)
   - [`<slot>` 组件](#slot)
@@ -1309,12 +1147,9 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   - [Render 函数](/guide/render-function.html)
 
 ### vm.$refs
-### vm.$refs
 
-- **Type:** `Object`
 - **类型：** `Object`
 
-- **Read only**
 - **只读**
 
 - **Details:**
@@ -1323,20 +1158,16 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   An object that holds child components that have `ref` registered.
   一个对象，包含了注册过 `ref` 的子组件。
 
-- **See also:**
-  - [Child Component Refs](/guide/components.html#Child-Component-Refs)
-  - [ref](#ref)
 - **另见：**
+  - [Child Component Refs](/guide/components.html#Child-Component-Refs)
   - [子组件索引](/guide/components.html#Child-Component-Refs)
   - [ref](#ref)
+  - [ref](#ref)
 
 ### vm.$isServer
-### vm.$isServer
 
-- **Type:** `boolean`
 - **类型：** `boolean`
 
-- **Read only**
 - **只读**
 
 - **Details:**
@@ -1348,12 +1179,10 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **See also:** [Server-Side Rendering](/guide/ssr.html)
 - **另见：** [服务器端渲染](/guide/ssr.html)
 
-## Instance Methods / Data
-## 实例方法 ／ 数据
+## 实例方法 ／ 数据 (Instance Methods / Data)
 
 <h3 id="vm-watch">vm.$watch( expOrFn, callback, [options] )</h3>
 
-- **Arguments:**
 - **参数：**
   - `{string | Function} expOrFn`
   - `{Function} callback`
@@ -1364,20 +1193,16 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **Returns:** `{Function} unwatch`
 - **返回值：** `{Function} unwatch`
 
-- **Usage:**
 - **用法：**
 
   Watch an expression or a computed function on the Vue instance for changes. The callback gets called with the new value and the old value. The expression can be a single keypath or any valid binding expressions.
-
   观察 Vue 实例变化的一个表达式或计算函数。回调的参数为新值和旧值。表达式可以是某个键路径或任意合法绑定表达式。
 
-  观察 Vue 实例变化的一个表达式或计算函数。回调的参数为新值和旧值。表达式可以是某个键路径或任意合法绑定表达式。
 
-<p class="tip">Note: when mutating (rather than replacing) an Object or an Array, the old value will be the same as new value because they reference the same Object/Array. Vue doesn't keep a copy of the pre-mutate value.</p>
+<p class="tip">Note: when mutating (rather than replacing) an Object or an Array, the old value will be the same as new value because they reference the same Object/Array. Vue doesn't keep a copy of the pre-mutate value.
+注意：在修改（不是替换）对象或数组时，旧值将与新值相同，因为他们索引同一个对象／数组。Vue 不会保留修改之前值的副本。</p>
 
-<p class="tip">注意：在修改（不是替换）对象或数组时，旧值将与新值相同，因为他们索引同一个对象／数组。Vue 不会保留修改之前值的副本。</p>
 
-- **Example:**
 - **示例：**
 
   ``` js
@@ -1409,9 +1234,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```
 
   `vm.$watch` returns an unwatch function that stops firing the callback:
-
-  `vm.$watch` 返回一个取消观察函数，用来停止触发回调：
-
   `vm.$watch` 返回一个取消观察函数，用来停止触发回调：
 
   ``` js
@@ -1424,9 +1246,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **Option: deep**
 
   To also detect nested value changes inside Objects, you need to pass in `deep: true` in the options argument. Note that you don't need to do so to listen for Array mutations.
-
-  为了发现对象内部值的变化，可以在选项参数中指定 deep: true。注意监听数组的变动不需要这么做。
-
   为了发现对象内部值的变化，可以在选项参数中指定 deep: true。注意监听数组的变动不需要这么做。
 
   ``` js
@@ -1441,9 +1260,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **Option: immediate**
 
   Passing in `immediate: true` in the option will trigger the callback immediately with the current value of the expression:
-
-  在选项参数中指定 `immediate: true` 将立即以表达式的当前值触发回调：
-
   在选项参数中指定 `immediate: true` 将立即以表达式的当前值触发回调：
 
   ``` js
@@ -1456,7 +1272,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 <h3 id="vm-set">vm.$set( object, key, value )</h3>
 
-- **Arguments:**
 - **参数：**
   - `{Object} object`
   - `{string} key`
@@ -1465,33 +1280,25 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **Returns:** the set value.
 - **返回值：**设置的值
 
-- **Usage:**
 - **用法**
 
   This is the **alias** of the global `Vue.set`.
 
   这是全局 `Vue.set` 的 **别名**
 
-- **See also:** [Vue.set](#Vue-set)
 - **另见：** [Vue.set](#Vue-set)
 
 <h3 id="vm-delete">vm.$delete( object, key )</h3>
 
-- **Arguments:**
 - **参数：**
   - `{Object} object`
   - `{string} key`
 
-- **Usage:**
 - **用法：**
 
   This is the **alias** of the global `Vue.delete`.
-
   这是全局 `Vue.delete` 的 **别名**
 
-  这是全局 `Vue.delete` 的 **别名**
-
-- **See also:** [Vue.delete](#Vue-delete)
 - **另见：** [Vue.delete](#Vue-delete)
 
 ## Instance Methods / Events
@@ -1977,7 +1784,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   - [Data Binding Syntax - interpolations](/guide/syntax.html#Text)
   - [Components - Cheap Static Components with v-once](/guide/components.html#Cheap-Static-Components-with-v-once)
 
-## Special Attributes
+## 特殊属性 (Special Attributes)
 
 ### key
 
@@ -1985,15 +1792,12 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **特性：** `string`
 
   The `key` special attribute is primarily used as a hint for Vue's virtual DOM algorithm to identify VNodes when diffing the new list of nodes against the old list. Without keys, Vue uses an algorithm that minimizes element movement and tries to patch/reuse elements of the same type in-place as much as possible. With keys, it will reorder elements based on the order change of keys, and elements with keys that are no longer present will always be removed/destroyed.
-
   当 Vue 的虚拟 DOM 算法差分计算新的节点列表和旧的节点列表，来识别 VNodes 时，key 这个特殊属性会为该算法提供线索。在不使用 keys 的情况下，Vue 会使用一个算法来减少元素的移动，并且尽可能在适当的位置，来修补/重新使用相同类型的元素。在使用 keys 的情况下，Vue 会基于 keys 的变化顺序来重新排列元素，那些包含 keys 但不再出现的元素通常将被移除/销毁。
 
   Children of the same common parent must have **unique keys**. Duplicate keys will cause render errors.
-
   具有相同父元素的子元素必须使用唯一 keys。重复 keys 会导致渲染报错。
 
   The most common use case is combined with `v-for`:
-
   最常见的用例是结合 `v-for` 一起使用。
 
 
@@ -2004,13 +1808,11 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```
 
   It can also be used to force replacement of an element/component instead of reusing it. This can be useful when you want to:
-
   也可以使用 key 属性来强行替换一个元素/组件而不是重新使用元素/组件。这种做法会很有用，当你想尝试以下做法：
 
   - Properly trigger lifecycle hooks of a component
-  - Trigger transitions
-
   - 适当地触发一个组件的生命周期钩子
+  - Trigger transitions
   - 触发过渡
 
   For example:
@@ -2022,7 +1824,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```
 
   When `text` changes, the `<span>` will always be replaced instead of patched, so a transition will be triggered.
-
   当 text 变化时，<span> 元素也会跟着一起被替换而不是被修补，因此会触发一个过渡。
 
 ### ref
@@ -2032,34 +1833,24 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 
   `ref` is used to register a reference to an element or a child component. The reference will be registered under the parent component's `$refs` object. If used on a plain DOM element, the reference will be that element; if used on a child component, the reference will be component instance:
-
   使用 ref 属性来注册一个元素和子组件的引用。该引用被挂载到父组件的 `$refs` 对象下。如果在一个原生 DOM 元素上使用 ref ，该引用将会变成该元素；如果在一个子元素上使用 ref ,这个引用会变成该组件的实例：
 
   ``` html
   <!-- vm.$refs.p will the DOM node -->
+  <!-- vm.$refs.p 将会变成 DOM 节点 -->
   <p ref="p">hello</p>
 
   <!-- vm.$refs.child will be the child comp instance -->
-  <child-comp ref="child"></child-comp>
-  ```
-
-
-  ``` html
-  <!-- vm.$refs.p 将会变成 DOM 节点 -->
-  <p ref="p">hello</p>
   <!-- vm.$refs.child 将会变成子元素的实例 -->
   <child-comp ref="child"></child-comp>
   ```
 
   When used on elements/components with `v-for`, the registered reference will be an Array containing DOM nodes or component instances.
-
   当在含有 v-for 的元素/组件上使用 ref 属性时，被注册的引用会变成一个包含各 DOM 节点或者组件实例的数组。
 
   An important note about the ref registration timing: because the refs themselves are created as a result of the render function, you cannot access them on the initial render - they don't exist yet! `$refs` is also non-reactive, therefore you should not attempt to use it in templates for data-binding.
-
   需要注意的一点是关于 ref 的注册时间点： 因为 refs 自身是作为 render 函数执行完后所创造的一个结果值，所以开发者不能再初始 render 时去使用它们，因为 refs 还不存在。`$refs` 也是不可交互的，因此开发者不要尝试在模板中为了数据绑定去使用它。
 
-- **See also:** [Child Component Refs](/guide/components.html#Child-Component-Refs)
 - **另见：** [Child Component Refs](/guide/components.html#Child-Component-Refs)
 
 ### slot
@@ -2067,31 +1858,22 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **Expects:** `string`
 - **特性：** `string`
 
-
   Used on content inserted into child components to indicate which named slot the content belongs to.
-
   在插入到子组件的内容上使用 slot 属性，来表明哪个命名的 slot 是归该内容所属。
 
-
   For detailed usage, see the guide section linked below.
-
   想知道更详细的用法，可参考以下链接
 
-
-- **See also:** [Named Slots](/guide/components.html#Named-Slots)
 - **另见：**[Named Slots](/guide/components.html#Named-Slots)
 
-## Built-In Components
-## 内置组件
+## 内置组件 (Built-In Components)
 
 ### component
 
-- **Props:**
 - **属性：**
   - `is` - string | ComponentDefinition(组件声明) | ComponentConstructor(组件构造器)
   - `inline-template` - boolean
 
-- **Usage:**
 - **用法：**
 
   A "meta component" for rendering dynamic components. The actual component to render is determined by the `is` prop:
@@ -2114,23 +1896,16 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ### transition
 
-- **Props:**
-  - `name` - string, Used to automatically generate transition CSS class names. e.g. `name: 'fade'` will auto expand to `.fade-enter`, `.fade-enter-active`, etc. Defaults to `"v"`.
-  - `appear` - boolean, Whether to apply transition on initial render. Defaults to `false`.
-  - `css` - boolean, Whether to apply CSS transition classes. Defaults to `true`. If set to `false`, will only trigger JavaScript hooks registered via component events.
-  - `type` - string, Specify the type of transition events to wait for to determine transition end timing. Available values are `"transition"` and `"animation"`. By default, it will automatically detect the type that has a longer duration.
-  - `mode` - string, Controls the timing sequence of leaving/entering transitions. Available modes are `"out-in"` and `"in-out"`; defaults to simultaneous.
-  - `enter-class` - string
-  - `leave-class` - string
-  - `enter-active-class` - string
-  - `leave-active-class` - string
-  - `appear-class` - string
-  - `appear-active-class` - string
 - **属性:**
+  - `name` - string, Used to automatically generate transition CSS class names. e.g. `name: 'fade'` will auto expand to `.fade-enter`, `.fade-enter-active`, etc. Defaults to `"v"`.
   - `name` - string，自动生成 CSS 过渡动画样式名字 例如： `name: 'fade'` 将会生成 `.fade-enter`， `.fade-enter-active`等等。 默认是 `"v"`。
+  - `appear` - boolean, Whether to apply transition on initial render. Defaults to `false`.
   - `appear` - boolean，初始渲染的时候是否执行过渡动画。默认 `false`.
+  - `css` - boolean, Whether to apply CSS transition classes. Defaults to `true`. If set to `false`, will only trigger JavaScript hooks registered via component events.
   - `css` - boolean，是否使用 CSS 过渡动画样式。 默认 `true`。 如果设置为 `false`，只会触发在组件事件中注册的 JavaScript 钩子。
+  - `type` - string, Specify the type of transition events to wait for to determine transition end timing. Available values are `"transition"` and `"animation"`. By default, it will automatically detect the type that has a longer duration.
   - `type` - string，指定过渡事件的类型，以确定过渡结束时间，可用的值有 `"transition"` and `"animation"`。它会将持续时间较长的类型作为默认值。
+  - `mode` - string, Controls the timing sequence of leaving/entering transitions. Available modes are `"out-in"` and `"in-out"`; defaults to simultaneous.
   - `mode` - string， 控制离开/进入过渡动画的时间顺序。可用的模式有 `"out-in"` and `"in-out"`； 默认是同时。
   - `enter-class` - string
   - `leave-class` - string
@@ -2139,7 +1914,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   - `appear-class` - string
   - `appear-active-class` - string
 
-- **Events:**
 - **事件：**
   - `before-enter`
   - `enter`
@@ -2151,7 +1925,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   - `appear`
   - `after-appear`
 
-- **Usage:**
 - **用法：**
 
   `<transition>` serve as transition effects for **single** element/component. The `<transition>` does not render an extra DOM element, nor does it show up in the inspected component hierarchy. It simply applies the transition behavior to the wrapped content inside.
@@ -2197,21 +1970,18 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ### transition-group
 
-- **Props:**
-  - `tag` - string, defaults to `span`.
-  - `move-class` - overwrite CSS class applied during moving transition.
-  - exposes the same props as `<transition>` except `mode`.
 - **属性：**
+  - `tag` - string, defaults to `span`.
   - `tag` - string, 默认值 `span`.
+  - `move-class` - overwrite CSS class applied during moving transition.
   - `move-class` - 重写离开时的 CSS 过渡样式
+  - exposes the same props as `<transition>` except `mode`.
   - 除了 `mode` 其他属性和 `<transition>` 一样。
 
-- **Events:**
-  - exposes the same events as `<transition>`.
 - **事件：**
+  - exposes the same events as `<transition>`.
   - 和 `<transition>` 的事件一样。
 
-- **Usage:**
 - **用法**
 
   `<transition-group>` serve as transition effects for **multiple** elements/components. The `<transition-group>` renders a real DOM element. By default it renders a `<span>`, and you can configure what element is should render via the `tag` attribute.
@@ -2236,7 +2006,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ### keep-alive
 
-- **Usage:**
 - **用法：**
 
   When wrapped around a dynamic component, `<keep-alive>` caches the inactive component instances without destroying them. Similar to `<transition>`, `<keep-alive>` is an abstract component: it doesn't render a DOM element itself, and doesn't show up in the component parent chain.
@@ -2271,20 +2040,18 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   </transition>
   ```
 
-  <p class="tip">`<keep-alive>` does not work with functional components because they do not have instances to be cached.</p>
-  <p class="tip">`<keep-alive>` 在函数化组件中不会生效。因为它根本就没有实例可以被缓存。</p>
+  <p class="tip">`<keep-alive>` does not work with functional components because they do not have instances to be cached.
+  `<keep-alive>` 在函数化组件中不会生效。因为它根本就没有实例可以被缓存。</p>
 
 - **See also:** [Dynamic Components - keep-alive](/guide/components.html#keep-alive)
 - **另见：** [动态组件 - keep-alive](/guide/components.html#keep-alive)
 
 ### slot
 
-- **Props:**
 - **属性：**
   - `name` - string, Used for named slot.
   - `name` - string, 用来命名 slot。
 
-- **Usage:**
 - **用法：**
 
   `<slot>` serve as content distribution outlets in component templates. `<slot>` itself will be replaced.
@@ -2296,14 +2063,12 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **See also:** [Content Distribution with Slots](/guide/components.html#Content-Distribution-with-Slots)
 - **另见：** [使用 Slots 内容分发](/guide/components.html#Content-Distribution-with-Slots)
 
-## VNode Interface
-## VNode 接口
+## VNode 接口 (VNode Interface)
 
 - Please refer to the [VNode class declaration](https://github.com/vuejs/vue/blob/next/src/core/vdom/vnode.js).
 - 请参阅 [VNode 类声明](https://github.com/vuejs/vue/blob/next/src/core/vdom/vnode.js).
 
-## Server-Side Rendering
-## 服务端渲染
+## 服务端渲染 (Server-Side Rendering)
 
 - Please refer to the [vue-server-renderer package documentation](https://github.com/vuejs/vue/tree/next/packages/vue-server-renderer).
 - 请参阅 [Vue 服务端渲染文档](https://github.com/vuejs/vue/tree/next/packages/vue-server-renderer).
