@@ -120,4 +120,4 @@ There are also other hooks which will be called at different stages of the insta
 Below is a diagram for the instance lifecycle. You don't need to fully understand everything going on right now, but this diagram will be helpful in the future.
 下图解释了 Vue 实例的生命周期。如果你现在还不能完全理解它，没有关系，总有一天它会派上用场。
 
-![Lifecycle](/images/lifecycle.png)
+{% img /images/lifecycle.png "Lifecycle" %}
