@@ -1301,27 +1301,20 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 - **另见：** [Vue.delete](#Vue-delete)
 
-## Instance Methods / Events
-## 实例方法/事件
+## 实例方法/事件 (Instance Methods / Events)
 
 <h3 id="vm-on">vm.$on( event, callback )</h3>
-<h3 id="vm-on">vm.$on( event, callback )</h3>
 
-- **Arguments:**
-  - `{string} event`
-  - `{Function} callback`
-- **参数:**
+- **参数：**
   - `{string} event`
   - `{Function} callback`
 
-- **Usage:**
-- **用法:**
+- **用法：**
 
   Listen for a custom event on the current vm. Events can be triggered by `vm.$emit`. The callback will receive all the additional arguments passed into these event-triggering methods.
-  监听当前实例上的自定义事件。事件可以由 `vm.$emit`触发。传入这些方法的附加参数都会传入这个方法的回调。
+  监听当前实例上的自定义事件。事件可以由 `vm.$emit`触发。这些触发事件的方法所接收到的额外参数，都会传递给回调 `callback`。
 
-- **Example:**
-- **示例:**
+- **示例：**
 
   ``` js
   vm.$on('test', function (msg) {
@@ -1332,33 +1325,23 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```
 
 <h3 id="vm-once">vm.$once( event, callback )</h3>
-<h3 id="vm-once">vm.$once( event, callback )</h3>
 
-- **Arguments:**
-  - `{string} event`
-  - `{Function} callback`
-- **参数:**
+- **参数：**
   - `{string} event`
   - `{Function} callback`
 
-- **Usage:**
-- **用法:**
+- **用法：**
 
   Listen for a custom event, but only once. The listener will be removed once it triggers for the first time.
-  监听一个自定义事件，但是只有一次。自定义事件第一次触发后，监听器就会被移除。
+  监听自定义事件，但这是一次性的。当自定义事件被触发一次后，监听器就会被移除。
 
 <h3 id="vm-off">vm.$off( [event, callback] )</h3>
-<h3 id="vm-off">vm.$off( [event, callback] )</h3>
 
-- **Arguments:**
-  - `{string} [event]`
-  - `{Function} [callback]`
-- **参数:**
+- **参数：**
   - `{string} [event]`
   - `{Function} [callback]`
 
-- **Usage:**
-- **用法:**
+- **用法：**
 
   Remove event listener(s).
   删除事件监听器。
@@ -1373,48 +1356,37 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   - 如果同时提供了事件与回调，则只删除这个回调。
 
 <h3 id="vm-emit">vm.$emit( event, [...args] )</h3>
-<h3 id="vm-emit">vm.$emit( event, [...args] )</h3>
 
-- **Arguments:**
-  - `{string} event`
-  - `[...args]`
 - **参数:**
   - `{string} event`
   - `[...args]`
 
   Trigger an event on the current instance. Any additional arguments will be passed into the listener's callback function.
-  触发当前实例上的事件。所有的附加参数都会传给监听器回调。
+  在当前实例上触发事件。所有的额外参数都会传给监听器的回调函数。
 
-## Instance Methods / Lifecycle
-## 实例方法/生命周期
+## 实例方法/生命周期 (Instance Methods / Lifecycle)
 
 <h3 id="vm-mount">vm.$mount( [elementOrSelector] )</h3>
-<h3 id="vm-mount">vm.$mount( [elementOrSelector] )</h3>
 
-- **Arguments:**
-  - `{Element | string} [elementOrSelector]`
-  - `{boolean} [hydrating]`
-- **参数:**
+- **参数：**
   - `{Element | string} [elementOrSelector]`
   - `{boolean} [hydrating]`
 
 - **Returns:** `vm` - the instance itself
-- **返回值:** `vm` —— 实例自身
+- **返回值：** `vm` —— 实例自身
 
-- **Usage:**
-- **用法:**
+- **用法：**
 
   If a Vue instance didn't receive the `el` option at instantiation, it will be in "unmounted" state, without an associated DOM element. `vm.$mount()` can be used to manually start the mounting of an unmounted Vue instance.
-  如果 Vue 实例在实例化时没有接收 `el` 选项, 则它处于“未挂载”状态，没有关联的 DOM 元素。可以使用 `vm.$mount()` 手动地开始挂载/编译未挂载的实例。
+  如果 Vue 实例在实例化时没有接收 `el` 选项, 则它处于“未挂载”状态，没有关联的 DOM 元素。这时，可以使用 `vm.$mount()` 手动挂载。
 
   If `elementOrSelector` argument is not provided, the template will be rendered as an off-document element, and you will have to use native DOM API to insert it into the document yourself.
-  如果没提供`elementOrSelector`参数，模板将被渲染为文档之外的元素，你将必须使用原生的DOM API来将它插入文档中。
+  如果没提供 `elementOrSelector` 参数，模板渲染出来的元素不会被插入到文档中。你将需要使用原生的 DOM API 来将它插入文档中。
 
   The method returns the instance itself so you can chain other instance methods after it.
   这个方法返回实例自身，因而可以链式调用其它实例方法。
 
-- **Example:**
-- **示例:**
+- **示例：**
 
   ``` js
   var MyComponent = Vue.extend({
@@ -1422,47 +1394,40 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   })
 
   // create and mount to #app (will replace #app)
+  // 创建一个 Vue 实例并将它挂载到 #app （会替换掉 #app 的内容）
   new MyComponent().$mount('#app')
 
   // the above is the same as:
+  // 跟上面的代码一样的效果：
   new MyComponent({ el: '#app' })
 
   // or, render off-document and append afterwards:
+  // 或者，先在文档外渲染，之后再将它插入文档：
   var component = new MyComponent().$mount()
   document.getElementById('app').appendChild(component.$el)
   ```
 
-- **See also:**
-  - [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
-  - [Server-Side Rendering](/guide/ssr.html)
 - **另见:**
   - [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
   - [Server-Side Rendering](/guide/ssr.html)
 
 <h3 id="vm-forceUpdate">vm.$forceUpdate()</h3>
-<h3 id="vm-forceUpdate">vm.$forceUpdate()</h3>
 
-- **Usage:**
 - **用法:**
 
   Force the Vue instance to re-render. Note it does not affect all child components, only the instance itself and child components with inserted slot content.
-  j强制Vue实例重新渲染。注意，这个方法不会影响所有的子组件，只有示例自身还有那些具有插槽内容的子组件。
+  强制 Vue 实例重新渲染。这个方法不会影响所有的子组件，它只会让实例自身，还有那些带有插槽内容的子组件重新渲染。
 
 <h3 id="vm-nextTick">vm.$nextTick( callback )</h3>
-<h3 id="vm-nextTick">vm.$nextTick( callback )</h3>
 
-- **Arguments:**
-  - `{Function} callback`
 - **参数:**
   - `{Function} callback`
 
-- **Usage:**
 - **用法:**
 
   Defer the callback to be executed after the next DOM update cycle. Use it immediately after you've changed some data to wait for the DOM update. This is the same as the global `Vue.nextTick`, except that the callback's `this` context is automatically bound to the instance calling this method.
-  延迟回调在下次 DOM 更新循环之后执行。在你修改数据之后立即使用这个方法，等待DOM更新。这跟全局的 `Vue.nextTick` 是一样的，除了回调的 `this` 上下文调用这个方法的时候自动绑定实例。
+  将回调推迟到下一个 DOM 更新循环再执行。在你修改数据之后立即使用这个方法，等待 DOM 更新。这跟全局的 `Vue.nextTick` 几乎一模一样，唯一不同的是调用这个方法时，回调的 `this` 自动绑定实例。
 
-- **Example:**
 - **示例:**
 
   ``` js
@@ -1472,11 +1437,15 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
       // ...
       example: function () {
         // modify data
+        // 修改数据
         this.message = 'changed'
         // DOM is not updated yet
+        // DOM 还没有更新
         this.$nextTick(function () {
           // DOM is now updated
+          // 到这里 DOM 已经更新了
           // `this` is bound to the current instance
+          // `this` 已经绑定到当前的实例
           this.doSomethingElse()
         })
       }
@@ -1484,17 +1453,14 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   })
   ```
 
-- **See also:**
-  - [Vue.nextTick](#Vue-nextTick)
-  - [Async Update Queue](/guide/reactivity.html#Async-Update-Queue)
+
 - **另见:**
   - [Vue.nextTick](#Vue-nextTick)
+  - [Async Update Queue](/guide/reactivity.html#Async-Update-Queue)
   - [异步更新队列](/guide/reactivity.html#Async-Update-Queue)
 
 <h3 id="vm-destroy">vm.$destroy()</h3>
-<h3 id="vm-destroy">vm.$destroy()</h3>
 
-- **Usage:**
 - **用法:**
 
   Completely destroy a vm. Clean up its connections with other existing vms, unbind all its directives, turn off all event listeners.
@@ -1509,10 +1475,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **See also:** [Lifecycle Diagram](/guide/instance.html#Lifecycle-Diagram)
 - **另见:** [生命周期图示](/guide/instance.html#Lifecycle-Diagram)
 
-## Directives
-## 指令
+## 指令 (Directives)
 
-### v-text
 ### v-text
 
 - **Expects:** `string`
@@ -1524,19 +1488,18 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   Updates the element's `textContent`. If you need to update the part of `textContent`, you should use `{% raw %}{{ Mustache }}{% endraw %}` interpolations.
   更新元素的 `textContent`。如果你需要更新 `textContent` 的一部分，你应该使用 `{% raw %}{{ Mustache }}{% endraw %}` 插值。
 
-- **Example:**
 - **示例:**
 
   ```html
   <span v-text="msg"></span>
   <!-- same as -->
+  <!-- 跟上面一样 -->
   <span>{{msg}}</span>
   ```
 
 - **See also:** [Data Binding Syntax - interpolations](/guide/syntax.html#Text)
 - **另见:** [数据绑定语法 - 插值](/guide/syntax.html#Text)
 
-### v-html
 ### v-html
 
 - **Expects:** `string`
@@ -1546,27 +1509,25 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **详细:**
 
   Updates the element's `innerHTML`. **Note that the contents are inserted as plain HTML - they will not be compiled as Vue templates**. If you find yourself trying to compose templates using `v-html`, try to rethink the solution by using components instead.
-  更新元素的 `innerHTML`。**注意，内容按照纯HTML插入 —— 它们将不会被编译为Vue模板**。如果你发现自己想用 `v-html`去组成模板，你需要重新考虑使用组件的方案去替代。
+  更新元素的 `innerHTML`。**注意，内容会以普通 HTML 的方式插入 —— 它们将不会被当作 Vue 模板来编译**。如果你想用 `v-html` 去组合模板，你应该考虑使用组件。
 
-  <p class="tip">Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). Only use `v-html` on trusted content and **never** on user-provided content.</p>
-  <p class="tip">在网站上动态渲染任意 HTML 是非常危险的，因为容易导致[XSS攻击](https://en.wikipedia.org/wiki/Cross-site_scripting)。只在可信内容上使用 `v-html` ， **永远不要** 用在用户提交的内容上。</p>
+  <p class="tip">Dynamically rendering arbitrary HTML on your website can be very dangerous because it can easily lead to [XSS attacks](https://en.wikipedia.org/wiki/Cross-site_scripting). Only use `v-html` on trusted content and **never** on user-provided content.
+  在网站上动态渲染 HTML 是非常危险的，因为容易遭受 [XSS攻击](https://en.wikipedia.org/wiki/Cross-site_scripting)。请只对可信的内容使用 `v-html` ，**永远不要** 用在用户提交的内容上。</p>
 
-- **Example:**
 - **示例:**
 
   ```html
   <div v-html="html"></div>
   ```
+
 - **See also:** [Data Binding Syntax - interpolations](/guide/syntax.html#Raw-HTML)
 - **另见:** [数据绑定语法 —— 插值](/guide/syntax.html#Raw-HTML)
 
-### v-if
 ### v-if
 
 - **Expects:** `any`
 - **类型:** `any`
 
-- **Usage:**
 - **用法:**
 
   Conditionally render the element based on the truthy-ness of the expression value. The element and its contained directives / components are destroyed and re-constructed during toggles. If the element is a `<template>` element, its content will be extracted as the conditional block.
@@ -1574,30 +1535,27 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
   This directive triggers transitions when its condition changes.
   当指令条件改变将触发转换。
-  
+
 
 - **See also:** [Conditional Rendering - v-if](/guide/conditional.html)
 - **另见:** [条件渲染 - v-if](/guide/conditional.html)
 
 ### v-show
-### v-show
 
 - **Expects:** `any`
 - **类型:** `any`
 
-- **Usage:**
 - **用法:**
 
   Toggle's the element's `display` CSS property based on the truthy-ness of the expression value.
-  根据表达式的值的条件的真假，切换元素的 `display` CSS属性。
+  根据表达式的值，切换元素的 `display` CSS 属性。
 
   This directive triggers transitions when its condition changes.
-  当指令条件改变将触发转换。
+  当条件改变时，该指令将触发转换。
 
 - **See also:** [Conditional Rendering - v-show](/guide/conditional.html#v-show)
 - **另见:** [条件渲染 - v-show](/guide/conditional.html#v-show)
 
-### v-else
 ### v-else
 
 - **Does not expect expression**
@@ -1606,7 +1564,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **Restriction:** previous sibling element must have `v-if`.
 - **限制:** 前一兄弟元素必须有 `v-if`.
 
-- **Usage:**
 - **用法:**
 
   Denote the "else block" for `v-if`.
@@ -1627,16 +1584,14 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   - [条件渲染 - v-else](/guide/conditional.html#v-else)
 
 ### v-for
-### v-for
 
 - **Expects:** `Array | Object | number | string`
 - **类型:** `Array | Object | number | string`
 
-- **Usage:**
 - **用法:**
 
   Render the element or template block multiple times based on the source data. The directive's value must use the special syntax `alias in expression` to provide an alias for the current element being iterated on:
-  基于源数据将元素或模板块重复数次。指令的值必须使用特定语法 `alias in expression`，为当前遍历的元素提供别名：
+  基于源数据将元素或模板块多次渲染。指令的值必须使用特定语法 `alias in expression`，为当前遍历的元素提供别名：
 
   ``` html
   <div v-for="item in items">
@@ -1654,7 +1609,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```
 
   The default behavior of `v-for` will try to patch the elements in-place without moving them. To force it to reorder elements, you need to provide an ordering hint with the `key` special attribute:
-  `v-for` 默认的行为尝试填补元素位置而不去移动它们。如果要强制给元素排序，你需要使用 `key` 特殊属性来指定排序的根据：
+  默认地，`v-for` 会尝试填补元素位置而不去移动它们。如果要强制给元素排序，你需要使用 `key` 特殊属性来提供排序的依据：
 
   ``` html
   <div v-for="item in items" :key="item.id">
@@ -1663,16 +1618,14 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```
 
   The detailed usage for `v-for` is explained in the guide section linked below.
-  `v-for` 详细的用法在下面的指导部分的链接中介绍了。
+  `v-for` 的详细用法可以在下面链接的教程里找到。
 
-- **See also:**
-  - [List Rendering](/guide/list.html)
-  - [key](/guide/list.html#key)
 - **另见:**
+  - [List Rendering](/guide/list.html)
   - [列表渲染](/guide/list.html)
+  - [key](/guide/list.html#key)
   - [键](/guide/list.html#key)
 
-### v-on
 ### v-on
 
 - **Shorthand:** `@`
@@ -1681,65 +1634,70 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **Expects:** `Function | Inline Statement`
 - **类型:** `Function | Inline Statement`
 
-- **Argument:** `event (required)`
 - **参数:** `event (required)`
 
-- **Modifiers:**
-  - `.stop` - call `event.stopPropagation()`.
-  - `.prevent` - call `event.preventDefault()`.
-  - `.capture` - add event listener in capture mode.
-  - `.self` - only trigger handler if event was dispatched from this element.
-  - `.{keyCode | keyAlias}` - only trigger handler on certain keys.
-  - `.native` - listen for a native event on the root element of component.
 - **修饰符:**
+  - `.stop` - call `event.stopPropagation()`.
   - `.stop` - 调用 `event.stopPropagation()`.
+  - `.prevent` - call `event.preventDefault()`.
   - `.prevent` - 调用 `event.preventDefault()`.
+  - `.capture` - add event listener in capture mode.
   - `.capture` - 添加事件侦听器时使用 capture 模式.
+  - `.self` - only trigger handler if event was dispatched from this element.
   - `.self` - 只当事件是从侦听器绑定的元素本身触发时才触发回调。
+  - `.{keyCode | keyAlias}` - only trigger handler on certain keys.
   - `.{keyCode | keyAlias}` - 只在指定按键上触发回调。
+  - `.native` - listen for a native event on the root element of component.
   - `.native` - 在组件的根元素上监听本地事件。
 
-- **Usage:**
 - **用法:**
 
   Attaches an event listener to the element. The event type is denoted by the argument. The expression can either be a method name or an inline statement, or simply omitted when there are modifiers present.
-  为元素绑定事件监听器。事件类型由参数指定。表达式可以是一个方法的名字或一个内联语句，如果没有修饰符也可以省略。
+  为元素绑定事件监听器。事件类型由参数指定。表达式可以是一个方法的名字或一个内联语句，如果有修饰符也可以省略。
 
   When used on a normal element, it listens to **native DOM events** only. When used on a custom element component, it also listens to **custom events** emitted on that child component.
-  用在普通元素上时，只能监听 **原生 DOM 事件**。用在自定义元素组件上时，也可以监听子组件触发的 **自定义事件**。
+  用在普通元素上时，只能监听 **原生 DOM 事件**。用在自定义元素组件上时，还会监听子组件触发的 **自定义事件**。
 
   When listening to native DOM events, the method receives the native event as the only argument. If using inline statement, the statement has access to the special `$event` property: `v-on:click="handle('ok', $event)"`.
-  在监听原生 DOM 事件时，方法以本地事件作为唯一的参数。如果使用内联语句，语句可以访问特殊的 `$event` 属性：`v-on:click="handle('ok',$event)"`。
+  在监听原生 DOM 事件时，方法以原生事件作为唯一的参数。如果使用内联语句，语句可以访问特殊的 `$event` 属性：`v-on:click="handle('ok',$event)"`。
 
-- **Example:**
 - **示例:**
 
   ```html
   <!-- method handler -->
+  <!-- 方法名 -->
   <button v-on:click="doThis"></button>
 
   <!-- inline statement -->
+  <!-- 内联语句 -->
   <button v-on:click="doThat('hello', $event)"></button>
 
   <!-- shorthand -->
+  <!-- 缩写 -->
   <button @click="doThis"></button>
 
   <!-- stop propagation -->
+  <!-- 阻止事件传播 -->
   <button @click.stop="doThis"></button>
 
   <!-- prevent default -->
+  <!-- 禁用事件的默认行为 -->
   <button @click.prevent="doThis"></button>
 
   <!-- prevent default without expression -->
+  <!-- 单纯禁用事件的默认行为 -->
   <form @submit.prevent></form>
 
   <!-- chain modifiers -->
+  <!-- 链式修饰符 -->
   <button @click.stop.prevent="doThis"></button>
 
   <!-- key modifier using keyAlias -->
+  <!-- 键修饰符(键别名) -->
   <input @keyup.enter="onEnter">
 
   <!-- key modifier using keyCode -->
+  <!-- 键修饰符(键码值) -->
   <input @keyup.13="onEnter">
   ```
 
@@ -1750,91 +1708,92 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   <my-component @my-event="handleThis"></my-component>
 
   <!-- inline statement -->
+  <!-- 内联语句 -->
   <my-component @my-event="handleThis(123, $event)"></my-component>
 
   <!-- native event on component -->
+  <!-- 组件的原生事件 -->
   <my-component @click.native="onClick"></my-component>
   ```
 
-- **See also:**
-  - [Methods and Event Handling](/guide/events.html)
-  - [Components - Custom Events](/guide/components.html#Custom-Events)
 - **另见:**
+  - [Methods and Event Handling](/guide/events.html)
   - [方法与事件处理器](/guide/events.html)
+  - [Components - Custom Events](/guide/components.html#Custom-Events)
   - [组件 —— 自定义事件](/guide/components.html#Custom-Events)
 
 ### v-bind
-### v-bind
 
-- **Shorthand:** `:`
 - **缩写:** `:`
 
 - **Expects:** `any (with argument) | Object (without argument)`
 - **类型:** `any (with argument) | Object (without argument)`
 
-- **Argument:** `attrOrProp (optional)`
 - **参数:** `attrOrProp (optional)`
 
 - **Modifiers:**
-  - `.prop` - Used for binding DOM attributes.
 - **修饰符:**
+  - `.prop` - Used for binding DOM attributes.
   - `.prop` - 用于绑定DOM属性。
 
-- **Usage:**
 - **用法:**
 
   Dynamically bind one or more attributes, or a component prop to an expression.
-  动态绑定一个或多个属性，或一个组件prop到一个表达式。
+  动态绑定元素个属性或组件 prop。
 
   When used to bind the `class` or `style` attribute, it supports additional value types such as Array or Objects. See linked guide section below for more details.
-  在绑定 `class` 或 `style` 时，支持其它类型的值，如数组或对象。下面指导部分的链接有更详细的介绍。
+  在绑定 `class` 或 `style` 时，支持其它类型的值，如数组或对象。下面链接的教程里有更详细的介绍。
 
   When used for prop binding, the prop must be properly declared in the child component.
   在绑定 prop 时，prop 必须在子组件中声明。
 
   When used without an argument, can be used to bind an object containing attribute name-value pairs. Note in this mode `class` and `style` does not support Array or Objects.
-  没有参数时，可以用来绑定到一个包含键值对的对象。注意此时 `class` 和 `style` 绑定不支持数组和对象。
+  没有参数时，可以用来绑定到一个包含键值对的对象。在使用这个方法的时候，`class` 和 `style` 绑定不支持数组和对象。
 
-- **Example:**
 - **示例:**
 
   ```html
   <!-- bind an attribute -->
+  <!-- 绑定一个属性 -->
   <img v-bind:src="imageSrc">
 
   <!-- shorthand -->
+  <!-- 缩写 -->
   <img :src="imageSrc">
 
   <!-- class binding -->
+  <!-- class 绑定 -->
   <div :class="{ red: isRed }"></div>
   <div :class="[classA, classB]"></div>
   <div :class="[classA, { classB: isB, classC: isC }]">
 
   <!-- style binding -->
+  <!-- style 绑定 -->
   <div :style="{ fontSize: size + 'px' }"></div>
   <div :style="[styleObjectA, styleObjectB]"></div>
 
   <!-- binding an object of attributes -->
+  <!-- 绑定一个对象 -->
   <div v-bind="{ id: someProp, 'other-attr': otherProp }"></div>
 
   <!-- DOM attribute binding with prop modifier -->
+  <!-- 用 prop 修饰符绑定 DOM 属性 -->
   <div v-bind:text-content.prop="text"></div>
 
   <!-- prop binding. "prop" must be declared in my-component. -->
+  <!-- prop 绑定。my-component 必须先声明 prop -->
   <my-component :prop="someThing"></my-component>
 
   <!-- XLink -->
   <svg><a :xlink:special="foo"></a></svg>
   ```
 
-- **See also:**
-  - [Class and Style Bindings](/guide/class-and-style.html)
-  - [Components - Component Props](/guide/components.html#Props)
 - **另见:**
+  - [Class and Style Bindings](/guide/class-and-style.html)
   - [Class 和 Style 绑定](/guide/class-and-style.html)
+  - [Components - Component Props](/guide/components.html#Props)
   - [组件 Props](/guide/components.html#Props)
 
-### v-model
 ### v-model
 
 - **Expects:** varies based on value of form inputs element or output of components
@@ -1851,41 +1810,35 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   - `<textarea>`
   - 组件
 
-- **Modifiers:**
-  - [`.lazy`](/guide/forms.html#lazy) - listen to `change` events instead of `input`
-  - [`.number`](/guide/forms.html#number) - cast input string to numbers
-  - [`.trim`](/guild/forms.html#trim) - trim input
 - **修饰符:**
+  - [`.lazy`](/guide/forms.html#lazy) - listen to `change` events instead of `input`
   - [`.lazy`](/guide/forms.html#lazy) - 监听 `change` 事件而不是`input`事件
+  - [`.number`](/guide/forms.html#number) - cast input string to numbers
   - [`.number`](/guide/forms.html#number) - 将输入的字符串转换成数值
+  - [`.trim`](/guild/forms.html#trim) - trim input
   - [`.trim`](/guild/forms.html#trim) - 去除输入内容的首位空格
 
-- **Usage:**
 - **用法:**
 
   Create a two-way binding on a form input element or a component. For detailed usage, see guide section linked below.
-  在表单控件或组件上创建一个双向绑定。可以查看下面指导部分的链接查看更详细的用法。
+  在组件或表单控件上创建一个双向绑定。下面链接的教程中有更详细的用法。
 
-- **See also:**
-  - [Form Input Bindings](/guide/forms.html)
-  - [Components - Form Input Components using Custom Events](/guide/components.html#Form-Input-Components-using-Custom-Events)
 - **另见:**
+  - [Form Input Bindings](/guide/forms.html)
   - [表单控件绑定](/guide/forms.html)
+  - [Components - Form Input Components using Custom Events](/guide/components.html#Form-Input-Components-using-Custom-Events)
   - [组件 —— 表单控件组件使用自定义事件](/guide/components.html#Form-Input-Components-using-Custom-Events)
 
-### v-pre
 ### v-pre
 
 - **Does not expect expression**
 - **不需要表达式**
 
-- **Usage**
 - **用法**
 
   Skip compilation for this element and all its children. You can use this for displaying raw mustache tags. Skipping large numbers of nodes with no directives on them can also speed up compilation.
   不去编译这个元素和它的子元素。可以用来显示原生 Mustache 标签。跳过大量没有指令的节点会加快编译。
 
-- **Example:**
 - **示例:**
 
   ```html
@@ -1893,18 +1846,15 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
    ```
 
 ### v-cloak
-### v-cloak
 
 - **Does not expect expression**
 - **不需要表达式**
 
-- **Usage:**
 - **用法:**
 
   This directive will remain on the element until the associated Vue instance finishes compilation. Combined with CSS rules such as `[v-cloak] { display: none }`, this directive can be used to hide un-compiled mustache bindings until the Vue instance is ready.
-  这个指令保持在元素上直到关联实例结束编译。和 CSS 规则如 `[v-cloak] { display: none }` 一起用时，这个指令可以隐藏未编译的 Mustache 标签直到实例准备完毕。
+  直到关联实例完成编译，这个指令都会保持在元素上。如果和像 `[v-cloak] { display: none }` 这样的 CSS 规则一起使用时，这个指令可以隐藏未编译的 Mustache 标签，直到实例完成编译。
 
-- **Example:**
 - **示例:**
 
   ```css
@@ -1920,9 +1870,8 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   ```
 
   The `<div>` will not be visible until the compilation is done.
-  `<div>` 不会显示，直到编译结束。
+  `<div>` 不会显示，直到编译完成。
 
-### v-once
 ### v-once
 
 - **Does not expect expression**
@@ -1932,29 +1881,33 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 - **详细:**
 
   Render the element and component **once** only. On subsequent re-renders, the element/component and all its children will be treated as static content and skipped. This can be used to optimize update performance.
-  只渲染元素和组件 **一次**。在后面的重新渲染中，这个元素/组件以及它们所有的子元素都会被当作静态内容去忽略掉。这个指令可以用来优化更新性能。
+  只渲染元素和组件 **一次**。在后面的重新渲染中，这个元素/组件以及它们所有的子元素都会被当作静态内容去忽略掉。这个指令可以用来优化更新的性能。
 
   ```html
   <!-- single element -->
+  <!-- 单个元素 -->
   <span v-once>This will never change: {{msg}}</span>
   <!-- the element have children -->
+  <!-- 带有子元素的元素 -->
   <div v-once>
     <h1>comment</h1>
     <p>{{msg}}</p>
   </div>
   <!-- component -->
+  <!-- 组件 -->
   <my-component v-once :comment="msg"></my-component>
   <!-- v-for directive -->
+  <!-- v-for 指令 -->
   <ul>
     <li v-for="i in list" v-once>{{i}}</li>
   </ul>
   ```
 
-- **See also:**
-  - [Data Binding Syntax - interpolations](/guide/syntax.html#Text)
-  - [Components - Cheap Static Components with v-once](/guide/components.html#Cheap-Static-Components-with-v-once)
+
 - **另见:**
+  - [Data Binding Syntax - interpolations](/guide/syntax.html#Text)
   - [数据绑定语法 —— 插值](/guide/syntax.html#Text)
+  - [Components - Cheap Static Components with v-once](/guide/components.html#Cheap-Static-Components-with-v-once)
   - [组件 —— 使用v-once的轻量级静态组件](/guide/components.html#Cheap-Static-Components-with-v-once)
 
 ## 特殊属性 (Special Attributes)
