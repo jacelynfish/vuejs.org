@@ -18,7 +18,7 @@
 See also | 另见
 component | 组件
 functional | 函数化| e.g. `functional component` ：函数化组件
-reactive | 响应式的 
+reactive | 响应式的
 
 
 参考 [vuejs-1.0 中文文档](http://cn.vuejs.org/)
@@ -61,12 +61,12 @@ api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egois
 api/index#Instance Methods/Eevents |[dmxj](https://github.com/dmxj)| mrwiredancer | ~~已完成~~
 api/index#Instance Methods/Lifecycle |[dmxj](https://github.com/dmxj)|mrwiredancer | ~~已完成~~
 api/index#Directives |[dmxj](https://github.com/dmxj)|mrwiredancer | ~~已完成~~
-api/index#Special Attributes |[aliencyl7](https://github.com/aliencyl7)| mrwiredancer | 校对中
+api/index#Special Attributes |[aliencyl7](https://github.com/aliencyl7)| mrwiredancer | ~~已完成~~
 api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| mrwiredancer|~~已完成~~
 api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | ~~已完成~~
 api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| hayeah | ~~已完成~~
 guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | ~~已完成~~
-guide/index | 
+guide/index |
 guide/instance | [baurine](https://github.com/baurine)| mrwiredancer| ~~已完成~~
 guide/syntax |[baurine](https://github.com/baurine)|milkmeowo| ~~已完成~~
 guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | ~~已完成~~
@@ -80,11 +80,11 @@ guide/transitions |
 guide/transitioning-state |[gongph](https://github.com/gongph)| milkmeowo | **校对中**
 guide/render-function | [pandazki](https://github.com/pandazki | | 翻译中
 guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer |~~已完成~~
-guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中** 
+guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中**
 guide/mixins | [leon0204](https://github.com/leon0204) | hayeah | ~~已完成~~
 guide/plugins |[leon0204](https://github.com/leon0204) | milkmeowo, hayeah|~~已完成~~
 guide/single-file-components | [seaify](https://github.com/seaify) | | `翻译中`
-guide/routing |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中** 
+guide/routing |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中**
 guide/state-management |
 guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | hayeah | ~~已完成~~
 guide/ssr | gongph | | 翻译中
