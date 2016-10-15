@@ -6,7 +6,7 @@ order: 2
 
 ## What is Vue.js?
 
-Vue (pronounced /vjuː/, like **view**) is a **progressive framework** for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is very easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with [modern tooling](application.html) and [supporting libraries](https://github.com/vuejs/awesome-vue#libraries--plugins).
+Vue (pronounced /vjuː/, like **view**) is a **progressive framework** for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is very easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with [modern tooling](single-file-components.html) and [supporting libraries](https://github.com/vuejs/awesome-vue#libraries--plugins).
 
 If you are an experienced frontend developer and want to know how Vue compares to other libraries/frameworks, check out the [Comparison with Other Frameworks](comparison.html).
 
@@ -51,34 +51,38 @@ In addition to text interpolation, we can also bind element attributes like this
 
 ``` html
 <div id="app-2">
-  <span v-bind:id="id">Inspect me</span>
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds to see my dynamically bound title!
+  </span>
 </div>
 ```
 ``` js
 var app2 = new Vue({
   el: '#app-2',
   data: {
-    id: 'inspect-me'
+    message: 'You loaded this page on ' + new Date()
   }
 })
 ```
 {% raw %}
 <div id="app-2" class="demo">
-  <span v-bind:id="id">Inspect me</span>
+  <span v-bind:title="message">
+    Hover your mouse over me for a few seconds to see my dynamically bound title!
+  </span>
 </div>
 <script>
 var app2 = new Vue({
   el: '#app-2',
   data: {
-    id: 'inspect-me'
+    message: 'You loaded this page on ' + new Date()
   }
 })
 </script>
 {% endraw %}
 
-Here we are encountering something new. The `v-bind` attribute you are seeing is called a **directive**. Directives are prefixed with `v-` to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM. Here it is basically saying "bind this element's `id` attribute to the `id` property on the Vue instance."
+Here we are encountering something new. The `v-bind` attribute you are seeing is called a **directive**. Directives are prefixed with `v-` to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM. Here it is basically saying "keep this element's `title` attribute up-to-date with the `message` property on the Vue instance."
 
-Use the browser devtools to inspect the element above - you should see that it has the id `inspect-me`. And yes, it would update if you modify `app2.id` in the console.
+If you open up your JavaScript console again and enter `app2.message = 'some new message'`, you'll once again see that the bound HTML - in this case the `title` attribute - has been updated.
 
 ## Conditionals and Loops
 
@@ -115,7 +119,7 @@ var app3 = new Vue({
 
 Go ahead and enter `app3.seen = false` in the console. You should see the message disappear.
 
-This second example demonstrates that we can bind data to not only text and attributes, but also the **structure** of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply [transition effects](transitions.html) when elements are inserted/updated/removed by Vue.
+This example demonstrates that we can bind data to not only text and attributes, but also the **structure** of the DOM. Moreover, Vue also provides a powerful transition effect system that can automatically apply [transition effects](transitions.html) when elements are inserted/updated/removed by Vue.
 
 There are quite a few other directives, each with its own special functionality. For example, the `v-for` directive can be used for displaying a list of items using the data from an Array:
 
@@ -249,7 +253,8 @@ The component system is another important concept in Vue, because it's an abstra
 In Vue, a component is essentially a Vue instance with pre-defined options. Registering a component in Vue is straightforward:
 
 ``` js
-Vue.component('todo', {
+// Define a new component called todo-item
+Vue.component('todo-item', {
   template: '<li>This is a todo</li>'
 })
 ```
@@ -258,14 +263,21 @@ Now you can compose it in another component's template:
 
 ``` html
 <ul>
-  <todo v-for="todo in todos"></todo>
+  <!--
+  Create an instance of the todo-item component
+  for each todo in a todos array
+  -->
+  <todo-item v-for="todo in todos"></todo-item>
 </ul>
 ```
 
 But this would render the same text for every todo, which is not super interesting. We should be able to pass data from the parent scope into child components. Let's modify the component definition to make it accept a [prop](/guide/components.html#Props):
 
 ``` js
-Vue.component('todo', {
+Vue.component('todo-item', {
+  // The todo-item component now accepts a
+  // "prop", which is like a custom attribute.
+  // This prop is called todo.
   props: ['todo'],
   template: '<li>{{ todo.text }}</li>'
 })
@@ -276,7 +288,11 @@ Now we can pass the todo into each repeated component using `v-bind`:
 ``` html
 <div id="app-7">
   <ol>
-    <todo v-for="todo in todos" v-bind:todo="todo"></todo>
+    <!--
+    Now we provide each todo-item with the todo object
+    it's representing, so that its content can be dynamic
+    -->
+    <todo-item v-for="todo in todos" v-bind:todo="todo"></todo-item>
   </ol>
 </div>
 ```
@@ -284,18 +300,22 @@ Now we can pass the todo into each repeated component using `v-bind`:
 var app7 = new Vue({
   el: '#app-7',
   data: {
-  todos: [{ /* ... */}]
+    todos: [
+      { text: 'Learn JavaScript' },
+      { text: 'Learn Vue' },
+      { text: 'Build something awesome' }
+    ]
   }
 })
 ```
 {% raw %}
 <div id="app-7" class="demo">
   <ol>
-    <todo v-for="todo in todos" v-bind:todo="todo"></todo>
+    <todo-item v-for="todo in todos" v-bind:todo="todo"></todo-item>
   </ol>
 </div>
 <script>
-Vue.component('todo', {
+Vue.component('todo-item', {
   props: ['todo'],
   template: '<li>{{ todo.text }}</li>'
 })
@@ -312,7 +332,7 @@ var app7 = new Vue({
 </script>
 {% endraw %}
 
-This is just a contrived example, but we have managed to separate our app into two smaller units, and the child is reasonably well-decoupled from the parent via the props interface. We can now further improve our `<todo>` component with more complex template and logic without affecting the parent app.
+This is just a contrived example, but we have managed to separate our app into two smaller units, and the child is reasonably well-decoupled from the parent via the props interface. We can now further improve our `<todo-item>` component with more complex template and logic without affecting the parent app.
 
 In a large application, it is necessary to divide the whole app into components to make development manageable. We will talk a lot more about components [later in the guide](/guide/components.html), but here's an (imaginary) example of what an app's template might look like with components:
 
@@ -332,7 +352,7 @@ You may have noticed that Vue components are very similar to **Custom Elements**
 
 1. The Web Components Spec is still in draft status, and is not natively implemented in every browser. In comparison, Vue components don't require any polyfills and work consistently in all supported browsers (IE9 and above). When needed, Vue components can also be wrapped inside a native custom element.
 
-2. Vue components provide important features that are not available in plain custom elements, most notably cross-component data flow, custom event communication and built tool integrations.
+2. Vue components provide important features that are not available in plain custom elements, most notably cross-component data flow, custom event communication and build tool integrations.
 
 ## Ready for More?
 

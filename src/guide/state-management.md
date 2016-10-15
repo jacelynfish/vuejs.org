@@ -1,12 +1,12 @@
 ---
 title: State Management
 type: guide
-order: 21
+order: 22
 ---
 
 ## Official Flux-Like Implementation
 
-Large applications can often grow in complexity, due to multiple pieces of state scattered across many components and the interactions between them. To solve this problem, Vue offers [vuex](https://github.com/vuejs/vuex/tree/next): our own Elm-inspired state management library. It even integrates into [vue-devtools](https://github.com/vuejs/vue-devtools), providing zero-setup access to time travel.
+Large applications can often grow in complexity, due to multiple pieces of state scattered across many components and the interactions between them. To solve this problem, Vue offers [vuex](https://github.com/vuejs/vuex): our own Elm-inspired state management library. It even integrates into [vue-devtools](https://github.com/vuejs/vue-devtools), providing zero-setup access to time travel.
 
 ### Information for React Developers
 
@@ -51,7 +51,7 @@ var store = {
 
 Notice all actions that mutate the store's state are put inside the store itself. This type of centralized state management makes it easier to understand what type of mutations could happen and how are they triggered. When something goes wrong, we'll also now have a log of what happened leading up to the bug.
 
-In additon, each instance/component can still own and manage its own private state:
+In addition, each instance/component can still own and manage its own private state:
 
 ``` js
 var vmA = new Vue({
@@ -75,4 +75,4 @@ var vmB = new Vue({
 
 As we continue developing the convention where components are never allowed to directly mutate state that belongs to a store, but should instead dispatch events that notify the store to perform actions, we eventually arrive at the [Flux](https://facebook.github.io/flux/) architecture. The benefit of this convention is we can record all state mutations happening to the store and implement advanced debugging helpers such as mutation logs, snapshots, and history re-rolls / time travel.
 
-This brings us full circle back to [vuex](https://github.com/vuejs/vuex/tree/next), so if you've read this far it's probably time to try it out!
+This brings us full circle back to [vuex](https://github.com/vuejs/vuex), so if you've read this far it's probably time to try it out!

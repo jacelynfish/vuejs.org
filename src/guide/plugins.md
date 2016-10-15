@@ -1,16 +1,10 @@
 ---
-title: Plugins
+title: 插件 (Plugins)
 type: guide
 order: 18
 ---
----
-标题: 插件
-类型: 指南
-排序: 18
----
 
-## Writing a Plugin
-## 开发插件
+## 开发插件 (Writing a Plugin)
 
 Plugins usually add global-level functionality to Vue. There is no strictly defined scope for a plugin - there are typically several types of plugins you can write:
 插件通常会为 Vue 添加全局功能。插件的范围没有严格的限制——通常是下面几种：
@@ -69,10 +63,11 @@ MyPlugin.install = function (Vue, options) {
 }
 ```
 
-## Using a Plugin
-## 使用插件
+## 使用插件 (Using a Plugin)
+
 Use plugins by calling the `Vue.use()` global method:
 通过 Vue.use() 全局方法使用插件：
+
 ``` js
 // calls `MyPlugin.install(Vue)`
 // 调用 `MyPlugin.install(Vue)`
@@ -81,14 +76,17 @@ Vue.use(MyPlugin)
 
 You can optionally pass in some options:
 你可以传入一个选项对象：
+
 ``` js
 Vue.use(MyPlugin, { someOption: true })
 ```
 
 `Vue.use` automatically prevents you from using the same plugin more than once, so calling it multiple times on the same plugin will install the plugin only once.
 `Vue.use` 自动阻止你使用相同的插件超过一次，所以当你重复的使用这个插件时，你只能安装一次。
+
 Some plugins provided by Vue.js official plugins such as `vue-router` automatically calls `Vue.use()` if `Vue` is available as a global variable. However in a module environment such as CommonJS, you always need to call `Vue.use()` explicitly:
 如果 Vue 加载成为全局变量，那么某些官方插件，比如 vue-router， 会自动调用 Vue.use。但是在一个模块运行环境，比如 CommonJS，你必须明文调用 Vue.use()：
+
 ``` js
 // When using CommonJS via Browserify or Webpack
 // 通过 Browserify 或 Webpack 使用 CommonJS 兼容模块
@@ -101,7 +99,6 @@ Vue.use(VueRouter)
 ```
 
 Checkout [awesome-vue](https://github.com/vuejs/awesome-vue#libraries--plugins) for a huge collection of community-contributed plugins and libraries.
-
 访问 awesome-vue (https://github.com/vuejs/awesome-vue#libraries--plugins) 获得大量社区贡献的插件和资料。
 
 
