@@ -1,12 +1,7 @@
 ---
-title: Join the Vue.js Community!
+title: 加入 vue.js 社区！ (Join the Vue.js Community!)
 type: guide
-order: 26
----
----
-标题: 加入 vue.js 社区！
-类型: 指南
-排序: 26 
+order: 29
 ---
 
 Vue's community is growing incredibly fast and if you're reading this, there's a good chance you're ready to join it. So... welcome!
@@ -14,11 +9,9 @@ Vue 社区正在不断扩大，既然你已经在阅读这个文档，那么这�
 Now we'll answer both what the community can do for and what you can do for the community.
 现在，我们会告诉你，社区能带给你什么，以及你能为社区做什么。
 
-## Resources You'll Enjoy
-## 你将获得的资源
+## 你将获得的资源 (Resources You'll Enjoy)
 
-### Get Support
-### 得到帮助
+### 得到帮助 (Get Support)
 
 - [Forum](http://forum.vuejs.org/): THE best place to ask questions and get answers about Vue and its ecosystem.
 - [论坛](http://forum.vuejs.org/): 对 Vue 及它相关生态系统提问和获得解答的好地方。
@@ -27,19 +20,16 @@ Now we'll answer both what the community can do for and what you can do for the 
 - [Github](https://github.com/vuejs): If you have a bug to report or feature to request, that's what the GitHub issues are for. We also welcome pull requests!
 - [Github](https://github.com/vuejs): 如果你有问题或报告，欢迎提交，感谢你的贡献！
 
-### Explore the Ecosystem
-### 探索生态圈
+### 探索生态圈 (Explore the Ecosystem)
 
 - [The Awesome Vue Page](https://github.com/vuejs/awesome-vue): See what other awesome resources have been published by other awesome people.
 - [The Awesome Vue Page](https://github.com/vuejs/awesome-vue): 看看其他牛人发布的好资源。
-- [The "Show and Tell" Subforum](http://forum.vuejs.org/category/15/show-tell): Another great place to check out what others have built with and for the growing Vue ecosystem.
-- [The "Show and Tell" 子论坛](http://forum.vuejs.org/category/15/show-tell): 另一个查看 Vue.js 相关项目的好地方。
+- [The "Show and Tell" Subforum](http://forum.vuejs.org/c/show-and-tell): Another great place to check out what others have built with and for the growing Vue ecosystem.
+- [The "Show and Tell" 子论坛](http://forum.vuejs.org/c/show-and-tell): 另一个看看别人的贡献的好地方。
 
-## What You Can Do
-## 你可以做的
+## 你可以做的 (What You Can Do)
 
-### Contribute Code
-### 参与开发
+### 参与开发 (Contribute Code)
 
 As with any project, there are rules to contributing. To ensure that we can help you or accept your pull request as quickly as possible, please read [the contributing guide](https://github.com/vuejs/vue/blob/dev/CONTRIBUTING.md).
 和其他项目一样，我们有一些参与的规则。为了确保我们能尽快的接收到你的请求提交，请阅读 [贡献指南](https://github.com/vuejs/vue/blob/dev/CONTRIBUTING.md).
@@ -57,8 +47,7 @@ After that, you'll be ready to contribute to Vue's core repositories:
 ...as well as many smaller official [companion libraries](https://github.com/vuejs).
 ...一些其他小型库 [仓库指南](https://github.com/vuejs).
 
-### Share (and Build) Your Experience
-### 分享和扩大你的经验
+### 分享和扩大你的经验 (Share (and Build) Your Experience)
 
 Apart from answering questions and sharing resources in the forum and Gitter channel, there are a few other less obvious ways to share and expand what you know:
 除了在社区和开发者聊天室提问和分享资源，这里还有一些其他分享以及扩展你的知识的途径：
@@ -68,8 +57,7 @@ Apart from answering questions and sharing resources in the forum and Gitter cha
 - **Watch a repo you care about.** This will send you notifications whenever there's activity in that repository, giving you insider knowledge about ongoing discussions and upcoming features. It's a fantastic way to build expertise so that you're eventually able to help address issues and pull requests.
 - **关注一个你感兴趣的仓库.** 这将会在每当仓库有活动的时候，及时的推送给你消息，并且让你了解正在进行的讨论和即将到来的功能。这个方法会让你很好地加深对 Vue 的理解，让你最终能够处理 issue 和提出 pull request
 
-### Translate Docs
-### 翻译文档
+### 翻译文档 (Translate Docs)
 
 Vue has already spread across the globe, with even the core team in at least half a dozen timezones. [The forum](http://forum.vuejs.org/) includes 7 languages and counting and many of our docs have [actively-maintained translations](https://github.com/vuejs?utf8=%E2%9C%93&query=vuejs.org). We're very proud of Vue's international reach, but we can do even better.
 Vue已经遍布全球，核心团队遍布十几个时区。[社区](http://forum.vuejs.org/)包含7种语言并且不断增长，其中很多的文档都在被 [活跃的翻译状态](https://github.com/vuejs?utf8=%E2%9C%93&query=vuejs.org)。我们对 Vue 的国际覆盖程度很自豪，但我们还可以做的更好。

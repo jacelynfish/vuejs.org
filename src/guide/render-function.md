@@ -84,7 +84,7 @@ Vue.component('anchored-heading', {
 })
 ```
 
-Much simpler! Sort of. The code is shorter, but also requires greater familiarity with Vue instance properties. In this case, you have to know that when you pass children without a `slot` attribute into a component, like the `Hello world!` inside of `anchored-heading`, those children are stored on the component instance at `$slots.default`. If you haven't already, **it's recommended to read through the [instance properties API](/api/#Instance-Properties) before diving into render functions.**
+Much simpler! Sort of. The code is shorter, but also requires greater familiarity with Vue instance properties. In this case, you have to know that when you pass children without a `slot` attribute into a component, like the `Hello world!` inside of `anchored-heading`, those children are stored on the component instance at `$slots.default`. If you haven't already, **it's recommended to read through the [instance properties API](/api/#vm-slots) before diving into render functions.**
 
 ## `createElement` Arguments
 
@@ -108,7 +108,7 @@ createElement(
   // {String | Array}
   // Children VNodes. Optional.
   [
-    createElement('h1', 'hello world')
+    createElement('h1', 'hello world'),
     createElement(MyComponent, {
       props: {
         someProp: 'foo'
@@ -160,6 +160,22 @@ One thing to note: similar to how `v-bind:class` and `v-bind:style` have special
   nativeOn: {
     click: this.nativeClickHandler
   },
+  // Custom directives. Note that the binding's 
+  // oldValue cannot be set, as Vue keeps track
+  // of it for you.
+  directives: [
+    {
+      name: 'my-custom-directive', 
+      value: '2'
+      expression: '1 + 1',
+      arg: 'foo',
+      modifiers: {
+        bar: true
+      }
+    }
+  ],
+  // The name of a slot if the child of a component
+  slot: 'name-of-slot'
   // Other special top-level properties
   key: 'myKey',
   ref: 'myRef'
@@ -228,7 +244,6 @@ If you really want to duplicate the same element/component many times, you can d
 
 ``` js
 render: function (createElement) {
-  var myParagraph =
   return createElement('div',
     Array.apply(null, { length: 20 }).map(function () {
       return createElement('p', 'hi')
@@ -264,7 +279,22 @@ render: function (createElement) {
 
 ## JSX
 
-If you're writing a lot of `render` functions, it might feel painful that we're using 14 lines above in place of this much simpler and arguably more readable template:
+If you're writing a lot of `render` functions, it might feel painful to write something like this:
+
+``` js
+createElement(
+  'anchored-heading', {
+    props: {
+      level: 1
+    }
+  }, [
+    createElement('span', 'Hello'),
+    ' world!'
+  ]
+)
+```
+
+Especially when the template version is so simple in comparison:
 
 ``` html
 <anchored-heading :level="1">

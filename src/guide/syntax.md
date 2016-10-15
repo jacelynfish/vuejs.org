@@ -13,11 +13,9 @@ Under the hood, Vue compiles the templates into Virtual DOM render functions. Co
 If you are familiar with Virtual DOM concepts and prefer the raw power of JavaScript, you can also [directly write render functions](/guide/render-function.html) instead of templates, with optional JSX support.
 如果你熟悉虚拟 DOM 概念，而且更喜欢原生 JavsScript，你也可以使用可选的 JSX 替代模板来[直接写 render 方法](/guide/render-function.html)。
 
-## Interpolations
-## 插值
+## 插值 (Interpolations)
 
-### Text
-### 文本
+### 文本 (Text)
 
 The most basic form of data binding is text interpolation using the "Mustache" syntax (double curly braces):
 数据绑定最基础的形式是文本插值，使用「Mustache」语法（双大括号）：
@@ -36,8 +34,7 @@ You can also perform one-time interpolations that do not update on data change b
 <span v-once>This will never change: {{ msg }}</span>
 ```
 
-### Raw HTML
-### 原始的 HTML
+### 原始的 HTML (Raw HTML)
 
 The double mustaches interprets the data as plain text, not HTML. In order to output real HTML, you will need to use the `v-html` directive:
 双 mustache 标签将数据解析为纯文本而不是 HTML。为了输出真的 HTML 字符串，需要用 `v-html` 指令：
@@ -53,8 +50,7 @@ The contents are inserted as plain HTML - data bindings are ignored. Note that y
 <p class="tip">在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 [XSS 攻击](https://en.wikipedia.org/wiki/Cross-site_scripting)。记住，只对可信内容使用 HTML 插值，**永不**用于用户提交的内容。</p>
 
 
-### Attributes
-### 属性
+### 属性 (Attributes)
 
 Mustaches cannot be used inside HTML attributes, instead use a [v-bind directive](/api/#v-bind):
 Mustaches 标签不能用在 HTML 属性内，使用 [v-bind 指令](/api/#v-bind) 替代：
@@ -70,8 +66,7 @@ It also works for boolean attributes - the attribute will be removed if the cond
 <button v-bind:disabled="someDynamicCondition">Button</button>
 ```
 
-### Using JavaScript Expressions
-### 使用 JavaScript 表达式
+### 使用 JavaScript 表达式 (Using JavaScript Expressions)
 
 So far we've only been binding to simple property keys in our templates. But Vue.js actually supports the full power of JavaScript expressions inside all data bindings:
 到目前为止，我们的模板只绑定到简单的属性键。不过实际上 Vue.js 在所有的数据绑定内支持全功能的 JavaScript 表达式：
@@ -91,15 +86,10 @@ These expressions will be evaluated as JavaScript in the data scope of the owner
 
 ``` html
 <!-- this is a statement, not an expression: -->
-{{ var a = 1 }}
-
-<!-- flow control won't work either, use ternary expressions -->
-{{ if (ok) { return message } }}
-```
-``` html
 <!-- 这是一个语句，不是表达式： -->
 {{ var a = 1 }}
 
+<!-- flow control won't work either, use ternary expressions -->
 <!-- 流程控制也不可以，可改用三元表达式 -->
 {{ if (ok) { return message } }}
 ```
@@ -107,8 +97,7 @@ These expressions will be evaluated as JavaScript in the data scope of the owner
 <p class="tip">Template expressions are sandboxed and only have access to a whitelist of globals such as `Math` and `Date`. You should not attempt to access user defined globals in template expressions.</p>
 <p class="tip">模板表达式运行在沙盒中，只能访问白名单中的全局变量，如 `Math` 和 `Date`，不要试图访问用户在模板表达式中定义的全局变量。</p>
 
-### Filters
-### 过滤器
+### 过滤器 (Filters)
 
 Vue.js allows you to define filters that can be used to apply common text formatting. Filters should be appended to the end of a **mustache interpolation**, denoted by the "pipe" symbol:
 Vue.js 允许定义过滤器用于格式化文本，添加在 **mustache 插值**的尾部，以「管道符」指示：
@@ -117,8 +106,8 @@ Vue.js 允许定义过滤器用于格式化文本，添加在 **mustache 插值*
 {{ message | capitalize }}
 ```
 
-<p class="tip">Vue 2.x filters can only be used inside mustache bindings. To achieve the same behavior inside directive bindings, you should use [Computed properties](/guide/computed.html) instead.</p>
-<p class="tip">Vue 2.x 过滤器只能用在 mustache 绑定中，如果想在指令绑定中实现相同的行为，你应该用[计算属性](/guide/computed.html)替代。</p>
+<p class="tip">Vue 2.x filters can only be used inside mustache bindings. To achieve the same behavior inside directive bindings, you should use [Computed properties](/guide/computed.html) instead.
+Vue 2.x 过滤器只能用在 mustache 绑定中，如果想在指令绑定中实现相同的行为，你应该用[计算属性](/guide/computed.html)替代。</p>
 
 The filter function always receives the expression's value as the first argument.
 过滤方法始终接收表达式的值作为第一个参数。
@@ -153,8 +142,7 @@ Filters are JavaScript functions, therefore they can take arguments:
 Here, the plain string `'arg1'` will be passed into the filter as the second argument, and the value of expression `arg2` will be evaluated and passed in as the third argument.
 这里，字符串 `arg1` 将作为第二个参数传递给过滤器，表达式 `arg2` 计算得到的值将作为第三个参数。
 
-## Directives
-## 指令
+## 指令 (Directives)
 
 Directives are special attributes with the `v-` prefix. Directive attribute values are expected to be **a single JavaScript expression** (with the exception for `v-for`, which will be discussed later). A directive's job is to reactively apply side effects to the DOM when the value of its expression changes. Let's review the example we saw in the introduction:
 指令是带有 `v-` 前缀的特殊属性。指令值被限定为**一个单一 JavaScript 表达式**(`v-for` 是特例，之后会讨论)。指令的职责就是当其表达式的值改变时响应式地把副作用应用到 DOM 上。我们来回头看下「概述」里的例子：
@@ -166,8 +154,7 @@ Directives are special attributes with the `v-` prefix. Directive attribute valu
 Here, the `v-if` directive would remove/insert the `<p>` element based on the truthiness of the value of the expression `seen`.
 这里 `v-if` 指令将根据表达式 `seen` 值的真假删除/插入 `<p>` 元素。
 
-### Arguments
-### 参数
+### 参数 (Arguments)
 
 Some directives can take an "argument", denoted by a colon after the directive name. For example, the `v-bind` directive is used to reactively update an HTML attribute:
 有些指令可以在其名称后面带一个「参数」，中间放一个冒号隔开。例如，`v-bind` 指令用于响应式地更新 HTML 属性：
@@ -189,8 +176,7 @@ Another example is the `v-on` directive, which listens to DOM events:
 Here the argument is the event name to listen to. We will talk about event handling in more detail too.
 这里参数是被监听的事件的名字。我们也会详细说明事件绑定。
 
-### Modifiers
-### 修饰符
+### 修饰符 (Modifiers)
 
 Modifiers are special postfixes denoted by a dot, which indicate that a directive should be bound in some special way. For example, the `.prevent` modifier tells the `v-on` directive to call `event.preventDefault()` on the triggered event:
 修饰符是以半角句号 `.` 开始的特殊后缀，用于表示指令应当以特殊方式绑定。例如 `.prevent` 修饰符告诉 `v-on` 指令事件触发时调用 `event.preventDefault()`：
@@ -202,44 +188,31 @@ Modifiers are special postfixes denoted by a dot, which indicate that a directiv
 We will see more use of modifiers later when we take a more thorough look at `v-on` and `v-model`.
 之后我们深入学习 `v-on` 和 `v-model` 时，我们将看到修饰符更多的用法。
 
-## Shorthands
-## 缩写
+## 缩写 (Shorthands)
 
 The `v-` prefix serves as a visual cue for identifying Vue-specific attributes in your templates. This is useful when you are using Vue.js to apply dynamic behavior to some existing markup, but can feel verbose for some frequently used directives. At the same time, the need for the `v-` prefix becomes less important when you are building an [SPA](https://en.wikipedia.org/wiki/Single-page_application) where Vue.js manages every template. Therefore, Vue.js provides special shorthands for two of the most often used directives, `v-bind` and `v-on`:
 `v-` 前缀是一种标识模板中特定的 Vue 属性的视觉暗示。当你需要在一些现有的 HTML 代码中添加动态行为时，这些前缀可以起到很好的区分效果。但你在使用一些常用指令的时候，你会感觉一直这么写实在是啰嗦。而且在构建[单页应用](https://en.wikipedia.org/wiki/Single-page_application)时，Vue.js 会管理所有的模板，此时 `v-` 前缀也没那么重要了。因此 Vue.js 为两个最常用的指令 `v-bind` 和 `v-on` 提供特别的缩写：
 
-### `v-bind` Shorthand
-### `v-bind` 缩写
+### `v-bind` 缩写 (`v-bind` Shorthand)
 
 ``` html
 <!-- full syntax -->
-<a v-bind:href="url"></a>
-
-<!-- shorthand -->
-<a :href="url"></a>
-```
-``` html
 <!-- 完整语法 -->
 <a v-bind:href="url"></a>
 
+<!-- shorthand -->
 <!-- 缩写 -->
 <a :href="url"></a>
 ```
 
-### `v-on` Shorthand
-### `v-on` 缩写
+### `v-on` 缩写 (`v-on` Shorthand)
 
 ``` html
 <!-- full syntax -->
-<a v-on:click="doSomething"></a>
-
-<!-- shorthand -->
-<a @click="doSomething"></a>
-```
-``` html
 <!-- 完整语法 -->
 <a v-on:click="doSomething"></a>
 
+<!-- shorthand -->
 <!-- 缩写 -->
 <a @click="doSomething"></a>
 ```
