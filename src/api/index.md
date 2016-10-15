@@ -1926,7 +1926,6 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
   The most common use case is combined with `v-for`:
   最常见的用例是结合 `v-for` 一起使用。
 
-
   ``` html
   <ul>
     <li v-for="item in items" :key="item.id">...</li>
