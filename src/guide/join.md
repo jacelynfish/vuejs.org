@@ -31,8 +31,8 @@ Now we'll answer both what the community can do for and what you can do for the 
 
 ### 参与开发 (Contribute Code)
 
-As with any project, there are rules to contributing. To ensure that we can help you or accept your pull request as quickly as possible, please read [the contributing guide](https://github.com/vuejs/vue/blob/dev/CONTRIBUTING.md).
-和其他项目一样，我们有一些参与的规则。为了确保我们能尽快的接收到你的请求提交，请阅读 [贡献指南](https://github.com/vuejs/vue/blob/dev/CONTRIBUTING.md).
+As with any project, there are rules to contributing. To ensure that we can help you or accept your pull request as quickly as possible, please read [the contributing guide](https://github.com/vuejs/vue/blob/dev/.github/CONTRIBUTING.md).
+和其他项目一样，我们有一些参与的规则。为了确保我们能尽快的接收到你的请求提交，请阅读 [贡献指南](https://github.com/vuejs/vue/blob/dev/.github/CONTRIBUTING.md).
 
 After that, you'll be ready to contribute to Vue's core repositories:
 在这之后，你已经准备好了给 Vue 的核心仓库贡献代码：
