@@ -76,7 +76,7 @@ guide/list |
 guide/events | [rayax86](https://github.com/rayax86) | | `翻译中`
 guide/forms | jacelynfish | milmeowo | ~~已完成~~
 guide/components |[MechanicianW](https://github.com/MechanicianW) |egoist | **校对中**
-guide/transitions |
+guide/transitions | jacelynfish  | | 待校对
 guide/transitioning-state |[gongph](https://github.com/gongph)| milkmeowo | **校对中**
 guide/render-function | [pandazki](https://github.com/pandazki | | 翻译中
 guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer |~~已完成~~
