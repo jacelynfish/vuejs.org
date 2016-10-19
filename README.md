@@ -70,7 +70,7 @@ guide/index |
 guide/instance | [baurine](https://github.com/baurine)| mrwiredancer| ~~已完成~~
 guide/syntax |[baurine](https://github.com/baurine)|milkmeowo| ~~已完成~~
 guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | ~~已完成~~
-guide/class-and-style |
+guide/class-and-style | fszer | | 待校对
 guide/conditional |[MechanicianW](https://github.com/MechanicianW) | hayeah | ~~已完成~~
 guide/list |
 guide/events | [rayax86](https://github.com/rayax86) | | `翻译中`
