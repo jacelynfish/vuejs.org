@@ -66,7 +66,7 @@ api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| mrwire
 api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | ~~已完成~~
 api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| hayeah | ~~已完成~~
 guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | ~~已完成~~
-guide/index | mrwiredancer | | 翻译中 
+guide/index | mrwiredancer | | 待校对 
 guide/instance | [baurine](https://github.com/baurine)| mrwiredancer| ~~已完成~~
 guide/syntax |[baurine](https://github.com/baurine)|milkmeowo| ~~已完成~~
 guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | ~~已完成~~
@@ -91,5 +91,5 @@ guide/ssr | gongph | | 翻译中
 guide/migration |[RiXiong](https://github.com/RiXiong)| mrwiredancer|**校对中**
 guide/migration-vue-router |
 guide/migration-vuex |
-guide/comparison |
+guide/comparison | mrwiredancer || 待校对
 guide/join |[leon0204](https://github.com/leon0204)| mrwiredancer| ~~已完成~~
