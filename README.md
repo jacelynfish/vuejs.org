@@ -89,5 +89,7 @@ guide/state-management |
 guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | hayeah | ~~已完成~~
 guide/ssr | gongph | | 翻译中
 guide/migration |[RiXiong](https://github.com/RiXiong)| mrwiredancer|**校对中**
+guide/migration-vue-router |
+guide/migration-vuex |
 guide/comparison |
 guide/join |[leon0204](https://github.com/leon0204)| mrwiredancer| ~~已完成~~
