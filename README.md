@@ -19,6 +19,8 @@ See also | 另见
 component | 组件
 functional | 函数化| e.g. `functional component` ：函数化组件
 reactive | 响应式的
+(single) source of truth | (单一)数据源
+
 
 
 参考 [vuejs-1.0 中文文档](http://cn.vuejs.org/)
