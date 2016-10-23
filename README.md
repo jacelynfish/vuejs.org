@@ -19,6 +19,7 @@ See also | 另见
 component | 组件
 functional | 函数化| e.g. `functional component` ：函数化组件
 reactive | 响应式的
+(single) source of truth | (单一)数据源
 mutation | 突变
 fallback content | 替换内容 | 根据 MDN 文档
 
