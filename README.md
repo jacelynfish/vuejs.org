@@ -80,7 +80,7 @@ guide/forms | jacelynfish | milmeowo | ~~已完成~~
 guide/components |[MechanicianW](https://github.com/MechanicianW) |egoist | **校对中**
 guide/transitions | jacelynfish  | | 待校对
 guide/transitioning-state |[gongph](https://github.com/gongph)| milkmeowo | **校对中**
-guide/render-function | [pandazki](https://github.com/pandazki | | 翻译中
+guide/render-function | [pandazki](https://github.com/pandazki) | | 待校对
 guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer |~~已完成~~
 guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中**
 guide/mixins | [leon0204](https://github.com/leon0204) | hayeah | ~~已完成~~
@@ -92,6 +92,6 @@ guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | hayeah | ~~已
 guide/ssr | gongph | | 翻译中
 guide/migration |[RiXiong](https://github.com/RiXiong)| mrwiredancer|**校对中**
 guide/migration-vue-router |
-guide/migration-vuex |
+guide/migration-vuex | mrwiredancer | | 待校对
 guide/comparison | mrwiredancer || 待校对
 guide/join |[leon0204](https://github.com/leon0204)| mrwiredancer| ~~已完成~~
