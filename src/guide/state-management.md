@@ -12,7 +12,7 @@ Large applications can often grow in complexity, due to multiple pieces of state
 ### 如果你是 React 开发者 (Information for React Developers)
 
 If you're coming from React, you may be wondering how vuex compares to [redux](https://github.com/reactjs/redux), the most popular Flux implementation in that ecosystem. Redux is actually view-layer agnostic, so it can easily be used with Vue via some [simple bindings](https://github.com/egoist/revue). Vuex is different in that it _knows_ it's in a Vue app. This allows it to better integrate with Vue, offering a more intuitive API and improved development experience.
-如果你是 React 开发者，你可能想知道 vuex 和 [redux](https://github.com/reactjs/redux) 的区别。redux 是 React 生态系统里最受欢迎的 Flux 实现，它是视图层无关的，所以通过一些[简单的绑定](https://github.com/reactjs/redux)就可以与 Vue 配合使用。Vuex 有点不一样，它必需在一个 Vue 应用里使用。这让它可以更好地集成到 Vue 里面，提供直观的 API 以及更好的开发体验。
+如果你是 React 开发者，你可能想知道 vuex 和 [redux](https://github.com/reactjs/redux) 的区别。redux 是 React 生态系统里最受欢迎的 Flux 实现，它和视图层无关，所以通过一些[简单的绑定](https://github.com/reactjs/redux)就可以与 Vue 配合使用。Vuex 有点不一样，它必需在一个 Vue 应用里使用。这让它可以更好地集成到 Vue 里面，提供直观的 API 以及更好的开发体验。
 
 ## 从头实现简单的状态管理 (Simple State Management from Scratch)
 
@@ -32,7 +32,7 @@ const vmB = new Vue({
 ```
 
 Now whenever `sourceOfTruth` is mutated, both `vmA` and `vmB` will update their views automatically. Subcomponents within each of these instances would also have access via `this.$root.$data`. We have a single source of truth now, but debugging would be a nightmare. Any piece of data could be changed by any part of our app at any time, without leaving a trace.
-现在，当 `sourceOfTruth` 改变，`vmA` 和 `vmB` 都会自动更新它们的视图。它们的子部件也可以通过 `this.$root.$data` 来访问这个数据。这样，我们就有了单一数据源。但是调试起来会很痛苦，因为应用的任何部分都可以在任何时候修改数据的任何部分，而且不会留下记录。
+现在，当 `sourceOfTruth` 改变，`vmA` 和 `vmB` 都会自动更新它们的视图。它们的子组件也可以通过 `this.$root.$data` 来访问这个数据。这样，我们就有了单一数据源。但是调试起来会很痛苦，因为应用的任何部分都可以在任何时候修改数据的任何部分，而且不会留下记录。
 
 To help solve this problem, we can adopt a simple **store pattern**:
 要解决这个问题，我们采用一个简单的 **store 模式**：
