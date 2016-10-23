@@ -1,5 +1,5 @@
 ---
-title: Render 函数 (Render Functions)
+title: 渲染函数 (Render Functions)
 type: guide
 order: 14
 ---
@@ -7,10 +7,10 @@ order: 14
 ## 基础 (Basics)
 
 Vue recommends using templates to build your HTML in the vast majority of cases. There are situations however, where you really need the full programmatic power of JavaScript. That's where you can use the **render  function**, a closer-to-the-compiler alternative to templates.
-Vue 建议再绝大多数情况下使用模板（template）来构建你的 HTML。然而在一些情况下，你真的需要 JavaScript 的编程能力。此时你就可以使用 **render 函数**——一个更接近于编译器的选择(closer-to-the-compiler alternative)。
+在绝大多数情况下，Vue 建议使用模板（template）来构建你的 HTML。然而在一些情况下，你真的需要 JavaScript 的编程能力。此时你就可以使用 **渲染函数**——一个更接近于编译器的选择(closer-to-the-compiler alternative)。
 
 Let's dive into a simple example where a `render` function would be practical. Say you want to generate anchored headings:
-我们来通过一个简单的例子感性了解一下 `render`。假设你想要生成一个带有锚链接的标题：
+我们来通过一个简单的例子感性了解一下 `render`。假设你想要生成一个带有链接的标题（anchored headings）：
 
 ``` html
 <h1>
@@ -28,7 +28,7 @@ For the HTML above, you decide you want this component interface:
 ```
 
 When you get started with a component that just generates a heading based on the `level` prop, you quickly arrive at this:
-当你开始写一个通过 `level` prop 生成 heading 的组件，你可能很快就会想到这样实现：
+当你开始写这样一个组件，它会通过 `level` 属性来生成标题，你可能很快就会想到这样实现：
 
 ``` html
 <script type="text/x-template" id="anchored-heading-template">
@@ -68,10 +68,10 @@ Vue.component('anchored-heading', {
 ```
 
 That template doesn't feel great. It's not only verbose, but we're duplicating `<slot></slot>` for every heading level and will have to do the same when we add the anchor element. The whole thing is also wrapped in a useless `div` because components must contain exactly one root node.
-这样的模板看起来就不那么舒服。不仅仅是冗余的问题，更重要的是，我们要为每个 heading 添加 `<slot></slot>` ，之后添加锚元素时也是如此。同时，所有的东西还需要被包裹在一个无用的 div 中，仅仅是因为组件必须要有一个根节点。
+这样的模板看起来就不那么舒服。不仅仅是冗余的问题，更重要的是，我们要为每个标题添加 `<slot></slot>` ，之后添加链接时也是如此。同时，所有的东西还需要被包裹在一个无用的 div 中，仅仅是因为组件必须要有一个根节点。
 
 While templates work great for most components, it's clear that this isn't one of them. So let's try rewriting it with a `render` function:
-虽然模板对于大多数组件来说非常适用，但在这个场景下就想的不够简洁了。那么，让我们来尝试一下用 `render` 函数来重新实现上面的例子：
+虽然模板对于大多数组件来说非常适用，但在这个场景下就显得不够简洁了。那么，让我们来尝试一下用 `render` 函数来重新实现上面的例子：
 
 ``` js
 Vue.component('anchored-heading', {
@@ -91,7 +91,7 @@ Vue.component('anchored-heading', {
 ```
 
 Much simpler! Sort of. The code is shorter, but also requires greater familiarity with Vue instance properties. In this case, you have to know that when you pass children without a `slot` attribute into a component, like the `Hello world!` inside of `anchored-heading`, those children are stored on the component instance at `$slots.default`. If you haven't already, **it's recommended to read through the [instance properties API](/api/#Instance-Properties) before diving into render functions.**
-简单多了吧！可以这么说。代码精简了许多，但是需要对 Vue 的实例属性有更为熟悉。在这个例子中，你需要知道当不使用 `slot` 属性向组件传递子元素时，比如 `anchored-heading` 中的 `Hello world!`，这些子元素会被存储在组件实例的 `$slots.default` 中。如果你对此不太了解， **在深入 render 函数之前建议阅读[实例属性 API](/api/#Instance-Properties)。**
+简单多了吧！代码精简了许多，但是需要对 Vue 的实例属性有更为熟悉。在这个例子中，你需要知道当不使用 `slot` 属性向组件传递子元素时，比如 `anchored-heading` 中的 `Hello world!`，这些子元素会被存储在组件实例的 `$slots.default` 中。如果你对此不太了解， **在深入渲染函数之前建议阅读[实例属性 API](/api/#Instance-Properties)。**
 
 ## `createElement` 参数 (`createElement` Arguments)
 
@@ -111,9 +111,9 @@ createElement(
   // {Object}
   // A data object corresponding to the attributes
   // you would use in a template. Optional.
-  // 你希望在模板中使用的特性（attributes）
+  // 你希望在模板中使用的属性（attributes）
   // 对应的数据对象。可选参数。
-{
+  {
     // (see details in the next section below)
     // （在下个章节中查看详情）
   },
@@ -136,7 +136,7 @@ createElement(
 ### 深入了解数据对象 (The Data Object In-Depth)
 
 One thing to note: similar to how `v-bind:class` and `v-bind:style` have special treatment in templates, they have their own top-level fields in VNode data objects.
-一件事需要注意：如果 `v-bind:class` 和 `v-bind:style` 在模板中会被特殊处理，在 VNode 数据对象中也拥有一个顶层属性（top-level fields）。
+这里有一件事需要注意：正如 `v-bind:class` 和 `v-bind:style` 在模板中会被特殊处理一样，VNode 数据对象中也拥有自己的顶层属性（top-level fields）。
 
 ``` js
 {
@@ -153,7 +153,7 @@ One thing to note: similar to how `v-bind:class` and `v-bind:style` have special
     fontSize: '14px'
   },
   // Normal HTML attributes
-  // 普通 HTML 特性（attributes）
+  // 普通 HTML 属性（attributes）
   attrs: {
     id: 'foo'
   },
@@ -237,12 +237,12 @@ Vue.component('anchored-heading', {
 })
 ```
 
-### 约束 (Constraints)
+### 限制 (Constraints)
 
 #### VNode 必须唯一 (VNodes Must Be Unique)
 
 All VNodes in the component tree must be unique. That means the following render function is invalid:
-组件树中的所有 VNode 必须唯一。这意味着下面的 render 函数是无效的：
+组件树中的所有 VNode 必须唯一。这意味着下面的渲染函数是无效的：
 
 ``` js
 render: function (createElement) {
@@ -255,7 +255,7 @@ render: function (createElement) {
 ```
 
 If you really want to duplicate the same element/component many times, you can do so with a factory function. For example, the following render function is a perfectly valid way of rendering 20 identical paragraphs:
-如果你确实需要多次使用相同元素/组件，你可以构造一个工厂函数。例如，下面的 render 函数就是一个完美的创建 20 个相同段落的方式：
+如果你确实需要多次使用相同元素/组件，你可以构造一个工厂函数。例如，下面的渲染函数就是一个完美的创建 20 个相同段落的方式：
 
 ``` js
 render: function (createElement) {
@@ -271,7 +271,7 @@ render: function (createElement) {
 ## 使用原生 JavaScript 替代模板特性 (Replacing Template Features with Plain JavaScript)
 
 Wherever something can be easily accomplished in plain JavaScript, Vue render functions do not provide a proprietary alternative. For example, in a template using `v-if` and `v-for`:
-所有原生 JavaScript 可以轻松完成的东西，Vue render 函数都不会提供专有的替换方式。例如，在模板中使用 `v-if` 和 `v-for`：
+所有原生 JavaScript 可以轻松完成的东西，Vue 渲染函数都不会提供专有的替换方式。例如，在模板中使用 `v-if` 和 `v-for`：
 
 ``` html
 <ul v-if="items.length">
@@ -281,7 +281,7 @@ Wherever something can be easily accomplished in plain JavaScript, Vue render fu
 ```
 
 This could be rewritten with JavaScript's `if`/`else` and `map` in a render function:
-上面的例子可以在 render 函数中使用 JavaScript 的 `if`/`else` 和 `map` 重写： 
+上面的例子可以在渲染函数中使用 JavaScript 的 `if`/`else` 和 `map` 重写： 
 
 ``` js
 render: function (createElement) {
@@ -333,7 +333,7 @@ For more on how JSX maps to JavaScript, see the [usage docs](https://github.com/
 ## 函数化组件 (Functional Components)
 
 The anchored heading component we created earlier is relatively simple. It doesn't manage any state, watch any state passed to it, and it has no lifecycle methods. Really, it's just a function with some props.
-之前创建的锚点标题组件是个相对简单的例子。它既不管理任何状态，不监听任何传递给它的状态，也没有生命周期方法。事实上，它就是一个接受参数的函数。
+之前创建的带链接的标题组件是个相对简单的例子。它既不管理任何状态，不监听任何传递给它的状态，也没有生命周期方法。事实上，它就是一个接受参数的函数。
 
 In cases like this, we can mark components as `functional`, which means that they're stateless (no `data`) and instanceless (no `this` context). A **functional component** looks like this:
 对于这样的例子，我们可以将组件标记为 `函数化（functional）`，这意味着它们是无状态（没有 `data`），无实例（没有 `this` 上下文）。一个 **函数化组件** 看起来应该像这样：
@@ -371,7 +371,7 @@ Everything the component needs is passed through `context`, which is an object c
 - `parent`: 父组件的引用
 
 After adding `functional: true`, updating the render function of our anchored heading component would simply require adding the `context` argument, updating `this.$slots.default` to `context.children`, then updating `this.level` to `context.props.level`.
-添加完 `functional: true` 之后，更新我们的锚点标题组件中的 render 函数就非常简单了：添加 `context` 参数，将 `this.$slots.default` 改为 `context.children`，再将 `this.level` 改为 `context.props.level`。
+添加完 `functional: true` 之后，更新我们的带链接的标题组件中的渲染函数就非常简单了：添加 `context` 参数，将 `this.$slots.default` 改为 `context.children`，再将 `this.level` 改为 `context.props.level`。
 
 Since functional components are just functions, they're much cheaper to render. They're also very useful as wrapper components. For example, when you need to:
 函数化组件仅仅是函数，它们的渲染成本更低。同时，函数化组件作为包装组件也非常有用。例如以下情形：
@@ -439,7 +439,7 @@ For this component, `children` will give you both paragraphs, `slots().default` 
 ## 模板编译 (Template Compilation)
 
 You may be interested to know that Vue's templates actually compile to render functions. This is an implementation detail you usually don't need to know about, but if you'd like to see how specific template features are compiled, you may find it interesting. Below is a little demo using `Vue.compile` to live-compile a template string:
-你可能有兴趣知道 Vue 模板实际上就是被编译成了 render 函数。这其实是个通常情况下无需了解的实现细节，但是如果你想看看模板是如何被编译的，可能会觉得非常有趣。下面是一个使用 `Vue.compile`  来实时编译模板字符串的小 demo：
+你可能有兴趣知道 Vue 模板实际上就是被编译成了渲染函数。这其实是个通常情况下无需了解的实现细节，但是如果你想看看模板是如何被编译的，可能会觉得非常有趣。下面是一个使用 `Vue.compile`  来实时编译模板字符串的小 demo：
 
 {% raw %}
 <div id="vue-compile-demo" class="demo">
@@ -512,3 +512,4 @@ console.error = function (error) {
 }
 </style>
 {% endraw %}
+ 
