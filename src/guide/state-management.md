@@ -32,7 +32,7 @@ const vmB = new Vue({
 ```
 
 Now whenever `sourceOfTruth` is mutated, both `vmA` and `vmB` will update their views automatically. Subcomponents within each of these instances would also have access via `this.$root.$data`. We have a single source of truth now, but debugging would be a nightmare. Any piece of data could be changed by any part of our app at any time, without leaving a trace.
-现在，当 `sourceOfTruth` 改变，`vmA` 和 `vmB` 都会自动更新它们的视图。它们的子组件也可以通过 `this.$root.$data` 来访问这个数据。这样，我们就有了单一数据源。但是调试起来会很痛苦，因为应用的任何部分都可以在任何时候修改数据的任何部分，而且不会留下记录。
+现在，当 `sourceOfTruth` 改变，`vmA` 和 `vmB` 都会自动更新它们的视图。它们的子组件也可以通过 `this.$root.$data` 来访问这个数据。这样，我们就有了单一数据源。但是调试起来会很痛苦，因为应用的任意模块都可以随时修改数据的任何部分，而且不会留下记录。
 
 To help solve this problem, we can adopt a simple **store pattern**:
 要解决这个问题，我们采用一个简单的 **store 模式**：
