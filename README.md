@@ -74,7 +74,7 @@ guide/syntax |[baurine](https://github.com/baurine)|milkmeowo| ~~已完成~~
 guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | ~~已完成~~
 guide/class-and-style | fszer | | 待校对
 guide/conditional |[MechanicianW](https://github.com/MechanicianW) | hayeah | ~~已完成~~
-guide/list |
+guide/list | mrwiredancer | coderkwong | ~~已完成~~
 guide/events | [rayax86](https://github.com/rayax86) | | `翻译中`
 guide/forms | jacelynfish | milmeowo | ~~已完成~~
 guide/components |[MechanicianW](https://github.com/MechanicianW) |egoist | **校对中**
@@ -87,7 +87,7 @@ guide/mixins | [leon0204](https://github.com/leon0204) | hayeah | ~~已完成~~
 guide/plugins |[leon0204](https://github.com/leon0204) | milkmeowo, hayeah|~~已完成~~
 guide/single-file-components | [seaify](https://github.com/seaify) | | `翻译中`
 guide/routing |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中**
-guide/state-management |
+guide/state-management | mrwiredancer | coderkwong | ~~已完成~~
 guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | hayeah | ~~已完成~~
 guide/ssr | gongph | | 翻译中
 guide/migration |[RiXiong](https://github.com/RiXiong)| mrwiredancer|**校对中**
