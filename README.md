@@ -20,8 +20,8 @@ component | 组件
 functional | 函数化| e.g. `functional component` ：函数化组件
 reactive | 响应式的
 (single) source of truth | (单一)数据源
-
-
+mutation | 突变
+fallback content | 替换内容 | 根据 MDN 文档
 
 参考 [vuejs-1.0 中文文档](http://cn.vuejs.org/)
 
@@ -68,7 +68,7 @@ api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| mrwire
 api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | ~~已完成~~
 api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| hayeah | ~~已完成~~
 guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | ~~已完成~~
-guide/index | mrwiredancer | | 待校对 
+guide/index | mrwiredancer | | 待校对
 guide/instance | [baurine](https://github.com/baurine)| mrwiredancer| ~~已完成~~
 guide/syntax |[baurine](https://github.com/baurine)|milkmeowo| ~~已完成~~
 guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | ~~已完成~~
