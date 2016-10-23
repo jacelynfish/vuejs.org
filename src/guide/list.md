@@ -352,7 +352,7 @@ This default mode is efficient, but only suitable **when your list render output
 这种默认的模式是高效的，不过这只适用于**你的列表渲染结构不依赖于子组件的状态或者临时的 DOM 状态（比如，表单控件的值）**的情况。
 
 To give Vue a hint so that it can track each node's identity, and thus reuse and reorder existing elements, you need to provide a unique `key` attribute for each item. An ideal value for `key` would be the unique id of each item. This special attribute is a rough equivalent to `track-by` in 1.x, but it works like an attribute, so you need to use `v-bind` to bind it to dynamic values (using shorthand here):
-为了要复用和重排已有的元素，你需要为每一个列表项都提供唯一的 `key` 属性，以此帮助 Vue 来追踪每一个节点。理想来说，`key` 的值对于每一个列表项都是唯一的。`key` 属性的作用跟 Vue 1.x 的 `track-by` 大致类似，不过因为它是特殊属性，所以你需要使用 `v-bind` 来将它绑定到动态值（这里使用了缩写）：
+为了要复用和重排已有的元素，你需要为每一个列表项都提供唯一的 `key` 属性，以此帮助 Vue 来追踪每一个节点。`key` 的理想值是每一个列表项的唯一 id。`key` 属性的作用跟 Vue 1.x 的 `track-by` 大致类似，不过因为它是特殊属性，所以你需要使用 `v-bind` 来将它绑定到动态值（这里使用了缩写）：
 
 ``` html
 <div v-for="item in items" :key="item.id">
