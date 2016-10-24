@@ -85,7 +85,7 @@ guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer |~~已�
 guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中**
 guide/mixins | [leon0204](https://github.com/leon0204) | hayeah | ~~已完成~~
 guide/plugins |[leon0204](https://github.com/leon0204) | milkmeowo, hayeah|~~已完成~~
-guide/single-file-components | [seaify](https://github.com/seaify) | | `翻译中`
+guide/single-file-components | 
 guide/routing |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中**
 guide/state-management | mrwiredancer | coderkwong | ~~已完成~~
 guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | hayeah | ~~已完成~~
