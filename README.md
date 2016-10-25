@@ -47,7 +47,7 @@ fallback content | 替换内容 | 根据 MDN 文档
 * 校对通过则将 PR 改为`待合并`，并分配给协调员
 * 校对不通过则将 PR 改为 `待修改`，并分配给 PR 提交者
 
-## 进度表 (最后更新：2016-10-25 15:03)
+## 进度表 (最后更新：2016-10-25 23:19)
 
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
@@ -68,7 +68,7 @@ api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| mrwire
 api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | ~~已完成~~
 api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| hayeah | ~~已完成~~
 guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | ~~已完成~~
-guide/index | mrwiredancer | | 待校对
+guide/index | mrwiredancer |pandazki | ~~已完成~~
 guide/instance | [baurine](https://github.com/baurine)| mrwiredancer| ~~已完成~~
 guide/syntax |[baurine](https://github.com/baurine)|milkmeowo| ~~已完成~~
 guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | ~~已完成~~
