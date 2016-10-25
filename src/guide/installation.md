@@ -6,6 +6,7 @@ vue_version: 2.0.3
 dev_size: "188.88"
 min_size: "62.54"
 gz_size: "22.86"
+ro_gz_size: "16"
 ---
 
 ### 兼容性 (Compatibility Note)
@@ -61,8 +62,8 @@ Vue.js 有两个版本：独立版本和运行时版本。
 - The standalone build includes the compiler and supports the `template` option. **It also relies on the presence of browser APIs so you cannot use it for server-side rendering.**
 - 独立版本包含了模版编译器，支持 `tempate` 选项。**它依赖浏览器的 API，所以你不能在服务器端渲染中使用它。**
 
-- The runtime-only build does not include the template compiler, and does not support the `template` option. You can only use the `render` option when using the runtime-only build, but it works with single-file components, because single-file components' templates are pre-compiled into `render` functions during the build step. The runtime-only build is roughly 30% lighter-weight than the standalone build, weighing only 16kb min+gzip.
-- 运行时版本不包含模版编译器，也不支持 `template` 选项。在使用运行时版本时，你只能使用 `render` 选项。不过它可以和单文件组件一起使用，因为在构建阶段，单文件组件的模版已经被预编译进 `render` 函数了。运行时版本的文件大小大概是独立版本的 70%，也就是约 16kb min+gzip。
+- The runtime-only build does not include the template compiler, and does not support the `template` option. You can only use the `render` option when using the runtime-only build, but it works with single-file components, because single-file components' templates are pre-compiled into `render` functions during the build step. The runtime-only build is roughly 30% lighter-weight than the standalone build, weighing only {{ro_gz_size}}kb min+gzip.
+- 运行时版本不包含模版编译器，也不支持 `template` 选项。在使用运行时版本时，你只能使用 `render` 选项。不过它可以和单文件组件一起使用，因为在构建阶段，单文件组件的模版已经被预编译进 `render` 函数了。运行时版本的文件大小大概是独立版本的 70%，也就是约 {{ro_gz_size}}kb min+gzip。
 
 By default, the NPM package exports the **runtime-only** build. To use the standalone build, add the following alias to your webpack config:
 NPM  包默认导出运行时版本。如果要使用独立版本，你需要在 webpack 的配置文件里加上：
