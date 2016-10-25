@@ -485,18 +485,22 @@ When a prop validation fails, Vue will produce a console warning (if using the d
 
 ## 自定义事件 (Custom Events)
 
-We have learned that the parent can pass data down to the child using props, but how do we communicate back to the parent when something happens? This is where custom events come in.
-在之前章节已经知道，父组件可以使用属性传递数据到子组件，但是反过来子组件向父组件通信该怎么做呢？是时候让自定义事件上场了。
+We have learned that the parent can pass data down to the child using props, but how do we communicate back to the parent when something happens? This is where Vue's custom event system comes in.
+在之前章节已经知道，父组件可以使用属性传递数据到子组件，但是反过来子组件向父组件通信该怎么做呢？是时候让 Vue 的自定义事件系统上场了。
 
 ### 使用 `v-on` 绑定自定义事件 (Using `v-on` with Custom Events)
 
-Every Vue instance implements the [Events interface](/api/#Instance-Methods-Events), which means it can:
+Every Vue instance implements an [events interface](/api/#Instance-Methods-Events), which means it can:
 Vue 实例实现了 [事件接口](/api/#Instance-Methods-Events)，这意味着它可以：
 
 - Listen to an event using `$on(eventName)`
 - 通过 `$on(eventName)` 监听事件
 - Trigger an event using `$emit(eventName)`
 - 通过 `$emit(eventName)` 触发事件
+
+<p class="tip">Note that Vue's event system is separate from the browser's [EventTarget API](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget). Though they work similarly, `$on` and `$emit` are __not__ aliases for `addEventListener` and `dispatchEvent`.
+要注意，Vue 的事件系统跟浏览器的 [EventTarget API](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) 是两回事，虽然它们的工作方式类似。`$on` 和 `$emit` __并不是__ `addEventListener` 和 `dispatchEvent` 的别名。
+</p>
 
 In addition, a parent component can listen to the events emitted from a child component using `v-on` directly in the template where the child component is used.
 除此之外，父组件也可以在模版中直接使用 `v-on`，来监听子组件分发的事件。
