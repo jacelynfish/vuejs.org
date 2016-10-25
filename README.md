@@ -47,7 +47,7 @@ fallback content | 替换内容 | 根据 MDN 文档
 * 校对通过则将 PR 改为`待合并`，并分配给协调员
 * 校对不通过则将 PR 改为 `待修改`，并分配给 PR 提交者
 
-## 进度表 (最后更新：2016-10-25 23:19)
+## 进度表 (最后更新：2016-10-25 23:50)
 
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
@@ -85,13 +85,13 @@ guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer |~~已�
 guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo, mrwiredancer |~~已完成~~
 guide/mixins | [leon0204](https://github.com/leon0204) | hayeah | ~~已完成~~
 guide/plugins |[leon0204](https://github.com/leon0204) | milkmeowo, hayeah|~~已完成~~
-guide/single-file-components | 
+guide/single-file-components | mrwiredancer || 待校对
 guide/routing |[lsslu](https://github.com/lsslu)| milkmeowo, mrwiredancer | ~~已完成~~
 guide/state-management | mrwiredancer | coderkwong | ~~已完成~~
 guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | hayeah | ~~已完成~~
 guide/ssr | gongph | | 待校对
 guide/migration |[RiXiong](https://github.com/RiXiong)| mrwiredancer|~~已完成~~
-guide/migration-vue-router |
+guide/migration-vue-router |mrwiredancer | | 翻译中
 guide/migration-vuex | mrwiredancer | coderkwong | ~~已完成~~
 guide/comparison | mrwiredancer || 待校对
 guide/join |[leon0204](https://github.com/leon0204)| mrwiredancer| ~~已完成~~
