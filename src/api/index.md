@@ -282,8 +282,8 @@ type: api
 
 - **用法：**
 
-  Register or retrieve a global component.
-  注册或获取全局组件。
+  Register or retrieve a global component. Registration also automatically sets the component's `name` with the given `id`.
+  注册或获取全局组件。注册组件还会自动将组件的 `name` 设置成传递进来的 `id`。
 
   ``` js
   // register an extended constructor

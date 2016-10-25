@@ -1125,12 +1125,28 @@ Components can recursively invoke themselves in their own template. However, the
 组件在它的模板内可以递归地调用自己，不过，只有当它有 `name` 选项时才可以：
 
 ``` js
+name: 'unique-name-of-my-component'
+```
+
+When you register a component globally using `Vue.component`, the global ID is automatically set as the component's `name` option.
+当你用 `Vue.component` 全局注册组件时，组件的全局 ID 会自动设置为组件的 `name` 选项。
+
+``` js
+Vue.component('unique-name-of-my-component', {
+  // ...
+})
+```
+
+If you're not careful, recursive components can also lead to infinite loops:
+如果不小心的话，递归组件也可能导致无限循环：
+
+``` js
 name: 'stack-overflow',
 template: '<div><stack-overflow></stack-overflow></div>'
 ```
 
-A component like the above will result in a "max stack size exceeded" error, so make sure recursive invocation is conditional (i.e. uses a `v-if` that will eventually be false). When you register a component globally using `Vue.component`, the global ID is automatically set as the component's `name` option.
-上面组件会导致一个错误 “max stack size exceeded”，所以要确保递归调用有终止条件。当使用 `Vue.component()` 全局注册一个组件时，组件的全局 ID 自动设置为组件的 `name` 选项。
+A component like the above will result in a "max stack size exceeded" error, so make sure recursive invocation is conditional (i.e. uses a `v-if` that will eventually be `false`).
+上面组件会导致一个错误 “max stack size exceeded”，所以要确保递归调用有终止条件（比如使用一个最终会为 `false` 的 `v-if` 指令）。
 
 ### 内联模板 (Inline Templates)
 
@@ -1142,7 +1158,7 @@ When the `inline-template` special attribute is present on a child component, th
   <div>
     <p>These are compiled as the component's own template.</p>
     <p>Not parent's transclusion content.</p>
-  </div>  
+  </div>
 </my-component>
 ```
 
