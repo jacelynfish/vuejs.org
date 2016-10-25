@@ -823,8 +823,8 @@ Vue 的过渡效果系统已经发生了大幅度的改变，它现在使用 `<t
 
 ### 可重用的 `Vue.transition` (`Vue.transition` for Reusable Transitions)<sup>弃用 (deprecated)</sup>
 
-With the new transition system, you can now just [use components for reusable transitions](http://rc.vuejs.org/guide/transitions.html#Reusable-Transitions).
-在新的过渡效果系统中，你只能[使用组件来重用过渡效果](http://rc.vuejs.org/guide/transitions.html#Reusable-Transitions).
+With the new transition system, you can now just [use components for reusable transitions](/guide/transitions.html#Reusable-Transitions).
+在新的过渡效果系统中，你只能[使用组件来重用过渡效果](/guide/transitions.html#Reusable-Transitions).
 
 {% raw %}
 <div class="upgrade-path">
