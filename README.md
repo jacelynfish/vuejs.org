@@ -47,7 +47,7 @@ fallback content | 替换内容 | 根据 MDN 文档
 * 校对通过则将 PR 改为`待合并`，并分配给协调员
 * 校对不通过则将 PR 改为 `待修改`，并分配给 PR 提交者
 
-## 进度表 (最后更新：2016-10-5 08:52)
+## 进度表 (最后更新：2016-10-25 15:03)
 
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
@@ -72,26 +72,26 @@ guide/index | mrwiredancer | | 待校对
 guide/instance | [baurine](https://github.com/baurine)| mrwiredancer| ~~已完成~~
 guide/syntax |[baurine](https://github.com/baurine)|milkmeowo| ~~已完成~~
 guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | ~~已完成~~
-guide/class-and-style | fszer | | 待校对
+guide/class-and-style | fszer | mrwiredancer | ~~已完成~~
 guide/conditional |[MechanicianW](https://github.com/MechanicianW) | hayeah | ~~已完成~~
 guide/list | mrwiredancer | coderkwong | ~~已完成~~
-guide/events | [rayax86](https://github.com/rayax86) | | `翻译中`
+guide/events | mrwiredancer | | 待校对
 guide/forms | jacelynfish | milmeowo | ~~已完成~~
-guide/components |[MechanicianW](https://github.com/MechanicianW) |egoist | **校对中**
+guide/components |[MechanicianW](https://github.com/MechanicianW) |mrwiredancer | ~~已完成~~
 guide/transitions | jacelynfish  | | 待校对
-guide/transitioning-state |[gongph](https://github.com/gongph)| milkmeowo | **校对中**
-guide/render-function | [pandazki](https://github.com/pandazki) | | 待校对
+guide/transitioning-state |[gongph](https://github.com/gongph)| milkmeowo | 待校对
+guide/render-function | [pandazki](https://github.com/pandazki) | mrwiredancer | ~~已完成~~
 guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer |~~已完成~~
-guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中**
+guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo, mrwiredancer |~~已完成~~
 guide/mixins | [leon0204](https://github.com/leon0204) | hayeah | ~~已完成~~
 guide/plugins |[leon0204](https://github.com/leon0204) | milkmeowo, hayeah|~~已完成~~
 guide/single-file-components | 
-guide/routing |[lsslu](https://github.com/lsslu)| milkmeowo |**校对中**
+guide/routing |[lsslu](https://github.com/lsslu)| milkmeowo, mrwiredancer | ~~已完成~~
 guide/state-management | mrwiredancer | coderkwong | ~~已完成~~
 guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | hayeah | ~~已完成~~
-guide/ssr | gongph | | 翻译中
-guide/migration |[RiXiong](https://github.com/RiXiong)| mrwiredancer|**校对中**
+guide/ssr | gongph | | 待校对
+guide/migration |[RiXiong](https://github.com/RiXiong)| mrwiredancer|~~已完成~~
 guide/migration-vue-router |
-guide/migration-vuex | mrwiredancer | | 待校对
+guide/migration-vuex | mrwiredancer | coderkwong | ~~已完成~~
 guide/comparison | mrwiredancer || 待校对
 guide/join |[leon0204](https://github.com/leon0204)| mrwiredancer| ~~已完成~~
