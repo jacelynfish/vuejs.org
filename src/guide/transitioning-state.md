@@ -1,38 +1,29 @@
 ---
-title: Transitioning State
+title: 给状态添加过渡效果 (Transitioning State)
 type: guide
-order: 13
+order: 14
 ---
 
 Vue's transition system offers many simple ways to animate entering, leaving, and lists, but what about animating your data itself? For example:
-Vue 的过渡系统提供了非常多简单的方法设置进入、离开和列表的动效。那么对于数据元素本身的动效呢，比如：
+Vue 的过渡效果系统提供了非常多简单的方式来设置进入、离开以及列表的动效。如果我想给数据本身添加过渡效果呢？例如：
 
 - numbers and calculations
-- 数字和运算
+- 数值和运算
 - colors displayed
 - 颜色的显示
 - the positions of SVG nodes
 - SVG 节点的位置
 - the sizes and other properties of elements
-- 元素的大小和其他的属性
+- 元素的大小和其它属性
 
 All of these are either already stored as raw numbers or can be converted into numbers. Once we do that, we can animate these state changes using 3rd-party libraries to tween state, in combination with Vue's reactivity and component systems.
-所有的原始数字都被事先存储起来，可以直接转换到数字。做到这一步，我们就可以结合 Vue 的响应式和组件系统，使用第三方库来实现切换元素的过渡状态。
+上面提到的数据都是以原始数值或者被转换成数值来储存的。所以，我们可以结合 Vue 的响应式和组件系统，用第三方库来给状态改变添加动效。
 
-## Animating State with Watchers
-## 状态动画 和 watcher
+## 用监视器给状态添加动效 (Animating State with Watchers)
 
 Watchers allow us to animate changes of any numerical property into another property. That may sound complicated in the abstract, so let's dive into an example using Tween.js:
-通过 watcher 我们能监听到任何数值属性的数值更新。可能听起来很抽象，接下来让我们先来看看使用Tweenjs一个例子：
+监视器让我们能给数值变化添加动效。从抽象层面好像有点复杂，所以让我们看一下这个使用 Tween.js 的示例：
 
-``` html
-<script src="https://unpkg.com/tween.js@16.3.4"></script>
-
-<div id="animated-number-demo">
-  <input v-model.number="number" type="number" step="20">
-  <p>{{ animatedNumber }}</p>
-</div>
-```
 ``` html
 <script src="https://unpkg.com/tween.js@16.3.4"></script>
 
@@ -68,66 +59,7 @@ new Vue({
   }
 })
 ```
-``` js
-new Vue({
-  el: '#animated-number-demo',
-  data: {
-    number: 0,
-    animatedNumber: 0
-  },
-  watch: {
-    number: function(newValue, oldValue) {
-      var vm = this
-      function animate (time) {
-        requestAnimationFrame(animate)
-        TWEEN.update(time)
-      }
-      new TWEEN.Tween({ tweeningNumber: oldValue })
-        .easing(TWEEN.Easing.Quadratic.Out)
-        .to({ tweeningNumber: newValue }, 500)
-        .onUpdate(function () {
-          vm.animatedNumber = this.tweeningNumber.toFixed(0)
-        })
-        .start()
-      animate()
-    }
-  }
-})
-```
 
-{% raw %}
-<script src="https://unpkg.com/tween.js@16.3.4"></script>
-<div id="animated-number-demo" class="demo">
-  <input v-model.number="number" type="number" step="20">
-  <p>{{ animatedNumber }}</p>
-</div>
-<script>
-new Vue({
-  el: '#animated-number-demo',
-  data: {
-    number: 0,
-    animatedNumber: 0
-  },
-  watch: {
-    number: function(newValue, oldValue) {
-      var vm = this
-      function animate (time) {
-        requestAnimationFrame(animate)
-        TWEEN.update(time)
-      }
-      new TWEEN.Tween({ tweeningNumber: oldValue })
-        .easing(TWEEN.Easing.Quadratic.Out)
-        .to({ tweeningNumber: newValue }, 500)
-        .onUpdate(function () {
-          vm.animatedNumber = this.tweeningNumber.toFixed(0)
-        })
-        .start()
-      animate()
-    }
-  }
-})
-</script>
-{% endraw %}
 {% raw %}
 <script src="https://unpkg.com/tween.js@16.3.4"></script>
 <div id="animated-number-demo" class="demo">
@@ -163,7 +95,7 @@ new Vue({
 {% endraw %}
 
 When you update the number, the change is animated below the input. This makes for a nice demo, but what about something that isn't directly stored as a number, like any valid CSS color for example? Here's how we could accomplish this with the addition of Color.js:
-当你改变输入框中的值时，动画就会被触发。这是一个很棒的演示，但是对于不能直接像数字一样存储的值，比如 CSS 中的 color 的值，下面的例子我们来通过 Color.js 实现一个例子：
+当你改变输入框中的值时，就会触发输入框下方的动画。这是一个很棒的演示，但是如果储存的数据不是数值，比方说 CSS 中的颜色值，那该怎么办？下面的示例代码我们使用 Color.js 来实现：
 
 ``` html
 <script src="https://unpkg.com/tween.js@16.3.4"></script>
@@ -315,11 +247,10 @@ new Vue({
 </style>
 {% endraw %}
 
-## Dynamic State Transitions
-## 动态状态转换
+## 动态的状态过渡效果 (Dynamic State Transitions)
 
 Just as with Vue's transition components, the data backing state transitions can be updated in real time, which is especially useful for prototyping! Even using a simple SVG polygon, you can achieve many effects that would be difficult to conceive of until you've played with the variables a little.
-就像 Vue 的过渡组件一样，数据背后状态转换会实时更新，这对于原型设计十分有用。当你修改一些变量，即使是一个简单的 SVG 多边形也可是实现很多难以想象的效果。
+就像 Vue 的过渡效果组件一样，状态过渡效果背后的数据也是可以实时更新的，这对于原型设计十分有用！当你能够随意调整变量时，即使是一个简单的 SVG 多边形也可以实现很多难以想象的效果。
 
 {% raw %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenLite.min.js"></script>
@@ -453,13 +384,12 @@ function generatePoints (stats) {
 {% endraw %}
 
 See [this fiddle](https://jsfiddle.net/chrisvfritz/65gLu2b6/) for the complete code behind the above demo.
+这个演示的完整代码可以参考 [这里](https://jsfiddle.net/chrisvfritz/65gLu2b6/)。
 
-## Organizing Transitions into Components
-## 在组件中组织过渡
+## 用组件管理过渡效果 (Organizing Transitions into Components)
 
 Managing many state transitions can quickly increase the complexity of a Vue instance or component. Fortunately, many animations can be extracted out into dedicated child components. Let's do this with the animated integer from our earlier example:
-管理多个状态转换可以快速提高一个 Vue 实例或组件的复杂性。幸好，多个动画可以提取到专用的子组件。
-我们来将之前的示例改写一下：
+管理多个状态过渡效果会让 Vue 实例或组件的复杂度快速增加。幸好，很多动效都可以提取到专门的子组件。让我们改写一下之前的示例代码：
 
 ``` html
 <script src="https://unpkg.com/tween.js@16.3.4"></script>
@@ -482,60 +412,6 @@ Managing many state transitions can quickly increase the complexity of a Vue ins
 // Components also offer a clean interface for configuring
 // more dynamic transitions and complex transition
 // strategies.
-Vue.component('animated-integer', {
-  template: '<span>{{ tweeningValue }}</span>',
-  props: {
-    value: {
-      type: Number,
-      required: true
-    }
-  },
-  data: function () {
-    return {
-      tweeningValue: 0
-    }
-  },
-  watch: {
-    value: function (newValue, oldValue) {
-      this.tween(oldValue, newValue)
-    }
-  },
-  mounted: function () {
-    this.tween(0, this.value)
-  },
-  methods: {
-    tween: function (startValue, endValue) {
-      var vm = this
-      function animate (time) {
-        requestAnimationFrame(animate)
-        TWEEN.update(time)
-      }
-      new TWEEN.Tween({ tweeningValue: startValue })
-        .to({ tweeningValue: endValue }, 500)
-        .onUpdate(function () {
-          vm.tweeningValue = this.tweeningValue.toFixed(0)
-        })
-        .start()
-      animate()
-    }
-  }
-})
-
-// All complexity has now been removed from the main Vue instance!
-new Vue({
-  el: '#example-8',
-  data: {
-    firstNumber: 20,
-    secondNumber: 40
-  },
-  computed: {
-    result: function () {
-      return this.firstNumber + this.secondNumber
-    }
-  }
-})
-```
-``` js
 // 这种复杂的补间动画逻辑可以被复用
 // 任何整数都可以执行动画
 // 组件化使我们的界面十分清晰
@@ -579,7 +455,8 @@ Vue.component('animated-integer', {
   }
 })
 
-// 这些复杂的动画已经从主要的 Vue 实例中移除了！
+// All complexity has now been removed from the main Vue instance!
+// 我们把这些复杂度从主 Vue 实例中移除了！
 new Vue({
   el: '#example-8',
   data: {
@@ -661,4 +538,4 @@ new Vue({
 {% endraw %}
 
 Within child components, we can use any combination of transition strategies that have been covered on this page, along with those offered by Vue's [built-in transition system](transitions.html). Together, there are very few limits to what can be accomplished.
-我们能在组件中结合使用这一节讲到各种过渡策略和 Vue 内建的过渡系统。配合使用，对于完成各种过渡动效几乎没有阻碍了。
+在子组件中，我们可以任意组合之前提到的各种过渡效果策略，以及 Vue [内置过渡效果系统](transitions.html)提供的策略。把它们组合起来使用，几乎可以实现任何过渡效果。
