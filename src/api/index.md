@@ -990,7 +990,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 - **类型：** `Array<string>`
 
-- **默认值：** `["{{", "}}"]`
+- **默认值：** `{% raw %}["{{", "}}"]{% endraw %}`
 
 - **Details:**
 - **详细：**
