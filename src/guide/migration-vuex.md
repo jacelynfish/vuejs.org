@@ -24,7 +24,7 @@ __Vuex 2.0__ 是一个激进的重新设计，极大简化了 API，面向的是
 __Vuex 1.0__ is mostly backwards-compatible, so requires very few changes to upgrade. It is recommended for those with large existing codebases or who just want the smoothest possible upgrade path to Vue 2.0. This guide is dedicated to facilitating that process, but only includes migration notes. For the complete usage guide, see [the Vuex 1.0 docs](https://github.com/vuejs/vuex/tree/1.0/docs/en).
 __Vuex 1.0__ 几乎是完全向后兼容的，只需要很小的改动就可以将旧项目升级到 Vuex 1.0。对于那些已经有大量代码的项目，或者想尽可能顺畅地升级到 Vue 2.0 的开发者，Vuex 1.0 会是更好的选择。本教程会帮助你完成这个过程，不过只会包括迁移的注意事项。如果你想查看完整的使用教程，可以看 [Vuex 1.0 文档](https://github.com/vuejs/vuex/tree/1.0/docs/en)。
 
-## 接受字符串属性路径的 `store.watch` (`store.watch` with String Property Path) <sup>弃用 (deprecated)</sup>
+## 接受字符串属性路径的 `store.watch` (`store.watch` with String Property Path) <sup>取代 (replaced)</sup>
 
 `store.watch` now only accept functions. So for example, you would have to replace:
 `store.watch` 现在只接受函数。比如，你需要将下面的代码：
@@ -59,10 +59,10 @@ This gives you more complete control over the reactive properties you'd like to 
 </div>
 {% endraw %}
 
-## store 的事件分发器 (Store's Event Emitter) <sup>弃用 (deprecated)</sup>
+## store 的事件分发器 (Store's Event Emitter) <sup>移除 (removed)</sup>
 
-The store instance no longer exposes the event emitter interface (`on`, `off`, `emit`). If you were previously using the store as a global event bus, [see this section](http://vuejs.org/guide/migration.html#dispatch-and-broadcast-deprecated) for migration instructions.
-store 实例不会再提供事件分发器的接口（`on`，`off`，`emit`）。如果你之前使用 store 来作为全局的事件中心，可以参考[教程的这一节]((http://vuejs.org/guide/migration.html#dispatch-and-broadcast-deprecated)，其中有相关的迁移指引。
+The store instance no longer exposes the event emitter interface (`on`, `off`, `emit`). If you were previously using the store as a global event bus, [see this section](http://vuejs.org/guide/migration.html#dispatch-and-broadcast-removed) for migration instructions.
+store 实例不会再提供事件分发器的接口（`on`，`off`，`emit`）。如果你之前使用 store 来作为全局的事件中心，可以参考[教程的这一节]((http://vuejs.org/guide/migration.html#dispatch-and-broadcast-removed)，其中有相关的迁移指引。
 
 Instead of using this interface to watch events emitted by the store itself (e.g. `store.on('mutation', callback)`), a new method `store.subscribe` is introduced. Typical usage inside a plugin would be:
 为了替代原有的接口（比如 `store.on('mutation', callback)`)，我们引入了一个新的方法 `store.subscribe`。这个方法的典型使用场景，就是在插件中使用：
@@ -88,7 +88,7 @@ See example [the plugins docs](https://github.com/vuejs/vuex/blob/1.0/docs/en/pl
 </div>
 {% endraw %}
 
-## 中间件 (Middlewares) <sup>弃用 (deprecated)</sup>
+## 中间件 (Middlewares) <sup>取代 (replaced)</sup>
 
 Middlewares are replaced by plugins. A plugin is simply a function that receives the store as the only argument, and can listen to the mutation event on the store:
 插件替代了中间件。插件其实就是接受 store 作为唯一参数的函数，它可以监听 store 的 mutation 事件：
