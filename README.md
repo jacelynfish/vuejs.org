@@ -58,47 +58,47 @@ non-trivial app | 正常应用
 
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
-api/index#Global Config | mrwiredancer | egoist | ~~已完成~~
-api/index#Global API | pandazki |mrwiredancer |  ~~已完成~~
+api/index#Global Config | [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | ~~已完成~~
+api/index#Global API | pandazki |[mrwiredancer](https://github.com/Mr-Wiredancer) |  ~~已完成~~
 api/index#Options/Data |[milkmeowo](https://github.com/milkmeowo)| egoist| ~~已完成~~
-api/index#Options/DOM |[milkmeowo](https://github.com/milkmeowo)| Mr-Wiredancer | ~~已完成~~
+api/index#Options/DOM |[milkmeowo](https://github.com/milkmeowo)| [mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
 api/index#Options/Lifecycle Hooks |[milkmeowo](https://github.com/milkmeowo)| hayeah |  ~~已完成~~
-api/index#Options/Assets|[milkmeowo](https://github.com/milkmeowo)| Mr-Wiredancer|  ~~已完成~~
+api/index#Options/Assets|[milkmeowo](https://github.com/milkmeowo)| [mrwiredancer](https://github.com/Mr-Wiredancer)|  ~~已完成~~
 api/index#Options/misc |[milkmeowo](https://github.com/milkmeowo)| hayeah |  ~~已完成~~
-api/index#Instance Properties | [dmxj](https://github.com/dmxj) |mrwiredancer| ~~已完成~~
+api/index#Instance Properties | [dmxj](https://github.com/dmxj) |[mrwiredancer](https://github.com/Mr-Wiredancer)| ~~已完成~~
 api/index#Instance Methods/Data | [alfredcc](https://github.com/alfredcc) |egoist| ~~已完成~~
-api/index#Instance Methods/Eevents |[dmxj](https://github.com/dmxj)| mrwiredancer | ~~已完成~~
-api/index#Instance Methods/Lifecycle |[dmxj](https://github.com/dmxj)|mrwiredancer | ~~已完成~~
-api/index#Directives |[dmxj](https://github.com/dmxj)|mrwiredancer | ~~已完成~~
-api/index#Special Attributes |[aliencyl7](https://github.com/aliencyl7)| mrwiredancer | ~~已完成~~
-api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| mrwiredancer|~~已完成~~
+api/index#Instance Methods/Eevents |[dmxj](https://github.com/dmxj)| [mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
+api/index#Instance Methods/Lifecycle |[dmxj](https://github.com/dmxj)|[mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
+api/index#Directives |[dmxj](https://github.com/dmxj)|[mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
+api/index#Special Attributes |[aliencyl7](https://github.com/aliencyl7)| [mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
+api/index#Built-in Components |[milkmeowo](https://github.com/milkmeowo)| [mrwiredancer](https://github.com/Mr-Wiredancer)|~~已完成~~
 api/index#VNode Interface |[milkmeowo](https://github.com/milkmeowo)| | ~~已完成~~
 api/index#Server-Side Rendering |[milkmeowo](https://github.com/milkmeowo)| hayeah | ~~已完成~~
 guide/installation |  [mrwiredancer](https://github.com/Mr-Wiredancer) | egoist | ~~已完成~~
-guide/index | mrwiredancer |pandazki | ~~已完成~~
-guide/instance | [baurine](https://github.com/baurine)| mrwiredancer| ~~已完成~~
+guide/index | [mrwiredancer](https://github.com/Mr-Wiredancer) |pandazki | ~~已完成~~
+guide/instance | [baurine](https://github.com/baurine)| [mrwiredancer](https://github.com/Mr-Wiredancer)| ~~已完成~~
 guide/syntax |[baurine](https://github.com/baurine)|milkmeowo| ~~已完成~~
-guide/computed |[gongph](https://github.com/gongph) |mrwiredancer | ~~已完成~~
-guide/class-and-style | fszer | mrwiredancer | ~~已完成~~
+guide/computed |[gongph](https://github.com/gongph) |[mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
+guide/class-and-style | fszer | [mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
 guide/conditional |[MechanicianW](https://github.com/MechanicianW) | hayeah | ~~已完成~~
-guide/list | mrwiredancer | coderkwong | ~~已完成~~
-guide/events | mrwiredancer | | 待校对
+guide/list | [mrwiredancer](https://github.com/Mr-Wiredancer) | coderkwong | ~~已完成~~
+guide/events | [mrwiredancer](https://github.com/Mr-Wiredancer) | [milkmeowo](https://github.com/milkmeowo)| ~~已完成~~
 guide/forms | jacelynfish | milmeowo | ~~已完成~~
-guide/components |[MechanicianW](https://github.com/MechanicianW) |mrwiredancer | ~~已完成~~
+guide/components |[MechanicianW](https://github.com/MechanicianW) |[mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
 guide/transitions | jacelynfish  | | 待校对
-guide/transitioning-state |[gongph](https://github.com/gongph)| mrwiredancer | ~~已完成~~
-guide/render-function | [pandazki](https://github.com/pandazki) | mrwiredancer | ~~已完成~~
-guide/reactivity |[pandazki](https://github.com/pandazki) |mrwiredancer |~~已完成~~
-guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo, mrwiredancer |~~已完成~~
+guide/transitioning-state |[gongph](https://github.com/gongph)| [mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
+guide/render-function | [pandazki](https://github.com/pandazki) | [mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
+guide/reactivity |[pandazki](https://github.com/pandazki) |[mrwiredancer](https://github.com/Mr-Wiredancer) |~~已完成~~
+guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo, [mrwiredancer](https://github.com/Mr-Wiredancer) |~~已完成~~
 guide/mixins | [leon0204](https://github.com/leon0204) | hayeah | ~~已完成~~
-guide/plugins |[leon0204](https://github.com/leon0204) | milkmeowo, hayeah|~~已完成~~
-guide/single-file-components | mrwiredancer || 待校对
-guide/routing |[lsslu](https://github.com/lsslu)| milkmeowo, mrwiredancer | ~~已完成~~
+guide/plugins |[leon0204](https://github.com/leon0204) | [milkmeowo](https://github.com/milkmeowo), hayeah|~~已完成~~
+guide/single-file-components | [mrwiredancer](https://github.com/Mr-Wiredancer) || 待校对
+guide/routing |[lsslu](https://github.com/lsslu)| [milkmeowo](https://github.com/milkmeowo), [mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
 guide/state-management | mrwiredancer | coderkwong | ~~已完成~~
 guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | hayeah | ~~已完成~~
-guide/ssr | gongph | mrwiredancer | ~~已完成~~
+guide/ssr | gongph | [mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
 guide/migration |[RiXiong](https://github.com/RiXiong)| mrwiredancer|~~已完成~~
-guide/migration-vue-router |mrwiredancer | | 待校对
-guide/migration-vuex | mrwiredancer | coderkwong | ~~已完成~~
-guide/comparison | mrwiredancer || 待校对
-guide/join |[leon0204](https://github.com/leon0204)| mrwiredancer| ~~已完成~~
+guide/migration-vue-router |[mrwiredancer](https://github.com/Mr-Wiredancer) | [pandazki](https://github.com/pandazki) | ~~已完成~~
+guide/migration-vuex | [mrwiredancer](https://github.com/Mr-Wiredancer) | coderkwong | ~~已完成~~
+guide/comparison | [mrwiredancer](https://github.com/Mr-Wiredancer) | [milkmeowo](https://github.com/milkmeowo) | ~~已完成~~
+guide/join |[leon0204](https://github.com/leon0204)| [mrwiredancer](https://github.com/Mr-Wiredancer)| ~~已完成~~
