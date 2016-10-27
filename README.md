@@ -93,6 +93,7 @@ guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo, [mrwiredan
 guide/mixins | [leon0204](https://github.com/leon0204) | hayeah | ~~已完成~~
 guide/plugins |[leon0204](https://github.com/leon0204) | [milkmeowo](https://github.com/milkmeowo), hayeah|~~已完成~~
 guide/single-file-components | [mrwiredancer](https://github.com/Mr-Wiredancer) || 待校对
+guide/deployment | [mrwiredancer](https://github.com/Mr-Wiredancer) | | 翻译中
 guide/routing |[lsslu](https://github.com/lsslu)| [milkmeowo](https://github.com/milkmeowo), [mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
 guide/state-management | mrwiredancer | coderkwong | ~~已完成~~
 guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | hayeah | ~~已完成~~
