@@ -417,8 +417,8 @@ Riot 2.0 提供了一个跟 Vue 类似的基于组件的开发模型（在 Riot 
 - Vue 提供了真正的条件渲染。而 Riot 渲染了所有的条件分支，只是将其它们选择性地显示和隐藏。
 - A far more powerful router. Riot’s routing API is extremely minimal.
 - Vue 有一个更加强大的路由系统。Riot 的路由 API 真的是非常局限。
-- More mature tooling support. Vue provides official support for [Webpack](https://github.com/vuejs/vue-loader), [Browserify](https://github.com/vuejs/vueify), and [SystemJS](https://github.com/vuejs/systemjs-plugin-vue), while Riot relies on community support for build system integration.
-- Vue 的工具支持更加成熟。它对 [Webpack](https://github.com/vuejs/vue-loader)，[Browserify](https://github.com/vuejs/vueify)，和 [SystemJS](https://github.com/vuejs/systemjs-plugin-vue)提供了官方支持。而 Riot 对构建系统的支持依赖于它的社区。
+- More mature tooling support. Vue provides official support for [Webpack](https://github.com/vuejs/vue-loader) and [Browserify](https://github.com/vuejs/vueify), while Riot relies on community support for build system integration.
+- Vue 的工具支持更加成熟。它对 [Webpack](https://github.com/vuejs/vue-loader) 和 [Browserify](https://github.com/vuejs/vueify) 提供了官方支持。而 Riot 对构建系统的支持依赖于它的社区。
 - [Transition effect system](transitions.html). Riot has none.
 － Vue 有[过渡效果系统](transitions.html)，而 Riot 还没有。
 - Better performance. [Despite advertising](https://github.com/vuejs/vuejs.org/issues/346) use of a virtual DOM, Riot in fact uses dirty checking and thus suffers from the same performance issues as Angular 1.
