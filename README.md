@@ -54,7 +54,7 @@ non-trivial app | 正常应用
 * 校对通过则将 PR 改为`待合并`，并分配给协调员
 * 校对不通过则将 PR 改为 `待修改`，并分配给 PR 提交者
 
-## 进度表 (最后更新：2016-10-27 18:22)
+## 进度表 (最后更新：2016-10-28 15:22)
 
 文章 | 翻译 | 校对 | 状态 |
 ---- | ---- | ---- | ---- |
@@ -85,7 +85,7 @@ guide/list | [mrwiredancer](https://github.com/Mr-Wiredancer) | coderkwong | ~~�
 guide/events | [mrwiredancer](https://github.com/Mr-Wiredancer) | [milkmeowo](https://github.com/milkmeowo)| ~~已完成~~
 guide/forms | jacelynfish | milmeowo | ~~已完成~~
 guide/components |[MechanicianW](https://github.com/MechanicianW) |[mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
-guide/transitions | jacelynfish  | | 待校对
+guide/transitions | jacelynfish  | codekwong, mrwiredancer | ~~已完成~~
 guide/transitioning-state |[gongph](https://github.com/gongph)| [mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
 guide/render-function | [pandazki](https://github.com/pandazki) | [mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
 guide/reactivity |[pandazki](https://github.com/pandazki) |[mrwiredancer](https://github.com/Mr-Wiredancer) |~~已完成~~
@@ -93,7 +93,7 @@ guide/custom-directive |[lsslu](https://github.com/lsslu)| milkmeowo, [mrwiredan
 guide/mixins | [leon0204](https://github.com/leon0204) | hayeah | ~~已完成~~
 guide/plugins |[leon0204](https://github.com/leon0204) | [milkmeowo](https://github.com/milkmeowo), hayeah|~~已完成~~
 guide/single-file-components | [mrwiredancer](https://github.com/Mr-Wiredancer) | [pandazki](https://github.com/pandazki) | ~~已完成~~
-guide/deployment | [mrwiredancer](https://github.com/Mr-Wiredancer) | | 翻译中
+guide/deployment | [mrwiredancer](https://github.com/Mr-Wiredancer) | coderkwong | ~~已完成~~
 guide/routing |[lsslu](https://github.com/lsslu)| [milkmeowo](https://github.com/milkmeowo), [mrwiredancer](https://github.com/Mr-Wiredancer) | ~~已完成~~
 guide/state-management | mrwiredancer | coderkwong | ~~已完成~~
 guide/unit-testing |[Yogi-Jiang](https://github.com/Yogi-Jiang) | hayeah | ~~已完成~~
