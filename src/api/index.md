@@ -2211,5 +2211,5 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ## 服务端渲染 (Server-Side Rendering)
 
-- Please refer to the [vue-server-renderer package documentation](https://github.com/vuejs/vue/tree/next/packages/vue-server-renderer).
-- 请参阅 [Vue 服务端渲染文档](https://github.com/vuejs/vue/tree/next/packages/vue-server-renderer).
+- Please refer to the [vue-server-renderer package documentation](https://github.com/vuejs/vue/tree/dev/packages/vue-server-renderer).
+- 请参阅 [Vue 服务端渲染文档](https://github.com/vuejs/vue/tree/dev/packages/vue-server-renderer).
