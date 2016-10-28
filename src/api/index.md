@@ -87,6 +87,22 @@ type: api
 
   > [Sentry](https://sentry.io), an error tracking service, provides [official integration](https://sentry.io/for/vue/) using this option.
 
+### ignoredElements
+
+- **Type:** `Array<string>`
+
+- **Default:** `[]`
+
+- **Usage:**
+
+  ``` js
+  Vue.config.ignoredElements = [
+    'my-custom-web-component', 'another-web-component'
+  ]
+  ```
+
+  Make Vue ignore custom elements defined outside of Vue (e.g., using the Web Components APIs). Otherwise, it will throw a warning about an `Unknown custom element`, assuming that you forgot to register a global component or misspelled a component name.
+
 ### keyCodes
 
 - **类型：** `{ [key: string]: number }`
@@ -282,8 +298,8 @@ type: api
 
 - **用法：**
 
-  Register or retrieve a global component.
-  注册或获取全局组件。
+  Register or retrieve a global component. Registration also automatically sets the component's `name` with the given `id`.
+  注册或获取全局组件。注册组件还会自动将组件的 `name` 设置成传递进来的 `id`。
 
   ``` js
   // register an extended constructor
@@ -974,7 +990,7 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 - **类型：** `Array<string>`
 
-- **默认值：** `["{{", "}}"]`
+- **默认值：** `{% raw %}["{{", "}}"]{% endraw %}`
 
 - **Details:**
 - **详细：**
@@ -2195,5 +2211,5 @@ All lifecycle hooks automatically have their `this` context bound to the instanc
 
 ## 服务端渲染 (Server-Side Rendering)
 
-- Please refer to the [vue-server-renderer package documentation](https://github.com/vuejs/vue/tree/next/packages/vue-server-renderer).
-- 请参阅 [Vue 服务端渲染文档](https://github.com/vuejs/vue/tree/next/packages/vue-server-renderer).
+- Please refer to the [vue-server-renderer package documentation](https://github.com/vuejs/vue/tree/dev/packages/vue-server-renderer).
+- 请参阅 [Vue 服务端渲染文档](https://github.com/vuejs/vue/tree/dev/packages/vue-server-renderer).
